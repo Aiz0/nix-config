@@ -1,10 +1,9 @@
-{pkgs, ...}:{
+{pkgs, ...}: {
   imports = [
     ./programs
     ./desktop
   ];
   home = {
-
     username = "aiz";
     homeDirectory = "/home/aiz";
 
@@ -29,6 +28,4 @@
       line_break.disabled = true;
     };
   };
-
-
 }

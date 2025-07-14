@@ -15,6 +15,8 @@
   nix.settings = {
     # enable flakes globally
     experimental-features = ["nix-command" "flakes"];
+    # don't pollute home with nix files
+    use-xdg-base-directories = true;
 
     substituters = [
       # cache mirror located in China
@@ -144,5 +146,16 @@
     };
 
     #udev.packages = with pkgs; [gnome-settings-daemon];
+  };
+
+  # Set XDG directories
+  # I like to have a clean home
+  environment.sessionVariables = let
+    local = "$HOME/local";
+  in {
+    XDG_CONFIG_HOME = local + "/config";
+    XDG_CACHE_HOME = local + "/cache";
+    XDG_STATE_HOME = local + "/state";
+    XDG_DATA_HOME = local + "/share";
   };
 }
