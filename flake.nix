@@ -19,6 +19,11 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mikuboot = {
+      url = "gitlab:evysgarden/mikuboot";
+      inputs.nixpkgs.follows = ""; # only useful for the package output
+    };
   };
 
   nixConfig = {
@@ -60,6 +65,7 @@
           modules = [
             ./hosts/${host}
             self.inputs.niri.nixosModules.niri
+            self.inputs.mikuboot.nixosModules.default
             self.inputs.home-manager.nixosModules.home-manager
             self.nixosModules.nixos
             self.nixosModules.users
