@@ -95,6 +95,7 @@
   };
 
   programs.niri.enable = true;
+  programs.fish.enable = true;
 
   programs.dconf.enable = true;
 
