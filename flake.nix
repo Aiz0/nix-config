@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    #nur.url = "github:nix-community/NUR";
+    nur.url = "github:nix-community/NUR";
 
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +42,7 @@
     ];
 
     overlays = [
+      self.inputs.nur.overlays.default
       self.inputs.niri.overlays.niri
     ];
   in {
