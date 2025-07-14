@@ -1,7 +1,8 @@
 {pkgs, ...}: {
   imports = [
-    ./programs
     ./desktop
+    ./programs
+    ./services
   ];
   home = {
     username = "aiz";
