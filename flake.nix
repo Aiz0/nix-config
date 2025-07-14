@@ -40,8 +40,6 @@
       self.inputs.niri.overlays.niri
     ];
   in {
-
-
     homeManagerModules = {
       aiz = ./modules/home/aiz;
       # snippets = ./modules/snippets;
@@ -49,7 +47,7 @@
     nixosModules = {
       #hardware = ./modules/nixos/hardware;
       #locale-en-us = ./modules/nixos/locale/en-us;
-      #nixos = ./modules/nixos/os;
+      nixos = ./modules/nixos/os;
       #snippets = ./modules/snippets;
       users = ./modules/nixos/users;
     };
@@ -63,6 +61,7 @@
             ./hosts/${host}
             self.inputs.niri.nixosModules.niri
             self.inputs.home-manager.nixosModules.home-manager
+            self.nixosModules.nixos
             self.nixosModules.users
             {
               home-manager = {
