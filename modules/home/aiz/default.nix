@@ -20,6 +20,12 @@
       unzip
     ];
 
+    pointerCursor = {
+      enable = true;
+      package = pkgs.posy-cursors;
+      name = "Posy_Cursor_Black";
+    };
+
     stateVersion = "25.05";
   };
 
