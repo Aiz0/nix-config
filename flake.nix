@@ -24,6 +24,11 @@
       url = "gitlab:evysgarden/mikuboot";
       inputs.nixpkgs.follows = ""; # only useful for the package output
     };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {

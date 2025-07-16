@@ -1,4 +1,5 @@
 {
+  self,
   pkgs,
   config,
   ...
@@ -23,6 +24,17 @@
       nautilus # gnome file manager
       file-roller
       oculante # image viewer
+
+      #quickshell Noctalia
+      self.inputs.quickshell.packages.${system}.default
+      qt6Packages.qt5compat
+      libsForQt5.qt5.qtgraphicaleffects
+      kdePackages.qtbase
+      kdePackages.qtdeclarative
+      cava
+      gpu-screen-recorder
+      xdg-desktop-portal-gnome
+      material-symbols
     ];
 
     pointerCursor = {
