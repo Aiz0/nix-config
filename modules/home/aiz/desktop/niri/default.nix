@@ -11,6 +11,7 @@
         tap = true;
         dwt = true; # disable while typing
         natural-scroll = true;
+        scroll-factor = 0.5;
         click-method = "clickfinger";
       };
     };
