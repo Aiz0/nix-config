@@ -29,6 +29,11 @@
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    disko = {
+          url = "github:nix-community/disko";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
   };
 
   nixConfig = {
@@ -51,6 +56,10 @@
       self.inputs.niri.overlays.niri
     ];
   in {
+    diskoConfigurations = {
+          luks-btrfs-subvolumes = ./modules/nixos/disko/luks-btrfs-subvolumes;
+        };
+
     homeManagerModules = {
       aiz = ./modules/home/aiz;
       # snippets = ./modules/snippets;
@@ -73,6 +82,7 @@
             self.inputs.niri.nixosModules.niri
             self.inputs.mikuboot.nixosModules.default
             self.inputs.home-manager.nixosModules.home-manager
+            self.inputs.disko.nixosModules.disko
             self.nixosModules.nixos
             self.nixosModules.users
             {

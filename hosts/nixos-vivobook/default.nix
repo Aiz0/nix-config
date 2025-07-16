@@ -1,7 +1,8 @@
-{...}: {
+{self, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/system.nix
+    self.diskoConfigurations.luks-btrfs-subvolumes
   ];
 
   boot.loader.systemd-boot.enable = true;
