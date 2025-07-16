@@ -18,6 +18,11 @@
       # archives
       zip
       unzip
+
+      # gui
+      nautilus # gnome file manager
+      file-roller
+      oculante # image viewer
     ];
 
     pointerCursor = {
@@ -27,6 +32,26 @@
     };
 
     stateVersion = "25.05";
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style.name = "adwaita-dark";
   };
 
   # starship - an customizable prompt for any shell
