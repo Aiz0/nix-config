@@ -139,6 +139,12 @@
       enable = true;
       pulse.enable = true;
     };
+    udisks2 = {
+      enable = true;
+    };
+    gvfs = {
+      enable = true;
+    };
 
     #udev.packages = with pkgs; [gnome-settings-daemon];
   };
