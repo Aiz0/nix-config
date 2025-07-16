@@ -8,6 +8,8 @@
       auto_update = false;
       autosave.after_delay.milliseconds = 1000;
 
+      theme = "Ayu Dark";
+
       minimap.show = "auto";
       indent_guides = {
         enabled = true;
