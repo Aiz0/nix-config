@@ -1,8 +1,4 @@
-{
-    config,
-    pkgs,
-    ...
-}: {
+{...}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/system.nix
@@ -13,7 +9,6 @@
 
   networking.hostName = "nixos-vivobook";
   networking.networkmanager.enable = true;
-
 
   system.stateVersion = "24.11";
 }
