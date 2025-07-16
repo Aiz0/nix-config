@@ -122,6 +122,7 @@
     fuzzel
     nixd
     alejandra
+    gtrash
   ];
 
   # Enable sound with pipewire.
