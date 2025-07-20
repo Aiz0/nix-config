@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./keyd
     ./regreet
   ];
 }
