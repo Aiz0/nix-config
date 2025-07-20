@@ -18,7 +18,6 @@
     enable = false;
     systemd = {
       enable = true;
-      target = "niri.service";
       enableInspect = true;
     };
     settings = {
@@ -43,6 +42,10 @@
         "group/session" = {
           modules = ["idle_inhibitor"];
           orientation = "inherit";
+        };
+
+        "niri/workspaces" = {
+          format = "";
         };
 
         clock = {
@@ -126,6 +129,7 @@
           format-disabled = "󰀝";
           format-disconnected = "󰀦";
           format-ethernet = "󰈀";
+          format-linked = "󰈁";
           format-icons = ["󰤟" "󰤢" "󰤥" "󰤨"];
           format-wifi = "{icon}";
           on-click = "networkmanager_dmenu -i";
@@ -134,27 +138,24 @@
           tooltip-format-ethernet = "{ifname} ";
           tooltip-format-wifi = "{essid} ({signalStrength}%) {icon}";
         };
+        power-profiles-daemon = {
+          format = "{icon}";
+
+          format-icons = {
+            balanced = "󰗑";
+            default = "󰗑";
+            performance = "󱐌";
+            power-saver = "󰌪";
+          };
+
+          tooltip-format = ''
+            Profile: {profile}
+            Driver: {driver}'';
+
+          tooltip = true;
+        };
       };
     };
-    style = ''
-      #waybar {
-          background: #383838;
-          color: #f8f8f2;
-          font-family: "Roboto";
-      }
-
-      #hardware,
-      #session {
-        background-color: #646464;
-        border-radius: 9999px;
-        padding: 1rem 0;
-      }
-
-
-      #clock {
-        font-weight: bold;
-        font-size: 1.5rem;
-      }
-    '';
+    style = ./style.css;
   };
 }

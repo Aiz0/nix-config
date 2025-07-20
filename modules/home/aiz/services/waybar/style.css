@@ -1,0 +1,40 @@
+ #waybar {
+     background: #383838;
+     color: #f8f8f2;
+     font-family: "Roboto";
+ }
+
+ .modules-left,
+ .modules-right,
+ .modules-center {
+  
+ }
+
+ #workspaces,
+ #hardware,
+ #session {
+   background-color: #646464;
+   border-radius: 9999px;
+   
+ }
+
+
+ #clock {
+   font-weight: bold;
+   font-size: 1.5rem;
+ }
+
+ #workspaces button label{
+   background-color: #fefefe;
+   border-radius: 9999px;
+  
+   transition: background-color 0.2s ease-in-out;
+ }
+
+ #workspaces button.focused label {
+   background-color: purple;
+ }
+
+ #workspaces button:hover {
+   background-color: #444444;
+ }
