@@ -6,6 +6,11 @@
       keyboard = {
         repeat-delay = 275;
         repeat-rate = 40;
+        # Remove next release
+        xkb = {
+          layout = "us";
+          variant = "colemak_dh";
+        };
       };
       touchpad = {
         tap = true;
