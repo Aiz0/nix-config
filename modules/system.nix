@@ -130,9 +130,6 @@
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
-  services.power-profiles-daemon = {
-    enable = true;
-  };
   security.polkit.enable = true;
 
   services = {
