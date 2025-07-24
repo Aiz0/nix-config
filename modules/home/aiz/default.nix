@@ -23,6 +23,7 @@
       nautilus # gnome file manager
       file-roller
       oculante # image viewer
+      protonvpn-gui
     ];
 
     pointerCursor = {
