@@ -25,6 +25,7 @@
       file-roller
       oculante # image viewer
       protonvpn-gui
+      krita
     ];
 
     pointerCursor = {
