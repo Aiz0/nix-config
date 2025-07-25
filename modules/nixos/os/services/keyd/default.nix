@@ -55,10 +55,10 @@
           };
           navigation = {
             #Home row modifiers
-            a = "alt";
-            s = "control";
-            d = "shift";
-            f = "meta";
+            a = "layer(alt)";
+            s = "layer(control)";
+            d = "layer(shift)";
+            f = "layer(meta)";
 
             # vi style navigation
             h = "left";
