@@ -30,6 +30,7 @@
       enable = true;
       package = pkgs.posy-cursors;
       name = "Posy_Cursor_Black";
+      dotIcons.enable = false;
     };
 
     stateVersion = "25.05";
@@ -81,8 +82,9 @@
 
   # Fix various applications to respect the XDG basedir spec
   home.sessionVariables = {
-    HISTFILE = config.xdg.stateHome + "/bash/history";
-    GNUPGHOME = config.xdg.dataHome + "/gnupg";
     STARSHIP_CACHE = config.xdg.cacheHome + "/starship";
   };
+  programs.bash.historyFile = "${config.xdg.stateHome}/bash/history";
+  gtk.gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+  programs.gpg.homedir = "${config.xdg.dataHome}/gnupg";
 }
