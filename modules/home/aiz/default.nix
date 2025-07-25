@@ -15,6 +15,8 @@
 
     packages = with pkgs; [
       neofetch
+      fzf
+      bat
 
       # archives
       zip
