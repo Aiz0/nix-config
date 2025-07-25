@@ -1,21 +1,20 @@
-{self, pkgs, ...}:{
-  
-  #packages required for Noctalia
-  home.packages = with pkgs; [
-    qt6Packages.qt5compat
-    libsForQt5.qt5.qtgraphicaleffects
-    kdePackages.qtbase
-    kdePackages.qtdeclarative
-    cava
-    gpu-screen-recorder
-    xdg-desktop-portal-gnome
-    material-symbols
-  ];
-  
+{
+  self,
+  pkgs,
+  ...
+}: {
   programs.quickshell = {
     enable = true;
-    package = self.inputs.quickshell.packages.${pkgs.system}.default;
+    package = self.inputs.quickshell.packages.${pkgs.system}.default.withModules (with pkgs; [
+      qt6.qtimageformats
+      qt6.qtmultimedia
+      qt6.qtdeclarative
+      pkgs.kdePackages.qt5compat
+      cava
+      gpu-screen-recorder
+      xdg-desktop-portal-gnome
+      material-symbols
+    ]);
     systemd.enable = true;
   };
-
 }
