@@ -54,11 +54,11 @@
     };
   };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "adwaita";
-    style.name = "adwaita-dark";
-  };
+  # qt = {
+  #   enable = true;
+  #   platformTheme.name = "qt5ct";
+  #   style.name = "breeze";
+  # };
 
   # starship - an customizable prompt for any shell
   programs.starship = {
