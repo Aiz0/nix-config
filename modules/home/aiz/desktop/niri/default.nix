@@ -9,7 +9,7 @@
         # Remove next release
         xkb = {
           layout = "us";
-          variant = "colemak_dh";
+          #variant = "colemak_dh";
         };
       };
       touchpad = {

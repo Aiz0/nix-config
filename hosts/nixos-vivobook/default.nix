@@ -13,7 +13,7 @@
 
   services.xserver.xkb = {
     layout = "us";
-    variant = "colemak_dh";
+    #variant = "colemak_dh";
   };
   services.xserver.exportConfiguration = true;
   console.useXkbConfig = true;
