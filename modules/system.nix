@@ -154,6 +154,9 @@
     #udev.packages = with pkgs; [gnome-settings-daemon];
   };
 
+  services.tailscale.enable = true;
+  services.tailscale.extraSetFlags = ["--operator=aiz"];
+
   # Set XDG directories
   # I like to have a clean home
   environment.sessionVariables = let
