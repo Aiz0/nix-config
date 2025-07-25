@@ -20,6 +20,26 @@
             semicolon = "overloadt2(alt, semicolon, ${delay})";
 
             capslock = "overload(control, esc)";
+            leftalt = "layer(navigation)";
+            
+          };
+          navigation = {
+            #Home row modifiers
+            a = "alt";
+            s = "control";
+            d = "shift";
+            f = "meta";
+            
+            # vi style navigation
+            h = "left";
+            j = "down";
+            k = "up";
+            l = "right";
+            # extra navigation
+            u = "pagedown";
+            i = "pageup";
+            y = "home";
+            o = "end"; 
           };
         };
       };
