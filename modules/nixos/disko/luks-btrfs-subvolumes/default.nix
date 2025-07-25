@@ -79,6 +79,11 @@
                         mountpoint = "/";
                         mountOptions = ["compress=zstd" "noatime"];
                       };
+                      # TODO: Make this configurable per host
+                      "/swap" = {
+                        mountpoint = "/.swapvol";
+                        swap.swapfile.size = "8G";
+                      };
                     };
                   };
                 };
