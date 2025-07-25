@@ -31,9 +31,9 @@
     };
 
     disko = {
-          url = "github:nix-community/disko";
-          inputs.nixpkgs.follows = "nixpkgs";
-        };
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -57,8 +57,8 @@
     ];
   in {
     diskoConfigurations = {
-          luks-btrfs-subvolumes = ./modules/nixos/disko/luks-btrfs-subvolumes;
-        };
+      luks-btrfs-subvolumes = ./modules/nixos/disko/luks-btrfs-subvolumes;
+    };
 
     homeManagerModules = {
       aiz = ./modules/home/aiz;
