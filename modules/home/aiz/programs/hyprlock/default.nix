@@ -1,11 +1,11 @@
-{...}: {
+{config, ...}: {
   programs.hyprlock = {
     enable = true;
     settings = {
       background = {
         monitor = "";
         #TODO: add background
-        path = "";
+        path = "~/" + config.xdg.configFile.wallpaper.target;
         color = "rgba(25, 20, 20, 1.0)";
 
         blur_passes = 2; # 0 disables blurring
@@ -19,7 +19,7 @@
       # TODO: show profile picture
       image = {
         monitor = "";
-        path = "";
+        path = "~/" + config.xdg.configFile.avatar.target;
         border_color = "0xffdddddd";
         border_size = 2;
         size = 100;

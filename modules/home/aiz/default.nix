@@ -7,6 +7,7 @@
     ./desktop
     ./programs
     ./services
+    ./assets
   ];
   home = {
     username = "aiz";

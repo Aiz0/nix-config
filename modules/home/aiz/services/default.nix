@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./hypridle
-    ./swww
+    ./hyprpaper.nix
     ./waybar
   ];
 }
