@@ -1,7 +1,14 @@
-{config, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  programs.niri.package = pkgs.niri-unstable;
   programs.niri.settings = {
     environment."NIXOS_OZONE_WL" = "1";
 
+    xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite-unstable;
     input = {
       keyboard = {
         repeat-delay = 275;
@@ -13,10 +20,10 @@
         };
       };
       touchpad = {
-        tap = true;
+        tap = false;
         dwt = true; # disable while typing
         natural-scroll = true;
-        scroll-factor = 0.5;
+        scroll-factor = 0.3;
         click-method = "clickfinger";
       };
     };

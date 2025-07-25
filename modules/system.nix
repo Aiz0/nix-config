@@ -94,6 +94,7 @@
   };
 
   programs.niri.enable = true;
+  programs.niri.package = pkgs.niri-unstable;
   programs.fish.enable = true;
 
   programs.dconf.enable = true;
@@ -126,6 +127,7 @@
     nixd
     alejandra
     gtrash
+    xwayland-satellite-unstable
   ];
 
   # required for hyprlock to perform authentication
