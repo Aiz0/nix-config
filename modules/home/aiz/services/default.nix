@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./hypridle
     ./swww
     ./waybar
   ];

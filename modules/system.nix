@@ -128,6 +128,9 @@
     gtrash
   ];
 
+  # required for hyprlock to perform authentication
+  security.pam.services.hyprlock = {};
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.polkit.enable = true;
