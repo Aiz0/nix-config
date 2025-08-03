@@ -3,13 +3,13 @@
   lib,
   ...
 }: {
-  options.myNixOS.regreet.enable = lib.mkOption {
+  options.myNixOS.programs.regreet.enable = lib.mkOption {
     description = "Enable regreet Display Manager";
-    default = true;
+    default = false;
     type = lib.types.bool;
   };
 
-  config = lib.mkIf config.myNixOS.regreet.enable {
+  config = lib.mkIf config.myNixOS.programs.regreet.enable {
     programs.regreet = {
       enable = true;
       theme.name = "Adwaita-dark";

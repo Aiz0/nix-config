@@ -38,9 +38,6 @@
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   fonts = {
     packages = with pkgs; [
       # icon fonts
@@ -73,10 +70,6 @@
     };
   };
 
-  programs.niri.enable = true;
-  programs.niri.package = pkgs.niri-unstable;
-  programs.fish.enable = true;
-
   programs.dconf.enable = true;
 
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -107,32 +100,10 @@
     nixd
     alejandra
     gtrash
-    xwayland-satellite-unstable
   ];
 
   # required for hyprlock to perform authentication
   security.pam.services.hyprlock = {};
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.polkit.enable = true;
-
-  services = {
-    dbus.packages = [pkgs.gcr];
-
-    pipewire = {
-      enable = true;
-      pulse.enable = true;
-    };
-    udisks2 = {
-      enable = true;
-    };
-    gvfs = {
-      enable = true;
-    };
-
-    #udev.packages = with pkgs; [gnome-settings-daemon];
-  };
 
   services.tailscale.enable = true;
   services.tailscale.extraSetFlags = ["--operator=aiz"];

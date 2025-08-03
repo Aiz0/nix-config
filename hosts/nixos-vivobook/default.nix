@@ -16,6 +16,12 @@
     laptop.enable = true;
   };
 
+  myNixOS = {
+    desktop = {
+      niri.enable = true;
+    };
+  };
+
   myUsers.aiz.enable = true;
 
   system.stateVersion = "24.11";

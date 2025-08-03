@@ -4,26 +4,26 @@
   pkgs,
   ...
 }: {
-  options.myNixOS.plymouth = {
+  options.myNixOS.programs.plymouth = {
     enable = lib.mkOption {
-      default = true;
+      default = false;
       description = "Enable Plymouth boot splash";
       type = lib.types.bool;
     };
     mikuboot = lib.mkOption {
-      default = true;
+      default = config.myNixOS.programs.plymouth.enable;
       description = "Enable Mikuboot theme";
       type = lib.types.bool;
     };
   };
 
-  config = lib.mkIf config.myNixOS.plymouth.enable {
+  config = lib.mkIf config.myNixOS.programs.plymouth.enable {
     boot = {
       plymouth = lib.mkMerge [
         {
           enable = true;
         }
-        (lib.mkIf config.myNixOS.plymouth.mikuboot {
+        (lib.mkIf config.myNixOS.programs.plymouth.mikuboot {
           themePackages = [pkgs.mikuboot];
           theme = "mikuboot";
         })
