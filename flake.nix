@@ -66,7 +66,7 @@
     };
     nixosModules = {
       #hardware = ./modules/nixos/hardware;
-      #locale-en-us = ./modules/nixos/locale/en-us;
+      locale = ./modules/locale;
       nixos = ./modules/nixos;
       #snippets = ./modules/snippets;
       users = ./modules/users;
@@ -85,6 +85,7 @@
             self.inputs.disko.nixosModules.disko
             self.nixosModules.nixos
             self.nixosModules.users
+            self.nixosModules.locale
             {
               home-manager = {
                 backupFileExtension = "backup";
