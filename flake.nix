@@ -69,7 +69,7 @@
       #locale-en-us = ./modules/nixos/locale/en-us;
       nixos = ./modules/nixos/os;
       #snippets = ./modules/snippets;
-      users = ./modules/nixos/users;
+      users = ./modules/users;
     };
 
     nixosConfigurations = forAllLinuxHosts (
