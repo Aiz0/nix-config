@@ -65,7 +65,7 @@
       # snippets = ./modules/snippets;
     };
     nixosModules = {
-      #hardware = ./modules/nixos/hardware;
+      hardware = ./modules/hardware;
       locale = ./modules/locale;
       nixos = ./modules/nixos;
       #snippets = ./modules/snippets;
@@ -83,6 +83,7 @@
             self.inputs.mikuboot.nixosModules.default
             self.inputs.home-manager.nixosModules.home-manager
             self.inputs.disko.nixosModules.disko
+            self.nixosModules.hardware
             self.nixosModules.nixos
             self.nixosModules.users
             self.nixosModules.locale

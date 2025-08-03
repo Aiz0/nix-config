@@ -1,0 +1,34 @@
+{
+  config,
+  lib,
+  ...
+}: {
+  options.myHardware.profiles.base.enable = lib.mkEnableOption "Base hardware configuration.";
+
+  config = lib.mkIf config.myHardware.profiles.base.enable {
+    console.useXkbConfig = true;
+
+    hardware = {
+      enableAllFirmware = true;
+
+      bluetooth = {
+        enable = true;
+        powerOnBoot = true;
+      };
+
+      logitech.wireless = {
+        enable = true;
+        enableGraphical = true;
+      };
+    };
+
+    services = {
+      fstrim.enable = true;
+
+      logind = {
+        powerKey = "suspend";
+        powerKeyLongPress = "poweroff";
+      };
+    };
+  };
+}
