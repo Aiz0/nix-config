@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./keyd
+    ./keyd.nix
     ./regreet
   ];
 }

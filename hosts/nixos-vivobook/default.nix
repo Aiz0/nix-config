@@ -29,6 +29,8 @@
     enable = true;
   };
 
+  myNixOS.keyd.enable = true;
+
   myUsers.aiz.enable = true;
 
   system.stateVersion = "24.11";
