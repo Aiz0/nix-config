@@ -57,7 +57,7 @@
     ];
   in {
     diskoConfigurations = {
-      luks-btrfs-subvolumes = ./modules/nixos/disko/luks-btrfs-subvolumes;
+      luks-btrfs-subvolumes = ./modules/disko/luks-btrfs-subvolumes.nix;
     };
 
     homeManagerModules = {
