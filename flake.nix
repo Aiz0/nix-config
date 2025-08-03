@@ -67,7 +67,7 @@
     nixosModules = {
       #hardware = ./modules/nixos/hardware;
       #locale-en-us = ./modules/nixos/locale/en-us;
-      nixos = ./modules/nixos/os;
+      nixos = ./modules/nixos;
       #snippets = ./modules/snippets;
       users = ./modules/users;
     };

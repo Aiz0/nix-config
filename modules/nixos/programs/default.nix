@@ -1,5 +1,5 @@
 {...}: {
   imports = [
-    ./plymouth
+    ./plymouth.nix
   ];
 }
