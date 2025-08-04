@@ -38,31 +38,14 @@
     };
   };
 
-  programs.dconf.enable = true;
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "no"; # disable root login
-      #PasswordAuthentication = false; # disable password login
-    };
-    openFirewall = true;
-  };
-
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    curl
-    git
     neofetch
     ghostty
     starship
     fuzzel
     nixd
     alejandra
-    gtrash
   ];
 
   # required for hyprlock to perform authentication
@@ -70,15 +53,4 @@
 
   services.tailscale.enable = true;
   services.tailscale.extraSetFlags = ["--operator=aiz"];
-
-  # Set XDG directories
-  # I like to have a clean home
-  environment.sessionVariables = let
-    local = "$HOME/local";
-  in {
-    XDG_CONFIG_HOME = local + "/config";
-    XDG_CACHE_HOME = local + "/cache";
-    XDG_STATE_HOME = local + "/state";
-    XDG_DATA_HOME = local + "/share";
-  };
 }

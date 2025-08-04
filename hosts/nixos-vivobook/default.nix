@@ -20,6 +20,9 @@
     desktop = {
       niri.enable = true;
     };
+    profiles = {
+      base.enable = true;
+    };
     programs.nix.enable = true;
   };
 
