@@ -50,7 +50,4 @@
 
   # required for hyprlock to perform authentication
   security.pam.services.hyprlock = {};
-
-  services.tailscale.enable = true;
-  services.tailscale.extraSetFlags = ["--operator=aiz"];
 }

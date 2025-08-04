@@ -24,6 +24,11 @@
       base.enable = true;
     };
     programs.nix.enable = true;
+
+    services.tailscale = {
+      enable = true;
+      operator = "aiz";
+    };
   };
 
   myUsers.aiz.enable = true;
