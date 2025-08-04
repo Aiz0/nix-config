@@ -3,9 +3,6 @@
   lib,
   ...
 }: {
-  # Set your time zone.
-  time.timeZone = "Europe/Stockholm";
-
   fonts = {
     packages = with pkgs; [
       # icon fonts

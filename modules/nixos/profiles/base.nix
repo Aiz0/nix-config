@@ -8,6 +8,7 @@
   options.myNixOS.profiles.base.enable = lib.mkEnableOption "base system configuration";
 
   config = lib.mkIf config.myNixOS.profiles.base.enable {
+    time.timeZone = "Europe/Stockholm";
     environment = {
       systemPackages = with pkgs; [
         (lib.hiPrio uutils-coreutils-noprefix)
