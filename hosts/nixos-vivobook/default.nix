@@ -20,6 +20,7 @@
     desktop = {
       niri.enable = true;
     };
+    programs.nix.enable = true;
   };
 
   myUsers.aiz.enable = true;

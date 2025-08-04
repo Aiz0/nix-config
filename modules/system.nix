@@ -3,38 +3,6 @@
   lib,
   ...
 }: {
-  # ============================= User related =============================
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # given the users in this list the right to specify additional substituters via:
-  #    1. `nixConfig.substituers` in `flake.nix`
-  #    2. command line args `--options substituers http://xxx`
-  nix.settings.trusted-users = ["aiz"];
-
-  # customise /etc/nix/nix.conf declaratively via `nix.settings`
-  nix.settings = {
-    # enable flakes globally
-    experimental-features = ["nix-command" "flakes"];
-    # don't pollute home with nix files
-    use-xdg-base-directories = true;
-
-    substituters = [
-      "https://cache.nixos.org"
-    ];
-
-    trusted-public-keys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    ];
-    builders-use-substitutes = true;
-  };
-
-  # do garbage collection weekly to keep disk usage low
-  nix.gc = {
-    automatic = lib.mkDefault true;
-    dates = lib.mkDefault "weekly";
-    options = lib.mkDefault "--delete-older-than 7d";
-  };
-
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
 
