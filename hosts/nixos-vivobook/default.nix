@@ -9,7 +9,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos-vivobook";
-  networking.networkmanager.enable = true;
 
   myHardware.profiles = {
     base.enable = true;
