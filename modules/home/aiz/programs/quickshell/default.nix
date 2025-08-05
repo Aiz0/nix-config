@@ -15,7 +15,6 @@
       qt6.qtimageformats
       qt6.qtmultimedia
       qt6.qtdeclarative
-      pkgs.kdePackages.qt5compat
     ]);
     systemd.enable = true;
   };
