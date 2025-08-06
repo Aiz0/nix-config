@@ -21,6 +21,10 @@
     programs = {
       nix.enable = true;
       systemd-boot.enable = true;
+      steam = {
+        enable = true;
+        steamHome.enable = true;
+      };
     };
 
     services.tailscale = {

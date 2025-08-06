@@ -36,7 +36,6 @@
       eza = {
         enable = true;
         enableFishIntegration = true;
-        enableZshIntegration = true;
         extraOptions = ["--group-directories-first" "--header"];
         git = true;
         icons = "auto";
@@ -45,7 +44,6 @@
       zoxide = {
         enable = true;
         enableFishIntegration = true;
-        enableZshIntegration = true;
         options = ["--cmd cd"];
       };
 
@@ -62,7 +60,6 @@
 
       zellij = {
         enable = true;
-        enableZshIntegration = false;
         enableFishIntegration = false;
       };
 
@@ -70,21 +67,6 @@
         enable = true;
         nix-direnv.enable = true;
         silent = true;
-      };
-
-      # rarely used
-      zsh = {
-        enable = true;
-        autocd = true;
-        autosuggestion.enable = true;
-        enableCompletion = true;
-        enableVteIntegration = true;
-        historySubstringSearch.enable = true;
-        history = {
-          expireDuplicatesFirst = true;
-          extended = true;
-          ignoreAllDups = true;
-        };
       };
     };
   };
