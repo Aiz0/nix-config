@@ -37,9 +37,6 @@
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
-    neofetch
-    ghostty
-    starship
     fuzzel
     nixd
     alejandra
