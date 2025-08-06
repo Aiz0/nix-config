@@ -12,6 +12,7 @@
     environment.systemPackages = [
       pkgs.xwayland-satellite-unstable
     ];
+    security.pam.services.hyprlock = {};
 
     programs.niri = {
       enable = true;

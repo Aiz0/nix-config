@@ -14,6 +14,8 @@
       stateVersion = "25.05";
 
       packages = with pkgs; [
+        # launcher
+        fuzzel
         # archives
         zip
         unzip

@@ -18,6 +18,9 @@
         wget
         curl
         gtrash
+        # TODO: add with devshell
+        nixd
+        alejandra
       ];
 
       # Set XDG directories

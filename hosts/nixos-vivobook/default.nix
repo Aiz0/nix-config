@@ -1,7 +1,6 @@
 {self, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system.nix
     ./home.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
