@@ -23,6 +23,12 @@
         file-roller
         protonvpn-gui
         krita
+
+        # fonts
+        source-code-pro
+        roboto
+        roboto-serif
+        noto-fonts-color-emoji
       ];
 
       pointerCursor = {
@@ -32,6 +38,17 @@
         dotIcons.enable = false;
       };
     };
+
+    fonts.fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = ["Roboto Serif"];
+        sansSerif = ["Roboto"];
+        monospace = ["Source Code Pro"];
+        emoji = ["Noto Color Emoji"];
+      };
+    };
+
     xdg.enable = true;
     programs.home-manager.enable = true;
 
