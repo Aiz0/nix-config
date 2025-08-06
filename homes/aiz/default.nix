@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    self.homeModules.aiz
+    self.homeModules.default
   ];
 
   config = {
@@ -43,6 +43,9 @@
     programs.home-manager.enable = true;
 
     myHome = {
+      profiles = {
+        xdg.enable = true;
+      };
       aiz = {
         desktop = {
           niri.enable = true;

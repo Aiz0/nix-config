@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./desktop
     ./programs
@@ -40,24 +36,4 @@
     };
   };
   programs.fish.enable = true;
-
-  # Fixes home manager not respecting me
-  # setting XDG environment variables
-  xdg = let
-    local = "/home/aiz/local";
-  in {
-    enable = true;
-    configHome = local + "/config";
-    cacheHome = local + "/cache";
-    stateHome = local + "/state";
-    dataHome = local + "/share";
-  };
-
-  # Fix various applications to respect the XDG basedir spec
-  home.sessionVariables = {
-    STARSHIP_CACHE = config.xdg.cacheHome + "/starship";
-  };
-  programs.bash.historyFile = "${config.xdg.stateHome}/bash/history";
-  gtk.gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-  programs.gpg.homedir = "${config.xdg.dataHome}/gnupg";
 }

@@ -65,7 +65,7 @@
     };
 
     homeModules = {
-      aiz = ./modules/home/aiz;
+      default = ./modules/home;
       # snippets = ./modules/snippets;
     };
     nixosModules = {
