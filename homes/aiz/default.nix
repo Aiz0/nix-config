@@ -41,5 +41,18 @@
     };
     xdg.enable = true;
     programs.home-manager.enable = true;
+
+    myHome = {
+      aiz = {
+        programs = {
+          git.enable = true;
+          hyprlock.enable = true;
+          jujutsu.enable = true;
+          quickshell.enable = true;
+          zen.enable = true;
+          zed-editor.enable = true;
+        };
+      };
+    };
   };
 }
