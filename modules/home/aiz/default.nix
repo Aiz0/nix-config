@@ -9,37 +9,6 @@
     ./services
     ./assets
   ];
-  home = {
-    username = "aiz";
-    homeDirectory = "/home/aiz";
-
-    packages = with pkgs; [
-      neofetch
-      fzf
-      bat
-
-      # archives
-      zip
-      unzip
-
-      # gui
-      nautilus # gnome file manager
-      file-roller
-      oculante # image viewer
-      protonvpn-gui
-      krita
-    ];
-
-    pointerCursor = {
-      enable = true;
-      package = pkgs.posy-cursors;
-      name = "Posy_Cursor_Black";
-      dotIcons.enable = false;
-    };
-
-    stateVersion = "25.05";
-  };
-
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";

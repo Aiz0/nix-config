@@ -1,0 +1,45 @@
+{
+  config,
+  pkgs,
+  lib,
+  self,
+  ...
+}: {
+  imports = [
+    self.homeModules.aiz
+  ];
+
+  config = {
+    home = {
+      username = "aiz";
+      homeDirectory = "/home/aiz";
+      stateVersion = "25.05";
+
+      packages = with pkgs; [
+        neofetch
+        fzf
+        bat
+
+        # archives
+        zip
+        unzip
+
+        # gui
+        nautilus # gnome file manager
+        file-roller
+        oculante # image viewer
+        protonvpn-gui
+        krita
+      ];
+
+      pointerCursor = {
+        enable = true;
+        package = pkgs.posy-cursors;
+        name = "Posy_Cursor_Black";
+        dotIcons.enable = false;
+      };
+    };
+    xdg.enable = true;
+    programs.home-manager.enable = true;
+  };
+}

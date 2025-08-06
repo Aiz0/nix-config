@@ -60,7 +60,11 @@
       luks-btrfs-subvolumes = ./modules/disko/luks-btrfs-subvolumes.nix;
     };
 
-    homeManagerModules = {
+    homeConfigurations = {
+      aiz = ./homes/aiz;
+    };
+
+    homeModules = {
       aiz = ./modules/home/aiz;
       # snippets = ./modules/snippets;
     };
@@ -93,7 +97,6 @@
                 extraSpecialArgs = {inherit self;};
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.aiz = import self.homeManagerModules.aiz;
               };
 
               nixpkgs = {
