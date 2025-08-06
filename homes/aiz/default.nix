@@ -17,9 +17,6 @@
 
       packages = with pkgs; [
         neofetch
-        fzf
-        bat
-
         # archives
         zip
         unzip
@@ -45,7 +42,9 @@
     myHome = {
       profiles = {
         xdg.enable = true;
+        shell.enable = true;
       };
+
       aiz = {
         desktop = {
           niri.enable = true;

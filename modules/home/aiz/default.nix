@@ -24,16 +24,4 @@
   #   platformTheme.name = "qt5ct";
   #   style.name = "breeze";
   # };
-
-  # starship - an customizable prompt for any shell
-  programs.starship = {
-    enable = true;
-    # custom settings
-    settings = {
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = true;
-    };
-  };
-  programs.fish.enable = true;
 }
