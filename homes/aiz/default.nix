@@ -44,6 +44,9 @@
 
     myHome = {
       aiz = {
+        desktop = {
+          niri.enable = true;
+        };
         programs = {
           git.enable = true;
           jujutsu.enable = true;
