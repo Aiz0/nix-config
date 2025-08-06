@@ -25,6 +25,10 @@
         protonvpn-gui
         krita
 
+        # chat
+        element-desktop
+        signal-desktop
+
         # fonts
         source-code-pro
         roboto
