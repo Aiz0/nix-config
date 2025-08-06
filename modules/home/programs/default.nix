@@ -1,5 +1,6 @@
 {...}: {
   imports = [
     ./fastfetch
+    ./ghostty.nix
   ];
 }

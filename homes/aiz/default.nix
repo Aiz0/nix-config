@@ -62,6 +62,7 @@
 
       programs = {
         fastfetch.enable = true;
+        ghostty.enable = true;
       };
 
       aiz = {
