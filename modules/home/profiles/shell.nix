@@ -30,12 +30,7 @@
         '';
       };
       # shell prompt
-      starship = {
-        enable = true;
-        settings = {
-          line_break.disabled = true;
-        };
-      };
+      starship.enable = true;
 
       # ls alternative
       eza = {
