@@ -46,11 +46,15 @@
       aiz = {
         programs = {
           git.enable = true;
-          hyprlock.enable = true;
           jujutsu.enable = true;
           quickshell.enable = true;
           zen.enable = true;
           zed-editor.enable = true;
+        };
+        services = {
+          hypridle.enable = true;
+          hyprpaper.enable = true;
+          trayscale.enable = true;
         };
       };
     };

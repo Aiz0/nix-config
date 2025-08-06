@@ -1,8 +1,7 @@
 {...}: {
   imports = [
-    ./hypridle
+    ./hypridle.nix
     ./hyprpaper.nix
     ./trayscale.nix
-    ./waybar
   ];
 }
