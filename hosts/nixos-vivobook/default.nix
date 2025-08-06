@@ -4,10 +4,6 @@
     ./home.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   networking.hostName = "nixos-vivobook";
 
   myHardware.profiles = {
@@ -22,7 +18,10 @@
     profiles = {
       base.enable = true;
     };
-    programs.nix.enable = true;
+    programs = {
+      nix.enable = true;
+      systemd-boot.enable = true;
+    };
 
     services.tailscale = {
       enable = true;
