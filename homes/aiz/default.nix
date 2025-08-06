@@ -42,6 +42,10 @@
         defaultApps.enable = true;
       };
 
+      programs = {
+        fastfetch.enable = true;
+      };
+
       aiz = {
         desktop = {
           niri.enable = true;

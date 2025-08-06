@@ -2,5 +2,6 @@
   imports = [
     ./aiz
     ./profiles
+    ./programs
   ];
 }
