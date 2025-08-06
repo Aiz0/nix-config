@@ -22,9 +22,7 @@
         unzip
 
         # gui
-        nautilus # gnome file manager
         file-roller
-        oculante # image viewer
         protonvpn-gui
         krita
       ];
@@ -43,6 +41,7 @@
       profiles = {
         xdg.enable = true;
         shell.enable = true;
+        defaultApps.enable = true;
       };
 
       aiz = {

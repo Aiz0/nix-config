@@ -1,6 +1,7 @@
 {...}: {
   imports = [
-    ./xdg.nix
+    ./defaultApps
     ./shell.nix
+    ./xdg.nix
   ];
 }
