@@ -23,11 +23,22 @@
         # gui
         file-roller
         protonvpn-gui
+        spotify
+
+        # image, video, audio editing
         krita
+        #kdePackages.kdenlive
+        video-trimmer
+        #aseprite
+        tenacity
 
         # chat
         element-desktop
         signal-desktop
+
+        # games
+        prismlauncher # minecraft-launcher
+        osu-lazer-bin
 
         # fonts
         source-code-pro
