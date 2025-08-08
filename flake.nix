@@ -5,6 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
 
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager/master";
@@ -34,83 +36,35 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
     accept-flake-config = true;
+
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+    ];
+
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
   };
 
-  outputs = {self, ...}: let
-    allSystems = [
-      "x86_64-linux"
-    ];
+  outputs = inputs @ {flake-parts, ...}:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = [
+        "x86_64-linux"
+      ];
 
-    forAllSystems = func: (self.inputs.nixpkgs.lib.genAttrs allSystems func);
-
-    forAllLinuxHosts = self.inputs.nixpkgs.lib.genAttrs [
-      "nixos-vivobook"
-    ];
-
-    overlays = [
-      self.inputs.nur.overlays.default
-      self.inputs.niri.overlays.niri
-    ];
-  in {
-    diskoConfigurations = {
-      luks-btrfs-subvolumes = ./modules/disko/luks-btrfs-subvolumes.nix;
+      imports = [
+        ./modules/flake
+        inputs.home-manager.flakeModules.home-manager
+        inputs.treefmt-nix.flakeModule
+      ];
     };
-
-    homeConfigurations = {
-      aiz = ./homes/aiz;
-    };
-
-    homeModules = {
-      default = ./modules/home;
-      # snippets = ./modules/snippets;
-    };
-    nixosModules = {
-      hardware = ./modules/hardware;
-      locale = ./modules/locale;
-      nixos = ./modules/nixos;
-      #snippets = ./modules/snippets;
-      users = ./modules/users;
-    };
-
-    nixosConfigurations = forAllLinuxHosts (
-      host:
-        self.inputs.nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit self;};
-
-          modules = [
-            ./hosts/${host}
-            self.inputs.niri.nixosModules.niri
-            self.inputs.mikuboot.nixosModules.default
-            self.inputs.home-manager.nixosModules.home-manager
-            self.inputs.disko.nixosModules.disko
-            self.nixosModules.hardware
-            self.nixosModules.nixos
-            self.nixosModules.users
-            self.nixosModules.locale
-            {
-              home-manager = {
-                backupFileExtension = "backup";
-                extraSpecialArgs = {inherit self;};
-                useGlobalPkgs = true;
-                useUserPackages = true;
-              };
-
-              nixpkgs = {
-                inherit overlays;
-                config.allowUnfree = true;
-              };
-            }
-          ];
-        }
-    );
-
-    formatter = forAllSystems (
-      # format with alejandra
-      system: self.inputs.nixpkgs.legacyPackages.${system}.alejandra
-    );
-  };
 }
