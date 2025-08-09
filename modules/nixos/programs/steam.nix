@@ -10,7 +10,7 @@
     steamHome = {
       enable = lib.mkEnableOption "Wraps steam to use a custom home directory";
       path = lib.mkOption {
-        type = lib.types.string;
+        type = lib.types.str;
         default = "$XDG_DATA_HOME/homes/steam";
         description = "Path to the Steam home directory";
       };
