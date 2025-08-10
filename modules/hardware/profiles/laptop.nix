@@ -9,7 +9,11 @@
     services = {
       # power management
       upower.enable = true;
-      power-profiles-daemon.enable = true;
+
+      tuned = {
+        enable = lib.mkDefault true;
+        settings.dynamic_tuning = true;
+      };
 
       # lid control
       logind = {
