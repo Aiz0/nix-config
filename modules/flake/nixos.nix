@@ -21,6 +21,7 @@
     in
       inputs.nixpkgs.lib.genAttrs [
         "nixos-vivobook"
+        "nixos-desktop"
       ] (
         host:
           inputs.nixpkgs.lib.nixosSystem {
