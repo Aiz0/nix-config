@@ -241,6 +241,22 @@
         "type": "github"
       }
     },
+    "noctalia": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1754791009,
+        "narHash": "sha256-icf5H1jC2ZOqJUMNHRFTnxw5Wh4DQvYlZyi9zL3r2g8=",
+        "owner": "aiz0",
+        "repo": "noctalia",
+        "rev": "aed1222eb66970643833a62ef6437a07237a1fa8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aiz0",
+        "repo": "noctalia",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -288,6 +304,7 @@
         "mikuboot": "mikuboot",
         "niri": "niri",
         "nixpkgs": "nixpkgs",
+        "noctalia": "noctalia",
         "nur": "nur",
         "quickshell": "quickshell",
         "treefmt-nix": "treefmt-nix",

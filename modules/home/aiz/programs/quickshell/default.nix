@@ -21,6 +21,10 @@
         qt6.qtmultimedia
         qt6.qtdeclarative
       ]);
+      configs = {
+        noctalia = self.inputs.noctalia;
+      };
+      activeConfig = "noctalia";
       systemd.enable = true;
     };
   };

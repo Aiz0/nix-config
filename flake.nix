@@ -41,6 +41,11 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    noctalia = {
+      url = "github:aiz0/noctalia";
+      flake = false;
+    };
   };
 
   nixConfig = {
