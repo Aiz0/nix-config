@@ -93,7 +93,10 @@
           zed-editor.enable = true;
         };
         services = {
-          hypridle.enable = true;
+          hypridle = {
+            enable = true;
+            autoSuspend = false; # turned off for now due to problems
+          };
           hyprpaper.enable = true;
           trayscale.enable = true;
         };
