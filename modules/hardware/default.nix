@@ -1,1 +1,6 @@
-{...}: {imports = [./profiles];}
+{...}: {
+  imports = [
+    ./profiles
+    ./monitors.nix
+  ];
+}

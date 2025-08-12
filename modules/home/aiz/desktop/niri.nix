@@ -11,6 +11,50 @@
       default = true;
       type = lib.types.bool;
     };
+    # TODO don't repeat thes here somehow.
+    # Instead use niri flake options somehow
+    outputs = let
+      inherit (lib) mkOption types;
+    in
+      mkOption {
+        type = types.listOf (types.submodule {
+          options = {
+            name = mkOption {
+              type = types.str;
+              example = "DP-1";
+            };
+            width = mkOption {
+              type = types.int;
+              example = 1920;
+            };
+            height = mkOption {
+              type = types.int;
+              example = 1080;
+            };
+            refreshRate = mkOption {
+              type = types.nullOr types.float;
+              default = null;
+            };
+            x = mkOption {
+              type = types.int;
+              default = 0;
+            };
+            y = mkOption {
+              type = types.int;
+              default = 0;
+            };
+            enabled = mkOption {
+              type = types.bool;
+              default = true;
+            };
+            primary = mkOption {
+              type = types.bool;
+              default = false;
+            };
+          };
+        });
+        default = [];
+      };
   };
 
   config = lib.mkIf config.myHome.aiz.desktop.niri.enable {
@@ -19,6 +63,20 @@
     programs.niri.package = pkgs.niri-unstable;
     programs.niri.settings = {
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite-unstable;
+      outputs = builtins.listToAttrs (map (v: {
+          name = v.name;
+          value = {
+            enable = v.enabled;
+            mode.height = v.height;
+            mode.width = v.width;
+            mode.refresh = v.refreshRate;
+            position.x = v.x;
+            position.y = v.y;
+            focus-at-startup = v.primary;
+          };
+        })
+        config.myHome.aiz.desktop.niri.outputs);
+
       input = {
         keyboard = {
           repeat-delay = 275;

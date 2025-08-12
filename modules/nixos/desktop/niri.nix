@@ -12,6 +12,14 @@
     environment.systemPackages = [
       pkgs.xwayland-satellite-unstable
     ];
+    home-manager.sharedModules = [
+      {
+        myHome.aiz.desktop.niri = {
+          enable = true;
+          outputs = config.myHardware.monitors;
+        };
+      }
+    ];
     security.pam.services.hyprlock = {};
 
     programs.niri = {
