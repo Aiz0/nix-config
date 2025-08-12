@@ -24,6 +24,7 @@
         file-roller
         protonvpn-gui
         spotify
+        freetube
 
         # image, video, audio editing
         krita
