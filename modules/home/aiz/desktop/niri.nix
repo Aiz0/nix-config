@@ -31,9 +31,15 @@
               type = types.int;
               example = 1080;
             };
-            refreshRate = mkOption {
-              type = types.nullOr types.float;
-              default = null;
+            refresh = {
+              rate = mkOption {
+                type = types.nullOr types.float;
+                default = null;
+              };
+              variable = {
+                enabled = lib.mkEnableOption "Enable variable refresh rate for this monitor";
+                on-demand = lib.mkEnableOption "Only enable variable refresh rate when a window supports it";
+              };
             };
             x = mkOption {
               type = types.int;
@@ -69,7 +75,14 @@
             enable = v.enabled;
             mode.height = v.height;
             mode.width = v.width;
-            mode.refresh = v.refreshRate;
+            mode.refresh = v.refresh.rate;
+            variable-refresh-rate =
+              if v.refresh.variable.enabled == true
+              then
+                if v.refresh.variable.on-demand == "true"
+                then "on-demand"
+                else true
+              else false;
             position.x = v.x;
             position.y = v.y;
             focus-at-startup = v.primary;

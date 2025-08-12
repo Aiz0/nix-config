@@ -19,6 +19,7 @@
         x = 0;
         y = 0;
         primary = true;
+        refresh.variable.enabled = true;
       }
       {
         name = "PNP(BNQ) BenQ GW2470 V8F02974019";

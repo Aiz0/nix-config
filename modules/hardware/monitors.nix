@@ -16,10 +16,17 @@ in {
           type = types.int;
           example = 1080;
         };
-        refreshRate = mkOption {
-          type = types.nullOr types.float;
-          default = null;
+        refresh = {
+          rate = mkOption {
+            type = types.nullOr types.float;
+            default = null;
+          };
+          variable = {
+            enabled = lib.mkEnableOption "Enable variable refresh rate for this monitor";
+            on-demand = lib.mkEnableOption "Only enable variable refresh rate when a window supports it";
+          };
         };
+
         x = mkOption {
           type = types.int;
           default = 0;
