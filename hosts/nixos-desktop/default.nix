@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./home.nix
+    ./disko.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
   networking.hostName = "nixos-desktop";
