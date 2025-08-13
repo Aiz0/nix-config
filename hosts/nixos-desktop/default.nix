@@ -2,11 +2,18 @@
   imports = [
     ./hardware-configuration.nix
     ./home.nix
-    ./disko.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
   networking.hostName = "nixos-desktop";
   myDisko.installDrive = "/dev/disk/by-id/nvme-ADATA_SX8200PNP_2K1520121131";
+
+  fileSystems = {
+    "/mnt/data" = {
+      device = "/dev/disk/by-id/ata-ST2000LM015-2E8174_ZDZMNR7N";
+      fsType = "btrfs";
+      options = ["compress=zstd" "noatime" "nofail"];
+    };
+  };
 
   myHardware = {
     profiles = {
