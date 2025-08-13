@@ -56,9 +56,14 @@
       };
     };
 
-    services.tailscale = {
-      enable = true;
-      operator = "aiz";
+    services = {
+      qbittorrent = {
+        enable = true;
+      };
+      tailscale = {
+        enable = true;
+        operator = "aiz";
+      };
     };
   };
 
