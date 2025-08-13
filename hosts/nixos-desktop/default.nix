@@ -45,6 +45,7 @@
     };
     profiles = {
       base.enable = true;
+      arr.enable = true;
     };
     programs = {
       nix.enable = true;
