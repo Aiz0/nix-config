@@ -60,6 +60,7 @@
       qbittorrent = {
         enable = true;
       };
+      jellyfin.enable = true;
       tailscale = {
         enable = true;
         operator = "aiz";
