@@ -68,7 +68,7 @@ in {
             ublock-origin
             web-scrobbler
             refined-github
-            privacy-redirect
+            libredirect
             indie-wiki-buddy
             tampermonkey
             image-search-options
