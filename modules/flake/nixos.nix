@@ -20,8 +20,8 @@
       modules = self.nixosModules;
     in
       inputs.nixpkgs.lib.genAttrs [
-        "nixos-vivobook"
-        "nixos-desktop"
+        "miyabi"
+        "sakurasou"
       ] (
         host:
           inputs.nixpkgs.lib.nixosSystem {

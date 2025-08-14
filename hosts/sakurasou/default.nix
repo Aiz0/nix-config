@@ -4,7 +4,7 @@
     ./home.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
-  networking.hostName = "nixos-desktop";
+  networking.hostName = "sakurasou";
   myDisko.installDrive = "/dev/disk/by-id/nvme-ADATA_SX8200PNP_2K1520121131";
 
   fileSystems = {

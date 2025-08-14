@@ -4,7 +4,7 @@
     ./home.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
-  networking.hostName = "nixos-vivobook";
+  networking.hostName = "miyabi";
 
   myHardware.profiles = {
     base.enable = true;
