@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./home.nix
+    ./secrets.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
   networking.hostName = "miyabi";

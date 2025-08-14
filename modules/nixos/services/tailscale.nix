@@ -27,12 +27,12 @@
     };
   };
   config = lib.mkIf config.myNixOS.services.tailscale.enable {
-    # assertions = [
-    #   {
-    #     assertion = config.myNixOS.services.tailscale.authKeyFile != null;
-    #     message = "config.tailscale.authKeyFile cannot be null.";
-    #   }
-    # ];
+    assertions = [
+      {
+        assertion = config.myNixOS.services.tailscale.authKeyFile != null;
+        message = "config.tailscale.authKeyFile cannot be null.";
+      }
+    ];
 
     # age.secrets.tailscaleCaddyAuth.file = "${self.inputs.secrets}/tailscale/caddyAuth.age";
 

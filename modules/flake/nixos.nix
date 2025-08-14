@@ -27,6 +27,7 @@
           inputs.nixpkgs.lib.nixosSystem {
             modules = [
               ../../hosts/${host}
+              inputs.agenix.nixosModules.default
               inputs.niri.nixosModules.niri
               inputs.mikuboot.nixosModules.default
               inputs.disko.nixosModules.disko

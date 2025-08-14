@@ -51,6 +51,16 @@
       url = "https://github.com/tomasklaen/uosc/releases/latest/download/uosc.zip";
       flake = false;
     };
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    secrets = {
+      url = "github:aiz0/secrets";
+      flake = false;
+    };
   };
 
   nixConfig = {
