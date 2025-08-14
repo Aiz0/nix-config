@@ -1,8 +1,13 @@
-{self, ...}: {
+{
+  config,
+  self,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ./home.nix
     ./secrets.nix
+    ./services.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
   networking.hostName = "sakurasou";
@@ -58,7 +63,9 @@
     };
 
     services = {
+      caddy.enable = true;
       qbittorrent = {
+        inherit (config.mySnippets.tailnet.networkMap.qbittorrent) port;
         enable = true;
       };
       jellyfin.enable = true;

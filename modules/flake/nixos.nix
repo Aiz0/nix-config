@@ -12,7 +12,7 @@
       hardware = ../hardware;
       locale = ../locale;
       nixos = ../nixos;
-      #snippets = ../snippets;
+      snippets = ../snippets;
       users = ../users;
     };
 
@@ -34,7 +34,7 @@
               inputs.home-manager.nixosModules.home-manager
               modules.hardware
               modules.nixos
-              #modules.snippets
+              modules.snippets
               modules.users
 
               {
