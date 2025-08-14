@@ -3,5 +3,6 @@
     ./aiz
     ./profiles
     ./programs
+    ./services
   ];
 }

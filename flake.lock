@@ -120,6 +120,19 @@
         "type": "gitlab"
       }
     },
+    "mpv-uosc": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1754734572,
+        "narHash": "sha256-Dd1lsBqTgzwHI/ghGhj4UVPUwt86sivx74EDU0mHfSo=",
+        "type": "tarball",
+        "url": "https://github.com/tomasklaen/uosc/releases/latest/download/uosc.zip"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/tomasklaen/uosc/releases/latest/download/uosc.zip"
+      }
+    },
     "niri": {
       "inputs": {
         "niri-stable": "niri-stable",
@@ -302,6 +315,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "mikuboot": "mikuboot",
+        "mpv-uosc": "mpv-uosc",
         "niri": "niri",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",

@@ -46,6 +46,11 @@
       url = "github:aiz0/noctalia";
       flake = false;
     };
+
+    mpv-uosc = {
+      url = "https://github.com/tomasklaen/uosc/releases/latest/download/uosc.zip";
+      flake = false;
+    };
   };
 
   nixConfig = {

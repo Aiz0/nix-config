@@ -81,6 +81,13 @@
         ghostty.enable = true;
       };
 
+      services = {
+        jellyfin-mpv-shim = {
+          enable = true;
+          uosc.enable = true;
+        };
+      };
+
       aiz = {
         desktop = {
           niri.enable = true;
