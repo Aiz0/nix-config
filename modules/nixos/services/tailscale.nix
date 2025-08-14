@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   self,
   ...
 }: {
@@ -34,7 +33,7 @@
       }
     ];
 
-    # age.secrets.tailscaleCaddyAuth.file = "${self.inputs.secrets}/tailscale/caddyAuth.age";
+    age.secrets.tailscaleCaddyAuth.file = "${self.inputs.secrets}/tailscale/caddyAuth.age";
 
     networking.firewall = {
       allowedUDPPorts = [config.services.tailscale.port];
@@ -64,7 +63,7 @@
 
       tailscale = {
         enable = true;
-        #inherit (config.myNixOS.services.tailscale) authKeyFile;
+        inherit (config.myNixOS.services.tailscale) authKeyFile;
 
         extraUpFlags =
           ["--ssh"]
