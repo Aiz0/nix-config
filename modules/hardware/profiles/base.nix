@@ -30,5 +30,6 @@
         powerKeyLongPress = "poweroff";
       };
     };
+    zramSwap.enable = lib.mkDefault true;
   };
 }
