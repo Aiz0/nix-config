@@ -22,6 +22,10 @@
   };
 
   myHardware = {
+    amd = {
+      cpu.enable = true;
+      gpu.enable = true;
+    };
     profiles = {
       base.enable = true;
     };

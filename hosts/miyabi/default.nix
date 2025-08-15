@@ -7,9 +7,15 @@
   ];
   networking.hostName = "miyabi";
 
-  myHardware.profiles = {
-    base.enable = true;
-    laptop.enable = true;
+  myHardware = {
+    amd = {
+      cpu.enable = true;
+      gpu.enable = true;
+    };
+    profiles = {
+      base.enable = true;
+      laptop.enable = true;
+    };
   };
 
   myNixOS = {
