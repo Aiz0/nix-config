@@ -4,13 +4,13 @@
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
     ./home.nix
     ./secrets.nix
     ./services.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
   networking.hostName = "sakurasou";
+  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "uas" "sd_mod"];
   myDisko.installDrive = "/dev/disk/by-id/nvme-ADATA_SX8200PNP_2K1520121131";
 
   fileSystems = {

@@ -1,11 +1,11 @@
 {self, ...}: {
   imports = [
-    ./hardware-configuration.nix
     ./home.nix
     ./secrets.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
   networking.hostName = "miyabi";
+  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_usb_sdmmc"];
 
   myHardware = {
     amd = {
