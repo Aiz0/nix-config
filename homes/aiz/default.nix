@@ -78,6 +78,7 @@
         xdg.enable = true;
         shell.enable = true;
         defaultApps.enable = true;
+        avatar.path = builtins.path {path = ./assets/avatar.webp;};
       };
 
       programs = {

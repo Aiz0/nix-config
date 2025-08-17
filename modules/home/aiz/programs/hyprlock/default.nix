@@ -1,9 +1,19 @@
+# TODO: fix todos and move out of aiz modules folder
 {
   config,
   lib,
   ...
 }: {
-  options.myHome.aiz.programs.hyprlock.enable = lib.mkEnableOption "hyprlock lock screen";
+  options.myHome.aiz.programs.hyprlock = {
+    enable = lib.mkEnableOption "hyprlock lock screen";
+    avatar = {
+      path = lib.mkOption {
+        description = "Path to user avatar, if null shows nothing";
+        default = config.myHome.profiles.avatar.path or null;
+        type = lib.types.nullOr lib.types.path;
+      };
+    };
+  };
 
   config = lib.mkIf config.myHome.aiz.programs.hyprlock.enable {
     programs.hyprlock = {
@@ -11,7 +21,7 @@
       settings = {
         background = {
           monitor = "";
-          #TODO: add background
+          #TODO: add background as option
           path = "~/" + config.xdg.configFile.wallpaper.target;
           color = "rgba(25, 20, 20, 1.0)";
 
@@ -23,10 +33,10 @@
           vibrancy = 0.1696;
           vibrancy_darkness = 0.0;
         };
-        # TODO: show profile picture
-        image = {
+        # User Avatar
+        image = lib.mkIf (config.myHome.aiz.programs.hyprlock.avatar.path != null) {
           monitor = "";
-          path = "~/" + config.xdg.configFile.avatar.target;
+          path = config.myHome.aiz.programs.hyprlock.avatar.path;
           border_color = "0xffdddddd";
           border_size = 2;
           size = 100;
