@@ -125,6 +125,19 @@
           {proportion = 2. / 3.;}
         ];
       };
+      window-rules = [
+        {
+          geometry-corner-radius = let
+            radius = 8.0;
+          in {
+            top-left = radius;
+            top-right = radius;
+            bottom-left = radius;
+            bottom-right = radius;
+          };
+          clip-to-geometry = true;
+        }
+      ];
       hotkey-overlay.skip-at-startup = true;
       clipboard.disable-primary = true;
 
