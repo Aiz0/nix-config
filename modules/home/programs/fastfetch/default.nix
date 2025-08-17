@@ -3,7 +3,14 @@
   lib,
   ...
 }: {
-  options.myHome.programs.fastfetch.enable = lib.mkEnableOption "fastfetch system information";
+  options.myHome.programs.fastfetch = {
+    enable = lib.mkEnableOption "fastfetch system information";
+    logo = lib.mkOption {
+      description = "logo name or path to use";
+      default = "";
+      type = lib.types.string;
+    };
+  };
 
   config = lib.mkIf config.myHome.programs.fastfetch.enable {
     programs.fastfetch = {
@@ -18,7 +25,8 @@
             top = 3;
           };
 
-          type = "small";
+          #type = "small";
+          source = config.myHome.programs.fastfetch.logo;
         };
 
         modules = [

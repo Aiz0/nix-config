@@ -81,7 +81,10 @@
       };
 
       programs = {
-        fastfetch.enable = true;
+        fastfetch = {
+          enable = true;
+          logo = builtins.path {path = ./assets/nix-snowflake-mashiro.png;};
+        };
         ghostty.enable = true;
       };
 
