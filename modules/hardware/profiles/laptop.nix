@@ -21,11 +21,6 @@
         lidSwitchExternalPower = "hibernate";
         lidSwitchDocked = "ignore";
       };
-
-      # default to us keyboard layout
-      xserver.xkb = {
-        layout = "us";
-      };
     };
     # enable keyd for custom layout
     myNixOS.keyd.enable = true;

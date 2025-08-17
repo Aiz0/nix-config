@@ -29,6 +29,10 @@
         powerKey = "suspend";
         powerKeyLongPress = "poweroff";
       };
+      # default to EurKEY keyboard layout
+      xserver.xkb = {
+        layout = "eu";
+      };
     };
     zramSwap.enable = lib.mkDefault true;
   };
