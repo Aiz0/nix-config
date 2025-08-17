@@ -1,5 +1,6 @@
 {
   config,
+  osConfig,
   lib,
   self,
   ...
@@ -28,6 +29,8 @@
         lang = "eng";
         lang_filter_sub = true;
         screenshot_dir = "~/Pictures/screenshots";
+        # set hostname explicitly so that it updates if hostname ever changes
+        player_name = osConfig.networking.hostName;
       };
     };
     xdg.configFile = lib.mkIf config.myHome.services.jellyfin-mpv-shim.uosc.enable {
