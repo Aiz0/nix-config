@@ -10,8 +10,9 @@
     services.hyprpaper = {
       enable = true;
       settings = {
-        preload = ["${config.xdg.configHome}/wallpaper.jxl"];
-        wallpaper = ",${config.xdg.configHome}/wallpaper.jxl";
+        ipc = "on";
+        preload = builtins.map (monitor: monitor.wallpaper.path) config.myHome.hardware.monitors;
+        wallpaper = builtins.map (monitor: "${monitor.plug},${monitor.wallpaper.path}") config.myHome.hardware.monitors;
       };
     };
   };

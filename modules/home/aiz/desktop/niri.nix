@@ -11,56 +11,6 @@
       default = true;
       type = lib.types.bool;
     };
-    # TODO don't repeat thes here somehow.
-    # Instead use niri flake options somehow
-    outputs = let
-      inherit (lib) mkOption types;
-    in
-      mkOption {
-        type = types.listOf (types.submodule {
-          options = {
-            name = mkOption {
-              type = types.str;
-              example = "DP-1";
-            };
-            width = mkOption {
-              type = types.int;
-              example = 1920;
-            };
-            height = mkOption {
-              type = types.int;
-              example = 1080;
-            };
-            refresh = {
-              rate = mkOption {
-                type = types.nullOr types.float;
-                default = null;
-              };
-              variable = {
-                enabled = lib.mkEnableOption "Enable variable refresh rate for this monitor";
-                on-demand = lib.mkEnableOption "Only enable variable refresh rate when a window supports it";
-              };
-            };
-            x = mkOption {
-              type = types.int;
-              default = 0;
-            };
-            y = mkOption {
-              type = types.int;
-              default = 0;
-            };
-            enabled = mkOption {
-              type = types.bool;
-              default = true;
-            };
-            primary = mkOption {
-              type = types.bool;
-              default = false;
-            };
-          };
-        });
-        default = [];
-      };
   };
 
   config = lib.mkIf config.myHome.aiz.desktop.niri.enable {
@@ -69,26 +19,25 @@
     programs.niri.package = pkgs.niri-unstable;
     programs.niri.settings = {
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite-unstable;
+
+      # Generate niri output configuration from monitor module.
       outputs = builtins.listToAttrs (map (v: {
-          name = v.name;
+          name = "${v.name.manufacturer} ${v.name.model} ${v.name.serial}";
           value = {
             enable = v.enabled;
             mode.height = v.height;
             mode.width = v.width;
-            mode.refresh = v.refresh.rate;
+            mode.refresh = v.refreshRate.value;
             variable-refresh-rate =
-              if v.refresh.variable.enabled == true
-              then
-                if v.refresh.variable.on-demand == "true"
-                then "on-demand"
-                else true
-              else false;
-            position.x = v.x;
-            position.y = v.y;
+              if v.refreshRate.variable.enabled && v.refreshRate.variable.on-demand
+              then "on-demand"
+              else v.refreshRate.variable.enabled;
+            position.x = v.position.x;
+            position.y = v.position.y;
             focus-at-startup = v.primary;
           };
         })
-        config.myHome.aiz.desktop.niri.outputs);
+        config.myHome.hardware.monitors);
 
       input = {
         keyboard = {

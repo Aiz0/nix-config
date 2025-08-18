@@ -29,24 +29,6 @@
     profiles = {
       base.enable = true;
     };
-    monitors = [
-      {
-        name = "LG Electronics LG ULTRAGEAR 102NTKFG9141";
-        width = 2560;
-        height = 1440;
-        x = 0;
-        y = 0;
-        primary = true;
-        refresh.variable.enabled = true;
-      }
-      {
-        name = "PNP(BNQ) BenQ GW2470 V8F02974019";
-        width = 1920;
-        height = 1080;
-        x = -1920;
-        y = 0;
-      }
-    ];
   };
 
   myNixOS = {

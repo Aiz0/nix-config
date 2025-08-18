@@ -3,6 +3,5 @@
     ./desktop
     ./programs
     ./services
-    ./assets
   ];
 }

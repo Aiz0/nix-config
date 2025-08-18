@@ -16,7 +16,6 @@
       {
         myHome.aiz.desktop.niri = {
           enable = true;
-          outputs = config.myHardware.monitors;
         };
       }
     ];
