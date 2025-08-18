@@ -6,6 +6,11 @@
 }: {
   options.myHome.aiz.programs.hyprlock = {
     enable = lib.mkEnableOption "hyprlock lock screen";
+    displayName = lib.mkOption {
+      description = "Display name on lock screen. defaults to username";
+      default = config.home.username or "";
+      type = lib.types.str;
+    };
     avatar = {
       path = lib.mkOption {
         description = "Path to user avatar, if null shows nothing";
@@ -72,10 +77,7 @@
           # Show username
           {
             monitor = "";
-            # I prefer the capitalized version
-            # TODO: add this as a config option
-            # its used in other places
-            text = "Aiz";
+            text = config.myHome.aiz.programs.hyprlock.displayName;
             color = "rgba(242, 243, 244, 0.75)";
             font_size = 12;
             font_family = "SF Pro Display Bold";

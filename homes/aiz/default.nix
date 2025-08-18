@@ -106,6 +106,10 @@
           quickshell.enable = true;
           zen.enable = true;
           zed-editor.enable = true;
+          hyprlock = {
+            enable = true;
+            displayName = "Aiz";
+          };
         };
         services = {
           hypridle = {
