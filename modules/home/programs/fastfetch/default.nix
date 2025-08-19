@@ -8,7 +8,7 @@
     logo = lib.mkOption {
       description = "logo name or path to use";
       default = "";
-      type = lib.types.string;
+      type = lib.types.str;
     };
   };
 
