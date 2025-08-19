@@ -50,9 +50,9 @@
 
     services = {
       caddy.enable = true;
-      qbittorrent = {
-        inherit (config.mySnippets.tailnet.networkMap.qbittorrent) port;
+      qbittorrent-hotio = {
         enable = true;
+        inherit (config.mySnippets.tailnet.networkMap.qbittorrent) port;
       };
       jellyfin.enable = true;
       tailscale = {
