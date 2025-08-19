@@ -27,7 +27,7 @@
         background =
           builtins.map (monitor: {
             monitor = monitor.plug;
-            path = monitor.wallpaper.path;
+            inherit (monitor.wallpaper) path;
             color = "rgba(25, 20, 20, 1.0)";
 
             blur_passes = 2; # 0 disables blurring
@@ -42,7 +42,7 @@
         # User Avatar
         image = lib.mkIf (config.myHome.aiz.programs.hyprlock.avatar.path != null) {
           monitor = "";
-          path = config.myHome.aiz.programs.hyprlock.avatar.path;
+          inherit (config.myHome.aiz.programs.hyprlock.avatar) path;
           border_color = "0xffdddddd";
           border_size = 2;
           size = 100;

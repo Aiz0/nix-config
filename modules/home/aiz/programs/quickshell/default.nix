@@ -22,7 +22,7 @@
         qt6.qtdeclarative
       ]);
       configs = {
-        noctalia = self.inputs.noctalia;
+        inherit (self.inputs) noctalia;
       };
       activeConfig = "noctalia";
       systemd.enable = true;
