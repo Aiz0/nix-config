@@ -50,6 +50,7 @@
 
     services = {
       caddy.enable = true;
+      recyclarr.enable = true;
       qbittorrent-hotio = {
         enable = true;
         inherit (config.mySnippets.tailnet.networkMap.qbittorrent) port;
