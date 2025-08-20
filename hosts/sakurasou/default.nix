@@ -56,6 +56,7 @@
         inherit (config.mySnippets.tailnet.networkMap.qbittorrent) port;
       };
       jellyfin.enable = true;
+      lanraragi.enable = true;
       tailscale = {
         enable = true;
         operator = "aiz";
