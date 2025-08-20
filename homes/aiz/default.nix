@@ -87,6 +87,10 @@
           logo = builtins.path {path = ./assets/nix-snowflake-mashiro.png;};
         };
         ghostty.enable = true;
+        hyprlock = {
+          enable = true;
+          displayName = "Aiz";
+        };
       };
 
       services = {
@@ -94,6 +98,12 @@
           enable = true;
           uosc.enable = true;
         };
+        hypridle = {
+          enable = true;
+          autoSuspend = false; # turned off for now due to problems
+        };
+        hyprpaper.enable = true;
+        trayscale.enable = true;
       };
 
       aiz = {
@@ -106,18 +116,6 @@
           quickshell.enable = true;
           zen.enable = true;
           zed-editor.enable = true;
-          hyprlock = {
-            enable = true;
-            displayName = "Aiz";
-          };
-        };
-        services = {
-          hypridle = {
-            enable = true;
-            autoSuspend = false; # turned off for now due to problems
-          };
-          hyprpaper.enable = true;
-          trayscale.enable = true;
         };
       };
     };

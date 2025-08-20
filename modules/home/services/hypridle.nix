@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  options.myHome.aiz.services.hypridle = {
+  options.myHome.services.hypridle = {
     enable = lib.mkEnableOption "hypridle idle/lock manager";
 
     autoSuspend = lib.mkOption {
@@ -14,11 +14,11 @@
     };
   };
 
-  config = lib.mkIf config.myHome.aiz.services.hypridle.enable {
+  config = lib.mkIf config.myHome.services.hypridle.enable {
     home.packages = [
       pkgs.wlopm # wayland output power management
     ];
-    myHome.aiz.programs.hyprlock.enable = true; # enable lock application
+    myHome.programs.hyprlock.enable = true; # enable lock application
     services.hypridle = {
       enable = true;
       settings = {
@@ -47,7 +47,7 @@
               on-resume = "wlopm --on *";
             }
           ]
-          ++ lib.optional config.myHome.aiz.services.hypridle.autoSuspend {
+          ++ lib.optional config.myHome.services.hypridle.autoSuspend {
             # suspend after 10 min
             timeout = 600;
             on-timeout = "systemctl suspend";

@@ -1,10 +1,9 @@
-# TODO: fix todos and move out of aiz modules folder
 {
   config,
   lib,
   ...
 }: {
-  options.myHome.aiz.programs.hyprlock = {
+  options.myHome.programs.hyprlock = {
     enable = lib.mkEnableOption "hyprlock lock screen";
     displayName = lib.mkOption {
       description = "Display name on lock screen. defaults to username";
@@ -20,7 +19,7 @@
     };
   };
 
-  config = lib.mkIf config.myHome.aiz.programs.hyprlock.enable {
+  config = lib.mkIf config.myHome.programs.hyprlock.enable {
     programs.hyprlock = {
       enable = true;
       settings = let
@@ -42,9 +41,9 @@
           })
           config.myHome.hardware.monitors;
         # User Avatar
-        image = lib.mkIf (config.myHome.aiz.programs.hyprlock.avatar.path != null) (builtins.map (monitor: {
+        image = lib.mkIf (config.myHome.programs.hyprlock.avatar.path != null) (builtins.map (monitor: {
             monitor = monitor.plug;
-            inherit (config.myHome.aiz.programs.hyprlock.avatar) path;
+            inherit (config.myHome.programs.hyprlock.avatar) path;
             border_color = "0xffdddddd";
             border_size = 2;
             size = 100;
@@ -81,7 +80,7 @@
             # Show username
             {
               monitor = monitor.plug;
-              text = config.myHome.aiz.programs.hyprlock.displayName;
+              text = config.myHome.programs.hyprlock.displayName;
               color = "rgba(242, 243, 244, 0.75)";
               font_size = 12;
               font_family = "SF Pro Display Bold";
