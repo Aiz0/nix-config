@@ -1,12 +1,12 @@
 {
   config,
+  osConfig,
   lib,
   ...
 }: {
   options.myHome.services.trayscale.enable = lib.mkEnableOption "trayscale tailscale tray service";
 
-  # TODO: Require tailscale to be enabled
-  config = lib.mkIf config.myHome.services.trayscale.enable {
+  config = lib.mkIf (config.myHome.services.trayscale.enable && osConfig.myNixOS.services.tailscale.enable && osConfig.myNixOS.services.tailscale.operator == config.home.username) {
     services.trayscale.enable = true;
   };
 }
