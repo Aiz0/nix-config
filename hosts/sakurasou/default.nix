@@ -38,6 +38,7 @@
     profiles = {
       base.enable = true;
       arr.enable = true;
+      btrfs.enable = true;
     };
     programs = {
       nix.enable = true;

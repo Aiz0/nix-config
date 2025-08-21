@@ -1,6 +1,7 @@
 {...}: {
   imports = [
-    ./base.nix
     ./arr.nix
+    ./base.nix
+    ./btrfs.nix
   ];
 }
