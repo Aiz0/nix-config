@@ -39,6 +39,12 @@
         #   vHost = "grafana.${config.mySnippets.tailnet.name}";
         # };
 
+        lanraragi = {
+          hostName = "sakurasou";
+          port = 3000;
+          vHost = "lanraragi.${config.mySnippets.tailnet.name}";
+        };
+
         lidarr = {
           hostName = "sakurasou";
           port = 8686;

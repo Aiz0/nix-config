@@ -19,6 +19,14 @@
         '';
       };
 
+      "${config.mySnippets.tailnet.networkMap.lanraragi.vHost}" = {
+        extraConfig = ''
+          bind tailscale/lanraragi
+          encode zstd gzip
+          reverse_proxy ${config.mySnippets.tailnet.networkMap.lanraragi.hostName}:${toString config.mySnippets.tailnet.networkMap.lanraragi.port}
+        '';
+      };
+
       "${config.mySnippets.tailnet.networkMap.lidarr.vHost}" = {
         extraConfig = ''
           bind tailscale/lidarr
