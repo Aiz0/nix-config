@@ -19,6 +19,16 @@
         '';
       };
 
+      "${config.mySnippets.tailnet.networkMap.kavita.vHost}" = {
+        extraConfig = ''
+          bind tailscale/kavita
+          encode zstd gzip
+          reverse_proxy ${config.mySnippets.tailnet.networkMap.kavita.hostName}:${toString config.mySnippets.tailnet.networkMap.kavita.port} {
+            flush_interval -1
+          }
+        '';
+      };
+
       "${config.mySnippets.tailnet.networkMap.lanraragi.vHost}" = {
         extraConfig = ''
           bind tailscale/lanraragi

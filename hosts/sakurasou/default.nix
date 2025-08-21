@@ -57,6 +57,7 @@
       };
       jellyfin.enable = true;
       lanraragi.enable = true;
+      kavita.enable = true;
       tailscale = {
         enable = true;
         operator = "aiz";

@@ -33,6 +33,12 @@
           vHost = "jellyfin.${config.mySnippets.tailnet.name}";
         };
 
+        kavita = {
+          hostName = "sakurasou";
+          port = 5000;
+          vHost = "kavita.${config.mySnippets.tailnet.name}";
+        };
+
         # grafana = {
         #   hostName = "mauville";
         #   port = 3010;

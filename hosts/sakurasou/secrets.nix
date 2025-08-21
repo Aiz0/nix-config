@@ -4,5 +4,6 @@
     tailscaleCaddyAuthKey.file = "${self.inputs.secrets}/tailscale/caddyAuth.age";
     radarrApiKey.file = "${self.inputs.secrets}/arr/radarrApiKey.age";
     sonarrApiKey.file = "${self.inputs.secrets}/arr/sonarrApiKey.age";
+    kavitaTokenKey.file = "${self.inputs.secrets}/kavita/tokenKey.age";
   };
 }
