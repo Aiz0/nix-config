@@ -20,7 +20,7 @@ in {
 
     downloadDir = lib.mkOption {
       type = lib.types.path;
-      default = "/mnt/data/downloads";
+      default = "/mnt/data/";
       description = "The directory where qBittorrent downloads files";
     };
 
@@ -86,7 +86,7 @@ in {
         "WEBUI_PORTS" = "8080/tcp,8080/udp";
       };
       volumes = [
-        "${cfg.downloadDir}:/data/downloads:rw"
+        "${cfg.downloadDir}:/data/:rw"
         "${cfg.dataDir}:/config:rw"
       ];
       ports = [
