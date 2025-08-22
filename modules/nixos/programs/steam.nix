@@ -7,6 +7,7 @@
   options.myNixOS.programs.steam = {
     enable = lib.mkEnableOption "Steam client configuration";
     session.enable = lib.mkEnableOption "Steam + Gamescope desktop session";
+    SGDBoop.enable = lib.mkEnableOption "Install steam grid database boop to easily apply custom artwork to Steam";
     steamHome = {
       enable = lib.mkEnableOption "Wraps steam to use a custom home directory";
       path = lib.mkOption {
@@ -37,13 +38,20 @@
         remotePlay.openFirewall = true;
       };
     };
-    # Create the wrapper script only if enableWrapped is true
-    environment.systemPackages = lib.mkIf config.myNixOS.programs.steam.steamHome.enable [
-      (pkgs.writeShellScriptBin "steam" ''
-        export HOME="${config.myNixOS.programs.steam.steamHome.path}"
-        mkdir -p ${config.myNixOS.programs.steam.steamHome.path}
-        exec ${lib.getExe config.programs.steam.package} "$@"
-      '')
-    ];
+    # Create the wrapper script only if steamHome is enabled
+    environment.systemPackages = lib.mkIf config.myNixOS.programs.steam.steamHome.enable ([
+        (pkgs.writeShellScriptBin "steam" ''
+          export HOME="${config.myNixOS.programs.steam.steamHome.path}"
+          mkdir -p ${config.myNixOS.programs.steam.steamHome.path}
+          exec ${lib.getExe config.programs.steam.package} "$@"
+        '')
+      ]
+      ++ lib.optionals config.myNixOS.programs.steam.SGDBoop.enable
+      [
+        (pkgs.writeShellScriptBin "SGDBoop" ''
+          export HOME="${config.myNixOS.programs.steam.steamHome.path}"
+          exec ${lib.getExe pkgs.sgdboop} "$@"
+        '')
+      ]);
   };
 }

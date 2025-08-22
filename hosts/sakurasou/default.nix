@@ -46,6 +46,7 @@
       steam = {
         enable = true;
         steamHome.enable = true;
+        SGDBoop.enable = true;
       };
     };
 
