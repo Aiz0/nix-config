@@ -40,6 +40,7 @@
         # games
         prismlauncher # minecraft-launcher
         osu-lazer-bin
+        bottles
 
         # fonts
         source-code-pro
