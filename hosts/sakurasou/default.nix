@@ -39,6 +39,10 @@
       base.enable = true;
       arr.enable = true;
       btrfs.enable = true;
+      swap = {
+        enable = true;
+        size = 16384;
+      };
     };
     programs = {
       nix.enable = true;

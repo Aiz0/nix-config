@@ -25,6 +25,7 @@
     profiles = {
       base.enable = true;
       btrfs.enable = true;
+      swap.enable = true;
     };
     programs = {
       nix.enable = true;
