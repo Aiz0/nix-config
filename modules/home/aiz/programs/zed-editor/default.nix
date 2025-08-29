@@ -8,7 +8,6 @@
   config = lib.mkIf config.myHome.aiz.programs.zed-editor.enable {
     programs.zed-editor = {
       enable = true;
-      installRemoteServer = true;
 
       userSettings = {
         auto_indent_on_paste = true;
