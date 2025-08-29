@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   imports = [
@@ -14,7 +15,9 @@
     myNixOS.programs.regreet.enable = true;
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-    programs.seahorse.enable = true;
+    environment.systemPackages = [
+      pkgs.kdePackages.kwallet
+    ];
 
     services = {
       udisks2.enable = true;
