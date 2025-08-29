@@ -18,13 +18,15 @@
     };
 
     # Fix various applications to respect the XDG basedir spec
-    # Applications that don't have custom configuration are set here
-    programs.bash.historyFile = "${config.xdg.stateHome}/bash/history";
-    gtk.gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    programs.gpg.homedir = "${config.xdg.dataHome}/gnupg";
+    # if they have a nix module that allows configuring this
+    # then that should be set where they are enabled
 
-    # These don't let you set it via nix config
     home.sessionVariables = {
+      GNUPGHOME = "${config.xdg.dataHome}/gnupg";
+      HISTFILE = "${config.xdg.stateHome}/bash/history";
+      NPM_CONFIG_CACHE = "${config.xdg.cacheHome}/npm";
+      NPM_CONFIG_INIT_MODULE = "${config.xdg.configHome}/npm/config/npm-init.js";
+      NPM_CONFIG_TMP = "$XDG_RUNTIME_DIR/npm";
       STARSHIP_CACHE = config.xdg.cacheHome + "/starship";
     };
   };
