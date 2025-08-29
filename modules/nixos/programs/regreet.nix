@@ -11,6 +11,12 @@
   };
 
   config = lib.mkIf config.myNixOS.programs.regreet.enable {
+    security.pam.services.gdm = {
+      enableGnomeKeyring = true;
+      gnupg.enable = true;
+      kwallet.enable = true;
+    };
+
     programs.regreet = {
       enable = true;
       theme.name = "Adwaita-dark";
