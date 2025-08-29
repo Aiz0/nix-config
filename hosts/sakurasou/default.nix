@@ -63,15 +63,23 @@
       qbittorrent-hotio = {
         enable = true;
         inherit (config.mySnippets.tailnet.networkMap.qbittorrent) port;
+        group = "media";
+      };
+      lanraragi = {
+        enable = true;
+        supplementaryGroups = ["media"];
       };
       jellyfin.enable = true;
-      lanraragi.enable = true;
       kavita.enable = true;
       tailscale = {
         enable = true;
         operator = "aiz";
       };
     };
+  };
+
+  users.groups.media = {
+    gid = 900;
   };
 
   myUsers.aiz.enable = true;
