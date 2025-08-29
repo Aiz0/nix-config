@@ -1,6 +1,7 @@
 {
   config,
   self,
+  pkgs,
   ...
 }: {
   imports = [
@@ -30,6 +31,8 @@
       base.enable = true;
     };
   };
+
+  environment.systemPackages = [pkgs.kdePackages.kdenlive];
 
   myNixOS = {
     desktop = {
