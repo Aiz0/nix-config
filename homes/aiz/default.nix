@@ -26,12 +26,20 @@
         spotify
         freetube
 
+        # Dev
+        nodejs
+        deno
+        pnpm
+        pakku
+
         # image, video, audio editing
         krita
         #kdePackages.kdenlive
         video-trimmer
         #aseprite
         tenacity
+        ffmpeg
+        imagemagick
 
         # chat
         element-desktop
