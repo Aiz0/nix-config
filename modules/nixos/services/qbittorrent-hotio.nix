@@ -67,7 +67,7 @@ in {
       image = "ghcr.io/hotio/qbittorrent";
       environment = {
         "LIBTORRENT" = "v1";
-        "PGID" = toString config.users.groups."${cfg.user}".gid;
+        "PGID" = toString config.users.groups."${cfg.group}".gid;
         "PUID" = toString config.users.users."${cfg.user}".uid;
         "TZ" = config.time.timeZone;
         "UMASK" = "002";
