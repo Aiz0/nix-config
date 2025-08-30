@@ -52,6 +52,9 @@
                   ];
 
                   config.allowUnfree = true;
+                  config.permittedInsecurePackages = [
+                    "qtwebengine-5.15.19" # Required for Jellyfin-mpv-shim
+                  ];
                 };
               }
             ];
