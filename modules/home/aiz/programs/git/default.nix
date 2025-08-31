@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  osConfig,
   ...
 }: {
   options.myHome.aiz.programs.git.enable = lib.mkEnableOption "git version control";
@@ -18,6 +19,12 @@
         github.user = "aiz0";
         push.autoSetupRemote = true;
       };
+      includes = [
+        {
+          condition = "gitdir:~/work/";
+          inherit (osConfig.age.secrets.gitWorkConfig) path;
+        }
+      ];
     };
   };
 }
