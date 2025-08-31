@@ -46,6 +46,7 @@
         enable = true;
         size = 16384;
       };
+      workstation.enable = true;
     };
     programs = {
       nix.enable = true;
