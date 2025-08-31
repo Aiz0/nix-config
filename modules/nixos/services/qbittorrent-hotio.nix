@@ -109,6 +109,10 @@ in {
       };
       after = [
         "podman-network-qbittorrent-hotio_default.service"
+        # IMPORTANT: Wait for the download directory to be mounted
+        # TODO: add config for this since mnt-data is only the default
+        "local-fs.target" # Ensures local filesystems are mounted
+        "mnt-data.mount" # Explicitly wait for /mnt/data
       ];
       requires = [
         "podman-network-qbittorrent-hotio_default.service"
