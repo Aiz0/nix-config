@@ -4,5 +4,6 @@
     ./hypridle.nix
     ./hyprpaper.nix
     ./trayscale.nix
+    ./vicinae.nix
   ];
 }

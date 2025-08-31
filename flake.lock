@@ -390,6 +390,7 @@
         "quickshell": "quickshell",
         "secrets": "secrets",
         "treefmt-nix": "treefmt-nix",
+        "vicinae": "vicinae",
         "zen-browser": "zen-browser"
       }
     },
@@ -474,6 +475,27 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "vicinae": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757504092,
+        "narHash": "sha256-iwxfUu/Ozrp8Iqaafx0agI9+J/vmCIU76+XhZh4PA3M=",
+        "owner": "vicinaehq",
+        "repo": "vicinae",
+        "rev": "c75291204a890d1866097b5b9713c49773328e67",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vicinaehq",
+        "repo": "vicinae",
         "type": "github"
       }
     },

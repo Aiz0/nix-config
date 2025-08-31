@@ -47,6 +47,11 @@
       flake = false;
     };
 
+    vicinae = {
+      url = "github:vicinaehq/vicinae";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     mpv-uosc = {
       url = "https://github.com/tomasklaen/uosc/releases/latest/download/uosc.zip";
       flake = false;

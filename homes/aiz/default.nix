@@ -116,6 +116,7 @@
         };
         hyprpaper.enable = true;
         trayscale.enable = true;
+        vicinae.enable = true;
       };
 
       aiz = {
