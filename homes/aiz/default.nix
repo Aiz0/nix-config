@@ -34,6 +34,7 @@
         deno
         pnpm
         pakku
+        live-server
 
         # image, video, audio editing
         krita
