@@ -16,10 +16,10 @@
       };
 
       # lid control
-      logind = {
-        lidSwitch = "hibernate";
-        lidSwitchExternalPower = "hibernate";
-        lidSwitchDocked = "ignore";
+      logind.settings.Login = {
+        HandleLidSwitch = "hibernate";
+        HandleLidSwitchExternalPower = "hibernate";
+        HandleLidSwitchDocked = "ignore";
       };
     };
     # enable keyd for custom layout
