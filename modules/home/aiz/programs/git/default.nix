@@ -18,6 +18,7 @@
         color.ui = true;
         github.user = "aiz0";
         push.autoSetupRemote = true;
+        init.defaultBranch = "main";
       };
       includes = [
         {
