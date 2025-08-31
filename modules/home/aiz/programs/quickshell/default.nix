@@ -9,18 +9,17 @@
 
   config = lib.mkIf config.myHome.aiz.programs.quickshell.enable {
     home.packages = with pkgs; [
-      material-symbols
+      ddcutil
+      roboto
+      inter
       cava
       gpu-screen-recorder
       xdg-desktop-portal-gnome
+      self.inputs.noctalia.packages.${system}.default
     ];
     programs.quickshell = {
       enable = true;
-      package = self.inputs.quickshell.packages.${pkgs.system}.default.withModules (with pkgs; [
-        qt6.qtimageformats
-        qt6.qtmultimedia
-        qt6.qtdeclarative
-      ]);
+      package = self.inputs.quickshell.packages.${pkgs.system}.default;
       configs = {
         inherit (self.inputs) noctalia;
       };

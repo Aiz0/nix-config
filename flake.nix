@@ -27,11 +27,6 @@
       inputs.nixpkgs.follows = ""; # only useful for the package output
     };
 
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,9 +37,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia = {
       url = "github:aiz0/noctalia";
-      flake = false;
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     vicinae = {
