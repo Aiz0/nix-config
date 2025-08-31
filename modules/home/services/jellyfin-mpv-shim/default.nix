@@ -31,6 +31,9 @@
         screenshot_dir = "~/Pictures/screenshots";
         # set hostname explicitly so that it updates if hostname ever changes
         player_name = osConfig.networking.hostName;
+        # Retry for 1 minute before showing window
+        # should be good enough for most cases
+        connect_retry_mins = 1;
       };
     };
     xdg.configFile = lib.mkIf config.myHome.services.jellyfin-mpv-shim.uosc.enable {
