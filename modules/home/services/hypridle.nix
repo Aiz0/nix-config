@@ -24,8 +24,8 @@
       settings = {
         general = {
           lock_cmd = "pidof hyprlock || hyprlock";
-          before_sleep_cmd = "pidof hyprlock || hyprlock --no-fade-in --immediate";
           after_sleep_cmd = "wlopm --on *";
+          before_sleep_cmd = "pidof hyprlock || hyprlock --no-fade-in --immediate-render";
         };
         listener =
           [
