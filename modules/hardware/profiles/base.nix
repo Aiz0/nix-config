@@ -26,7 +26,7 @@
       fstrim.enable = true;
 
       logind.settings.Login = {
-        HandlePowerKey = "suspend";
+        HandlePowerKey = "sleep";
         HandlePowerKeyLongPress = "poweroff";
       };
       # default to EurKEY keyboard layout

@@ -17,8 +17,8 @@
 
       # lid control
       logind.settings.Login = {
-        HandleLidSwitch = "hibernate";
-        HandleLidSwitchExternalPower = "hibernate";
+        HandleLidSwitch = "sleep";
+        HandleLidSwitchExternalPower = "sleep";
         HandleLidSwitchDocked = "ignore";
       };
     };
