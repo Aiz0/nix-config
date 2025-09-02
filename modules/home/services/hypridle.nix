@@ -15,16 +15,12 @@
   };
 
   config = lib.mkIf config.myHome.services.hypridle.enable {
-    home.packages = [
-      pkgs.wlopm # wayland output power management
-    ];
     myHome.programs.hyprlock.enable = true; # enable lock application
     services.hypridle = {
       enable = true;
       settings = {
         general = {
           lock_cmd = "pidof hyprlock || hyprlock";
-          after_sleep_cmd = "wlopm --on *";
           before_sleep_cmd = "pidof hyprlock || hyprlock --no-fade-in --immediate-render";
         };
         listener =
@@ -39,12 +35,6 @@
               # lock after 5 min
               timeout = 300;
               on-timeout = "loginctl lock-session";
-            }
-            {
-              # screen off after 6 min
-              timeout = 360;
-              on-timeout = "wlopm --off *";
-              on-resume = "wlopm --on *";
             }
           ]
           ++ lib.optional config.myHome.services.hypridle.autoSuspend {
