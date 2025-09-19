@@ -90,7 +90,10 @@
       profiles = {
         xdg.enable = true;
         shell.enable = true;
-        defaultApps.enable = true;
+        defaultApps = {
+          enable = true;
+          forceMimeAssociations = true;
+        };
         avatar.path = builtins.path {path = ./assets/avatar.webp;};
       };
 
