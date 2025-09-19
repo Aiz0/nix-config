@@ -20,6 +20,7 @@
       modules = self.nixosModules;
     in
       inputs.nixpkgs.lib.genAttrs [
+        "frieren"
         "miyabi"
         "sakurasou"
       ] (
