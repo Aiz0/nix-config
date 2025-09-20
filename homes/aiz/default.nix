@@ -131,6 +131,7 @@
           git.enable = true;
           jujutsu.enable = true;
           quickshell.enable = true;
+          ssh.enable = true;
           zen.enable = true;
           zed-editor.enable = true;
         };
