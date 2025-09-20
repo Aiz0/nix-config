@@ -5,18 +5,8 @@
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
   networking.hostName = "frieren";
-  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_usb_sdmmc"];
 
-  myHardware = {
-    amd = {
-      cpu.enable = true;
-      gpu.enable = true;
-    };
-    profiles = {
-      base.enable = true;
-      laptop.enable = true;
-    };
-  };
+  myHardware.framework.laptop13.amd-ai-300.enable = true;
 
   myNixOS = {
     desktop = {
@@ -26,6 +16,7 @@
       base.enable = true;
       btrfs.enable = true;
       swap.enable = true;
+      workstation.enable = true;
     };
     programs = {
       nix.enable = true;
