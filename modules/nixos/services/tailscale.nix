@@ -68,7 +68,7 @@
         extraUpFlags =
           ["--ssh"]
           ++ lib.optional (config.myNixOS.services.tailscale.operator != null)
-          "--operator ${config.myNixOS.services.tailscale.operator}";
+          "--operator=${config.myNixOS.services.tailscale.operator}";
 
         openFirewall = true;
         permitCertUid = lib.mkIf config.services.caddy.enable "caddy";
