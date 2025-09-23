@@ -24,6 +24,9 @@
 
         # gui
         kdePackages.dolphin
+        kdePackages.kservice
+        kdePackages.baloo-widgets
+        kdePackages.baloo
         kdePackages.ark
         seahorse
         protonvpn-gui
