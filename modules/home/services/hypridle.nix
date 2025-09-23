@@ -44,5 +44,23 @@
           };
       };
     };
+
+    systemd.user.services = {
+      pipewire-inhibit-idle = {
+        Unit = {
+          After = "graphical-session.target";
+          BindsTo = ["graphical-session.target"];
+          Description = "inhibit idle when audio is playing with Pipewire.";
+          PartOf = "graphical-session.target";
+        };
+
+        Service = {
+          ExecStart = lib.getExe pkgs.wayland-pipewire-idle-inhibit;
+          Restart = "no";
+        };
+
+        Install.WantedBy = ["graphical-session.target"];
+      };
+    };
   };
 }
