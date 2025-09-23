@@ -2,7 +2,7 @@
   imports = [
     ./git
     ./jujutsu
-    ./quickshell
+    ./noctalia.nix
     ./ssh.nix
     ./zed-editor
     ./zen

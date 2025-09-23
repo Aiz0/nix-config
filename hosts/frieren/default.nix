@@ -27,9 +27,12 @@
       };
     };
 
-    services.tailscale = {
-      enable = true;
-      operator = "aiz";
+    services = {
+      tailscale = {
+        enable = true;
+        operator = "aiz";
+      };
+      noctalia.enable = true;
     };
   };
 

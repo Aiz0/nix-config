@@ -59,6 +59,7 @@
     };
 
     services = {
+      noctalia.enable = true;
       caddy.enable = true;
       recyclarr.enable = true;
       qbittorrent-hotio = {
