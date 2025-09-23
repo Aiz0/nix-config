@@ -10,22 +10,27 @@
   config = lib.mkIf config.myHome.aiz.programs.git.enable {
     programs.git = {
       enable = true;
-      userName = "Aiz";
-      userEmail = "dev@aiz.moe";
-      delta.enable = true;
-      package = pkgs.gitFull;
-      extraConfig = {
+      settings = {
+        user = {
+          name = "Aiz";
+          email = "dev@aiz.moe";
+        };
         color.ui = true;
         github.user = "aiz0";
         push.autoSetupRemote = true;
         init.defaultBranch = "main";
       };
+      package = pkgs.gitFull;
       includes = [
         {
           condition = "gitdir:~/work/";
           inherit (osConfig.age.secrets.gitWorkConfig) path;
         }
       ];
+    };
+    programs.delta = {
+      enable = true;
+      enableGitIntegration = true;
     };
   };
 }
