@@ -14,7 +14,10 @@
   };
 
   config = lib.mkIf config.myHome.aiz.desktop.niri.enable {
-    services.swayosd.enable = true;
+    services = {
+      swayosd.enable = true;
+      gnome-keyring.enable = true;
+    };
 
     programs.niri.package = pkgs.niri-unstable;
     programs.niri.settings = {

@@ -24,7 +24,7 @@
         # gui
         kdePackages.dolphin
         kdePackages.ark
-        kdePackages.kwalletmanager
+        seahorse
         protonvpn-gui
         spotify
         freetube
