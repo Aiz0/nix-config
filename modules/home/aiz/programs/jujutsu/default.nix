@@ -16,6 +16,7 @@
         ui = {
           pager = "less -FRX";
           default-command = "st";
+          diff-editor = ":builtin";
         };
       };
     };
