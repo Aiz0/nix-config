@@ -66,6 +66,7 @@
         };
 
         wallpaper.enabled = false;
+        dock.enabled = false;
 
         notifications.location = "top_left";
 
