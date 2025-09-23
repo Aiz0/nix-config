@@ -174,9 +174,9 @@
 
         "Mod+Alt+Escape".action = toggle-keyboard-shortcuts-inhibit;
 
-        "Mod+D".action = screenshot-window;
+        "Mod+D".action.screenshot-window = [];
         "MOD+Shift+D".action.screenshot-screen = [];
-        "MOD+Ctrl+D".action = screenshot;
+        "MOD+Ctrl+D".action.screenshot = [];
 
         "Mod+Shift+Q".action = quit;
       };
