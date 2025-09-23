@@ -54,7 +54,7 @@
               ];
           };
         };
-        colorSchemes.predefinedScheme = "Catpuccin";
+        colorSchemes.predefinedScheme = "Catppuccin";
         general = {
           avatarImage = config.myHome.profiles.avatar.path;
           showScreenCorners = false;
