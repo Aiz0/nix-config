@@ -95,7 +95,7 @@
 
       binds = with config.lib.niri.actions; {
         "MOD+Return".action = spawn config.myHome.profiles.defaultApps.terminal.exec;
-        "MOD+Space".action = spawn "vicinae";
+        "MOD+Space".action = spawn "vicinae" "toggle";
         "MOD+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec;
         "MOD+Shift+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec "--private-window";
         "MOD+Z".action = spawn config.myHome.profiles.defaultApps.editor.exec;
