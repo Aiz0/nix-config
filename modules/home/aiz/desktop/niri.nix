@@ -19,6 +19,35 @@
       gnome-keyring.enable = true;
     };
 
+    # Don't know how much of this is necessary
+    # but it works now
+    xdg.portal = {
+      enable = true;
+      xdgOpenUsePortal = false;
+      config = {
+        common = {
+          default = [
+            "gtk"
+            "gnome"
+            "kde"
+          ];
+        };
+        niri = {
+          default = [
+            "gtk"
+            "gnome"
+            "kde"
+          ];
+          "org.freedesktop.impl.portal.FileChooser" = "kde";
+        };
+      };
+    };
+    xdg.portal.extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.kdePackages.xdg-desktop-portal-kde
+    ];
+
     programs.niri.package = pkgs.niri-unstable;
     programs.niri.settings = {
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite-unstable;

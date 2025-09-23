@@ -42,7 +42,7 @@ in {
     fileManager = {
       package = lib.mkOption {
         type = lib.types.package;
-        default = pkgs.nautilus;
+        default = pkgs.kdePackages.dolphin;
         description = "The default file manager package.";
       };
 
