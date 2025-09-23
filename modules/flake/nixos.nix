@@ -50,6 +50,7 @@
                   overlays = [
                     inputs.nur.overlays.default
                     inputs.niri.overlays.niri
+                    self.overlays.default
                   ];
 
                   config.allowUnfree = true;

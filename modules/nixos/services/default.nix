@@ -9,6 +9,7 @@
     ./qbittorrent.nix
     ./qbittorrent-hotio.nix
     ./recyclarr.nix
+    ./shoko.nix
     ./tailscale.nix
   ];
 }

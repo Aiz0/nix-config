@@ -415,6 +415,7 @@
         "nur": "nur",
         "quickshell": "quickshell",
         "secrets": "secrets",
+        "shoko-anime": "shoko-anime",
         "treefmt-nix": "treefmt-nix",
         "vicinae": "vicinae",
         "zen-browser": "zen-browser"
@@ -433,6 +434,22 @@
       "original": {
         "owner": "aiz0",
         "repo": "secrets",
+        "type": "github"
+      }
+    },
+    "shoko-anime": {
+      "locked": {
+        "lastModified": 1754105476,
+        "narHash": "sha256-8zE/x5yvZ2MAtROHyM1Co2Af1G4XpNlesD63CpbqouE=",
+        "owner": "diniamo",
+        "repo": "nixpkgs",
+        "rev": "68835b06378a799c94f9c27290df9b131c2455f1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "diniamo",
+        "ref": "shokoanime",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },

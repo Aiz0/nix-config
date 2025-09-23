@@ -68,6 +68,14 @@
           reverse_proxy ${config.mySnippets.tailnet.networkMap.radarr.hostName}:${toString config.mySnippets.tailnet.networkMap.radarr.port}
         '';
       };
+      
+      "${config.mySnippets.tailnet.networkMap.shoko.vHost}" = {
+        extraConfig = ''
+          bind tailscale/shoko
+          encode zstd gzip
+          reverse_proxy ${config.mySnippets.tailnet.networkMap.shoko.hostName}:${toString config.mySnippets.tailnet.networkMap.shoko.port}
+        '';
+      };
 
       "${config.mySnippets.tailnet.networkMap.sonarr.vHost}" = {
         extraConfig = ''

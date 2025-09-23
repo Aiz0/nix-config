@@ -58,6 +58,10 @@
       flake = false;
     };
 
+    shoko-anime = {
+      url = "github:diniamo/nixpkgs/shokoanime";
+    };
+
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";

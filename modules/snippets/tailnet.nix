@@ -92,6 +92,12 @@
           port = 7878;
           vHost = "radarr.${config.mySnippets.tailnet.name}";
         };
+        
+        shoko = {
+          hostName = "sakurasou";
+          port = 8111;
+          vHost = "shoko.${config.mySnippets.tailnet.name}";
+        };
 
         sonarr = {
           hostName = "sakurasou";

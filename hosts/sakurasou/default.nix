@@ -73,6 +73,7 @@
       };
       jellyfin.enable = true;
       kavita.enable = true;
+      shoko.enable = true;
       tailscale = {
         enable = true;
         operator = "aiz";
