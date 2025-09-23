@@ -28,6 +28,7 @@
         kdePackages.baloo-widgets
         kdePackages.baloo
         kdePackages.ark
+        kdePackages.ffmpegthumbs
         seahorse
         protonvpn-gui
         spotify
