@@ -95,6 +95,7 @@ in {
             "zen.tabs.vertical.right-side" = true;
             "zen.welcome-screen.seen" = true;
             "zen.workspaces.continue-where-left-off" = true;
+            "zen.view.experimental-no-window-controls" = true;
           };
         };
       };
