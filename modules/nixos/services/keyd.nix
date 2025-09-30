@@ -62,7 +62,15 @@
               "]" = "]";
               "'" = "'";
               "[" = "[";
-              leftalt = "layer(navigation)";
+
+              "capslock" = "backspace";
+
+              # thumb keys
+              leftalt = "overloadt2(special, tab, ${delay})";
+              space = "overloadt2(navigation, space, ${delay})";
+
+              rightalt = "overloadt2(symbol, enter, ${delay})";
+              rightcontrol = "overloadt2(symbol, backspace, ${delay})";
             };
             navigation = {
               #Home row modifiers
@@ -81,6 +89,55 @@
               i = "pageup";
               y = "home";
               o = "end";
+            };
+
+            symbol = {
+              # top row left
+              "q" = "'";
+              "w" = "<";
+              "e" = ">";
+              "r" = "\"";
+              "t" = ".";
+              # top row right
+              "y" = "&";
+              "u" = ";";
+              "i" = "[";
+              "o" = "]";
+              "p" = "%";
+
+              # home row left
+              "a" = "!";
+              "s" = "-";
+              "d" = "+";
+              "f" = "=";
+              "g" = "#";
+
+              # home row right
+              "h" = "|";
+              "j" = ":";
+              "k" = "(";
+              "l" = ")";
+              ";" = "`";
+
+              # bottom row left
+              "102nd" = "^";
+              "z" = "/";
+              "x" = "*";
+              "c" = "\\";
+              "v" = "";
+              "b" = "^";
+              # bottom row right
+              "n" = "~";
+              "m" = "$";
+              "," = "{";
+              "." = "}";
+              "/" = "@";
+            };
+
+            special = {
+              j = "G-w";
+              k = "G-a";
+              l = "G-o";
             };
           };
         };
