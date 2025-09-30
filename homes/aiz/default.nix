@@ -2,6 +2,7 @@
   pkgs,
   config,
   self,
+  lib,
   ...
 }: {
   imports = [
@@ -105,7 +106,7 @@
         ghostty.enable = true;
         hyprlock = {
           enable = true;
-          displayName = "Aiz";
+          displayName = lib.mkDefault "Aiz";
         };
       };
 
