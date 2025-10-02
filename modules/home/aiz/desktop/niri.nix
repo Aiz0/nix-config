@@ -146,8 +146,8 @@
 
         "Mod+Page_Down".action = move-column-to-workspace-down;
         "Mod+Page_Up".action = move-column-to-workspace-up;
-        "Mod+Ctrl+L".action = move-column-to-workspace-down;
-        "Mod+Ctrl+U".action = move-column-to-workspace-up;
+        "Mod+Shift+L".action = move-column-to-workspace-down;
+        "Mod+Shift+U".action = move-column-to-workspace-up;
 
         "Mod+Alt+Page_Down".action = move-workspace-down;
         "Mod+Alt+Page_Up".action = move-workspace-up;
