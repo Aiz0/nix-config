@@ -118,6 +118,7 @@
           enable = true;
           uosc.enable = true;
         };
+        gpg.enable = true;
         hypridle = {
           enable = true;
           autoSuspend = false; # turned off for now due to problems

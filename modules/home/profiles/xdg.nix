@@ -22,7 +22,6 @@
     # then that should be set where they are enabled
 
     home.sessionVariables = {
-      GNUPGHOME = "${config.xdg.dataHome}/gnupg";
       HISTFILE = "${config.xdg.stateHome}/bash/history";
       NPM_CONFIG_CACHE = "${config.xdg.cacheHome}/npm";
       NPM_CONFIG_INIT_MODULE = "${config.xdg.configHome}/npm/config/npm-init.js";
