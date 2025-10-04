@@ -9,6 +9,17 @@
     programs.zed-editor = {
       enable = true;
 
+      extensions = [
+        "nix"
+        "astro"
+        "deno"
+        "emmet"
+        "toml"
+        "zed-fish"
+        "nu"
+        "lua"
+      ];
+
       userSettings = {
         auto_indent_on_paste = true;
         auto_update = false;
