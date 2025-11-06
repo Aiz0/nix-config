@@ -78,13 +78,13 @@ in {
 
           search = {
             inherit engines;
-            default = "ddg";
+            default = "Kagi";
             force = true;
 
             order = [
+              "Kagi"
               "ddg"
               "Home Manager Options"
-              "Kagi"
               "NixOS Wiki"
               "nixpkgs"
               "Noogle"
