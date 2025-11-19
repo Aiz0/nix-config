@@ -16,7 +16,7 @@
 
       default = {
         bazarr = {
-          hostName = "sakurasou";
+          hostName = "miyabi";
           port = 6767;
           vHost = "bazarr.${config.mySnippets.tailnet.name}";
         };
@@ -28,13 +28,13 @@
         # };
 
         jellyfin = {
-          hostName = "sakurasou";
+          hostName = "miyabi";
           port = 8096;
           vHost = "jellyfin.${config.mySnippets.tailnet.name}";
         };
 
         kavita = {
-          hostName = "sakurasou";
+          hostName = "miyabi";
           port = 5000;
           vHost = "kavita.${config.mySnippets.tailnet.name}";
         };
@@ -46,13 +46,13 @@
         # };
 
         lanraragi = {
-          hostName = "sakurasou";
+          hostName = "miyabi";
           port = 3000;
           vHost = "lanraragi.${config.mySnippets.tailnet.name}";
         };
 
         lidarr = {
-          hostName = "sakurasou";
+          hostName = "miyabi";
           port = 8686;
           vHost = "lidarr.${config.mySnippets.tailnet.name}";
         };
@@ -64,7 +64,7 @@
         # };
 
         # ollama = {
-        #   hostName = "sakurasou";
+        #   hostName = "miyabi";
         #   port = 11434;
         #   vHost = "ollama.${config.mySnippets.tailnet.name}";
         # };
@@ -76,31 +76,31 @@
         # };
 
         prowlarr = {
-          hostName = "sakurasou";
+          hostName = "miyabi";
           port = 9696;
           vHost = "prowlarr.${config.mySnippets.tailnet.name}";
         };
 
         qbittorrent = {
-          hostName = "sakurasou";
+          hostName = "miyabi";
           port = 8080;
           vHost = "qbittorrent.${config.mySnippets.tailnet.name}";
         };
 
         radarr = {
-          hostName = "sakurasou";
+          hostName = "miyabi";
           port = 7878;
           vHost = "radarr.${config.mySnippets.tailnet.name}";
         };
-        
+
         shoko = {
-          hostName = "sakurasou";
+          hostName = "miyabi";
           port = 8111;
           vHost = "shoko.${config.mySnippets.tailnet.name}";
         };
 
         sonarr = {
-          hostName = "sakurasou";
+          hostName = "miyabi";
           port = 8989;
           vHost = "sonarr.${config.mySnippets.tailnet.name}";
         };

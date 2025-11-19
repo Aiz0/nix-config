@@ -1,5 +1,4 @@
 {
-  config,
   self,
   pkgs,
   ...
@@ -7,7 +6,6 @@
   imports = [
     ./home.nix
     ./secrets.nix
-    ./services.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
   ];
   networking.hostName = "sakurasou";
@@ -40,7 +38,6 @@
     };
     profiles = {
       base.enable = true;
-      arr.enable = true;
       btrfs.enable = true;
       swap = {
         enable = true;
@@ -60,20 +57,6 @@
 
     services = {
       noctalia.enable = true;
-      caddy.enable = true;
-      recyclarr.enable = true;
-      qbittorrent-hotio = {
-        enable = true;
-        inherit (config.mySnippets.tailnet.networkMap.qbittorrent) port;
-        group = "media";
-      };
-      lanraragi = {
-        enable = true;
-        supplementaryGroups = ["media"];
-      };
-      jellyfin.enable = true;
-      kavita.enable = true;
-      shoko.enable = true;
       tailscale = {
         enable = true;
         operator = "aiz";
