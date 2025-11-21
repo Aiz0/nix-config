@@ -67,7 +67,6 @@
 
   users.groups.media = {
     gid = 900;
-    members = ["radarr" "sonarr" "lidarr" "shoko"];
   };
 
   myUsers.aiz.enable = true;
