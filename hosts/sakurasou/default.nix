@@ -53,6 +53,7 @@
         steamHome.enable = true;
         SGDBoop.enable = true;
       };
+      podman.enable = true;
     };
 
     services = {
