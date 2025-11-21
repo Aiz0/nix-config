@@ -15,7 +15,6 @@
     };
   };
 
-
   nixpkgs.config.nvidia.acceptLicense = true;
   myHardware = {
     amd = {
@@ -56,7 +55,10 @@
       jellyfin.enable = true;
       kavita.enable = true;
       shoko.enable = true;
-      tailscale.enable = true;
+      tailscale = {
+        enable = true;
+        operator = "aiz";
+      };
     };
   };
 
@@ -64,6 +66,8 @@
     gid = 900;
     members = ["radarr" "sonarr" "lidarr" "shoko"];
   };
+
+  myUsers.aiz.enable = true;
 
   system.stateVersion = "24.11";
 }
