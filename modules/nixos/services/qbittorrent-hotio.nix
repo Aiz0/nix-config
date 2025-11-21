@@ -10,7 +10,6 @@
   GID = 888;
 in {
   options.myNixOS.services.qbittorrent-hotio = {
-    config.myNixOS.programs.podman.enable = true;
 
     enable = lib.mkEnableOption "qBittorrent hotio container";
 
@@ -45,6 +44,7 @@ in {
     };
   };
   config = lib.mkIf cfg.enable {
+    myNixOS.programs.podman.enable = true;
 
     # Containers
     virtualisation.oci-containers.containers."qbittorrent" = {
