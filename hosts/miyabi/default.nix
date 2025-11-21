@@ -16,9 +16,13 @@
   };
 
 
+  nixpkgs.config.nvidia.acceptLicense = true;
   myHardware = {
     amd = {
       cpu.enable = true;
+    };
+    nvidia = {
+      gpu.enable = true;
     };
     profiles = {
       base.enable = true;

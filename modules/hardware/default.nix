@@ -3,5 +3,6 @@
     ./amd
     ./profiles
     ./framework
+    ./nvidia
   ];
 }
