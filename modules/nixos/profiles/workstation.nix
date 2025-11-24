@@ -81,7 +81,6 @@
       };
 
       bpftune.enable = true;
-      preload.enable = true;
 
       udev.extraRules = ''
         ## SD cards use BFQ scheduler.
