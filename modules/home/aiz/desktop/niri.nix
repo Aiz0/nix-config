@@ -84,6 +84,7 @@
           click-method = "clickfinger";
         };
       };
+      prefer-no-csd = true;
       layout = {
         gaps = 8;
         focus-ring = {
