@@ -42,6 +42,7 @@
 
     services = {
       caddy.enable = true;
+      flexget.enable = true;
       recyclarr.enable = true;
       qbittorrent-hotio = {
         enable = true;
@@ -64,7 +65,7 @@
 
   users.groups.media = {
     gid = 900;
-    members = ["radarr" "sonarr" "lidarr" "shoko"];
+    members = ["radarr" "sonarr" "lidarr" "shoko" "flexget"];
   };
 
   myUsers.aiz.enable = true;

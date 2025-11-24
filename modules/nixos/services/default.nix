@@ -2,6 +2,7 @@
   imports = [
     ./caddy.nix
     ./jellyfin.nix
+    ./flexget.nix
     ./kavita.nix
     ./keyd.nix
     ./lanraragi.nix
