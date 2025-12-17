@@ -48,10 +48,7 @@
       inputs.quickshell.follows = "quickshell"; # Use same quickshell version
     };
 
-    vicinae = {
-      url = "github:vicinaehq/vicinae";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    vicinae.url = "github:vicinaehq/vicinae";
 
     mpv-uosc = {
       url = "https://github.com/tomasklaen/uosc/releases/latest/download/uosc.zip";
