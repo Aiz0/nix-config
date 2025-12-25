@@ -11,6 +11,7 @@
     ./qbittorrent-hotio.nix
     ./recyclarr.nix
     ./shoko.nix
+    ./suwayomi.nix
     ./tailscale.nix
   ];
 }

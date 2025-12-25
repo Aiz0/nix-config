@@ -60,6 +60,11 @@
       jellyfin.enable = true;
       kavita.enable = true;
       shoko.enable = true;
+      suwayomi = {
+        enable = true;
+        group = "media";
+        downloadsDir = "/mnt/data/media/manga";
+      };
       tailscale = {
         enable = true;
         operator = "aiz";
