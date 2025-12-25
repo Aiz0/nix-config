@@ -46,7 +46,9 @@
               ++ lib.optional osConfig.myHardware.profiles.laptop.enable {id = "Battery";}
               ++ [
                 {id = "Volume";}
-                {id = "Brightness";}
+              ]
+              ++ lib.optional osConfig.myHardware.profiles.laptop.enable {id = "Brightness";}
+              ++ [
                 {
                   id = "Clock";
                   formatVertical = "HH mm - ddd MMM d";
@@ -72,6 +74,7 @@
 
         ui = {
           fontFixed = "monospace";
+          panelBackgroundOpacity = 1.0;
         };
       };
     };
