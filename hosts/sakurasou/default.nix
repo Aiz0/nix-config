@@ -62,6 +62,10 @@
         enable = true;
         operator = "aiz";
       };
+      qbittorrent-hotio = {
+    enable = true;
+      group="media"; };
+
     };
   };
 
