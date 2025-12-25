@@ -1,3 +1,3 @@
-{...}:{
-  imports = [./gpu.nix ];
+{...}: {
+  imports = [./gpu.nix];
 }

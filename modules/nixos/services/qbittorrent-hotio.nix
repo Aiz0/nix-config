@@ -10,7 +10,6 @@
   GID = 888;
 in {
   options.myNixOS.services.qbittorrent-hotio = {
-
     enable = lib.mkEnableOption "qBittorrent hotio container";
 
     dataDir = lib.mkOption {

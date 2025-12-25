@@ -1,4 +1,8 @@
-{config,self, ...}: {
+{
+  config,
+  self,
+  ...
+}: {
   imports = [
     ./secrets.nix
     ./services.nix

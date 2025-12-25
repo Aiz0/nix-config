@@ -95,7 +95,7 @@
       home = "${config.myNixOS.services.flexget.dataDir}/flexget";
       createHome = true;
       isSystemUser = true;
-      group = config.myNixOS.services.flexget.group;
+      inherit (config.myNixOS.services.flexget) group;
     };
   };
 }
