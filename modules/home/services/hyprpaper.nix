@@ -10,8 +10,12 @@
     services.hyprpaper = {
       enable = true;
       settings = {
-        preload = builtins.map (monitor: monitor.wallpaper.path) config.myHome.hardware.monitors;
-        wallpaper = builtins.map (monitor: "${monitor.plug},${monitor.wallpaper.path}") config.myHome.hardware.monitors;
+        wallpaper =
+          builtins.map (monitor: {
+            monitor = monitor.plug;
+            path = monitor.wallpaper.path;
+          })
+          config.myHome.hardware.monitors;
       };
     };
   };
