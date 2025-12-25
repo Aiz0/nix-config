@@ -75,7 +75,7 @@ in {
           recursive = true;
         };
         jellyfin-mpv-shim-uosc-fonts = {
-          source = "${self.inputs.mpv-uosc}/scripts/fonts";
+          source = "${self.inputs.mpv-uosc}/fonts";
           target = "jellyfin-mpv-shim/fonts";
           recursive = true;
         };
