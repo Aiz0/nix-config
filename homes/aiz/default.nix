@@ -118,6 +118,7 @@
         jellyfin-mpv-shim = {
           enable = true;
           uosc.enable = true;
+          extraScripts.enable = true;
         };
         gpg.enable = true;
         hypridle = {

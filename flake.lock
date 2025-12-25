@@ -186,6 +186,22 @@
         "type": "gitlab"
       }
     },
+    "mpv-scripts": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762019928,
+        "narHash": "sha256-v3TGsCzSg+a1vrOgI5NbTVf8Bh/iMRRgwMy194sNq1Y=",
+        "owner": "occivink",
+        "repo": "mpv-scripts",
+        "rev": "01f3e99558915bb715b614d7f4b052230360eb21",
+        "type": "github"
+      },
+      "original": {
+        "owner": "occivink",
+        "repo": "mpv-scripts",
+        "type": "github"
+      }
+    },
     "mpv-uosc": {
       "flake": false,
       "locked": {
@@ -382,6 +398,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager_2",
         "mikuboot": "mikuboot",
+        "mpv-scripts": "mpv-scripts",
         "mpv-uosc": "mpv-uosc",
         "niri": "niri",
         "nixpkgs": "nixpkgs",
