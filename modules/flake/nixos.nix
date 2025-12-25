@@ -33,6 +33,7 @@
               inputs.mikuboot.nixosModules.default
               inputs.disko.nixosModules.disko
               inputs.home-manager.nixosModules.home-manager
+              inputs.nur.modules.nixos.default
               modules.hardware
               modules.nixos
               modules.snippets
