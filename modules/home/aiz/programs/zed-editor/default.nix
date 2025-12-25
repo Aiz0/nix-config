@@ -1,11 +1,16 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   options.myHome.aiz.programs.zed-editor.enable = lib.mkEnableOption "zed editor";
 
   config = lib.mkIf config.myHome.aiz.programs.zed-editor.enable {
+    home.packages = [
+      pkgs.nil
+    ];
+
     programs.zed-editor = {
       enable = true;
 
@@ -34,6 +39,20 @@
         };
 
         use_on_type_format = true;
+        languages = {
+          Nix = {
+            language_servers = [
+              "nil"
+              "!nixd"
+            ];
+            formatter = {
+              external = {
+                command = "alejandra";
+                arguments = ["--quiet" "--"];
+              };
+            };
+          };
+        };
       };
     };
   };
