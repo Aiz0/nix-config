@@ -30,8 +30,6 @@
     };
   };
 
-  environment.systemPackages = [pkgs.kdePackages.kdenlive];
-
   myNixOS = {
     desktop = {
       niri.enable = true;
