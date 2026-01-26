@@ -13,7 +13,7 @@
         wallpaper =
           builtins.map (monitor: {
             monitor = monitor.plug;
-            path = monitor.wallpaper.path;
+            inherit (monitor.wallpaper) path;
           })
           config.myHome.hardware.monitors;
       };

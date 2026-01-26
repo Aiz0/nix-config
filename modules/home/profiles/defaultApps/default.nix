@@ -48,7 +48,10 @@ in {
 
       exec = lib.mkOption {
         type = lib.types.str;
-        default = lib.getExe cfg.fileManager.package;
+        default =
+          if cfg.fileManager.package == pkgs.kdePackages.dolphin
+          then lib.getExe' cfg.fileManager.package "dolphin"
+          else lib.getExe cfg.fileManager.package;
         description = "The executable path for the default file manager.";
       };
     };

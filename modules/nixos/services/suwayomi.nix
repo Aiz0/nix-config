@@ -30,7 +30,7 @@
       enable = true;
       openFirewall = true;
       dataDir = "${config.myNixOS.services.suwayomi.dataDir}/suwayomi";
-      group = config.myNixOS.services.suwayomi.group;
+      inherit (config.myNixOS.services.suwayomi) group;
       settings.server = {
         port = 8585; # default is 8080
         extensionRepos = [
