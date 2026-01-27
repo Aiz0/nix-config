@@ -20,6 +20,7 @@
         enable = true;
         enableGraphical = true;
       };
+      opentabletdriver.enable = true;
     };
 
     services = {
