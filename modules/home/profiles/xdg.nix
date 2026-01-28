@@ -27,6 +27,7 @@
       NPM_CONFIG_INIT_MODULE = "${config.xdg.configHome}/npm/config/npm-init.js";
       NPM_CONFIG_TMP = "$XDG_RUNTIME_DIR/npm";
       STARSHIP_CACHE = config.xdg.cacheHome + "/starship";
+      _JAVA_OPTIONS= "-Djava.util.prefs.userRoot=${config.xdg.configHome}/java";
     };
   };
 }
