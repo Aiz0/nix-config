@@ -7,6 +7,7 @@
     ./keyd.nix
     ./lanraragi.nix
     ./noctalia.nix
+    ./prometheusNode.nix
     ./qbittorrent.nix
     ./qbittorrent-hotio.nix
     ./recyclarr.nix

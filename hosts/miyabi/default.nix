@@ -4,6 +4,8 @@
   ...
 }: {
   imports = [
+    ./grafana.nix
+    ./prometheus.nix
     ./secrets.nix
     ./services.nix
     self.diskoConfigurations.luks-btrfs-subvolumes
@@ -59,6 +61,9 @@
       };
       jellyfin.enable = true;
       kavita.enable = true;
+
+      prometheusNode.enable = true;
+
       shoko.enable = true;
       suwayomi = {
         enable = true;

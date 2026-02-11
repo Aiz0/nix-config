@@ -60,6 +60,7 @@
         enable = true;
         group = "media";
       };
+      prometheusNode.enable = true;
     };
   };
 

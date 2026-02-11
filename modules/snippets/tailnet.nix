@@ -39,11 +39,11 @@
           vHost = "kavita.${config.mySnippets.tailnet.name}";
         };
 
-        # grafana = {
-        #   hostName = "mauville";
-        #   port = 3010;
-        #   vHost = "grafana.${config.mySnippets.tailnet.name}";
-        # };
+        grafana = {
+          hostName = "miyabi";
+          port = 3010;
+          vHost = "grafana.${config.mySnippets.tailnet.name}";
+        };
 
         lanraragi = {
           hostName = "miyabi";
@@ -57,23 +57,17 @@
           vHost = "lidarr.${config.mySnippets.tailnet.name}";
         };
 
-        # loki = {
-        #   hostName = "mauville";
-        #   port = 3030;
-        #   vHost = "loki.${config.mySnippets.tailnet.name}";
-        # };
+        loki = {
+          hostName = "miyabi";
+          port = 3030;
+          vHost = "loki.${config.mySnippets.tailnet.name}";
+        };
 
-        # ollama = {
-        #   hostName = "miyabi";
-        #   port = 11434;
-        #   vHost = "ollama.${config.mySnippets.tailnet.name}";
-        # };
-
-        # prometheus = {
-        #   hostName = "mauville";
-        #   port = 3020;
-        #   vHost = "prometheus.${config.mySnippets.tailnet.name}";
-        # };
+        prometheus = {
+          hostName = "miyabi";
+          port = 3020;
+          vHost = "prometheus.${config.mySnippets.tailnet.name}";
+        };
 
         prowlarr = {
           hostName = "miyabi";
