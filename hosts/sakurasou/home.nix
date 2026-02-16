@@ -1,6 +1,11 @@
-{self, ...}: {
+{
+  self,
+  pkgs,
+  ...
+}: {
   home-manager.users.aiz = {
     imports = [self.homeConfigurations.aiz];
+    config.home.packages = [pkgs.aseprite];
     config.myHome.hardware.monitors = [
       {
         name = {
