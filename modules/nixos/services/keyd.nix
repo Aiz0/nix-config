@@ -32,18 +32,18 @@
               "o" = "y";
               "p" = ";";
               # home row left
-              "a" = "overloadt2(alt, a, ${delay})";
-              "s" = "overloadt2(control, r, ${delay})";
-              "d" = "overloadt2(shift, s, ${delay})";
-              "f" = "overloadt2(meta, t, ${delay})";
+              "a" = "overloadi(a, overloadt2(alt, a, ${delay}), 150)";
+              "s" = "overloadi(r, overloadt2(control, r, ${delay}), 150)";
+              "d" = "overloadi(s, overloadt2(shift, s, ${delay}), 150)";
+              "f" = "overloadi(t, overloadt2(meta, t, ${delay}), 150)";
               "g" = "g";
 
               # home row right
               "h" = "m";
-              "j" = "overloadt2(meta, n, ${delay})";
-              "k" = "overloadt2(shift, e, ${delay})";
-              "l" = "overloadt2(control, i, ${delay})";
-              ";" = "overloadt2(alt, o, ${delay})";
+              "j" = "overloadi(n, overloadt2(meta, n, ${delay}), 150)";
+              "k" = "overloadi(e, overloadt2(shift, e, ${delay}), 150)";
+              "l" = "overloadi(i, overloadt2(control, i, ${delay}), 150)";
+              ";" = "overloadi(o, overloadt2(alt, o, ${delay}), 150)";
 
               # bottom row left
               "102nd" = "z"; # < character
