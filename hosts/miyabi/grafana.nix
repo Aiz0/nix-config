@@ -4,6 +4,7 @@
       enable = true;
 
       settings = {
+        security.secret_key = "$__file{${config.age.secrets.grafanaSecretKey.path}}";
         server = {
           http_addr = "0.0.0.0";
           http_port = config.mySnippets.tailnet.networkMap.grafana.port;
@@ -180,6 +181,10 @@
             {
               targets = ["sakurasou:3021"];
               labels.instance = "sakurasou";
+            }
+            {
+              targets = ["holo:3021"];
+              labels.instance = "holo";
             }
           ];
         }
