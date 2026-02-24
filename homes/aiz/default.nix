@@ -33,7 +33,7 @@
         protonvpn-gui
         spotify
         freetube
-        nur.repos.lonerOrz.helium
+        nur.repos.Ev357.helium
 
         # Dev
         nodejs
