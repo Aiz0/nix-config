@@ -2,6 +2,7 @@
   config,
   lib,
   self,
+  pkgs,
   ...
 }: {
   imports = [
@@ -12,6 +13,17 @@
   config = lib.mkIf config.myHome.services.vicinae.enable {
     services.vicinae = {
       enable = true;
+      settings = {
+        close_on_focus_loss = true;
+      };
+      extensions = with self.inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
+        bluetooth
+        fuzzy-files
+        it-tools
+        niri
+        nix
+        process-manager
+      ];
       systemd = {
         enable = true;
         autoStart = true; # default: false

@@ -43,6 +43,11 @@
     };
 
     vicinae.url = "github:vicinaehq/vicinae";
+    vicinae-extensions = {
+      url = "github:vicinaehq/extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
 
     mpv-uosc = {
       url = "https://github.com/tomasklaen/uosc/releases/latest/download/uosc.zip";
