@@ -31,8 +31,8 @@
             inherit (monitor.wallpaper) path;
             color = "rgba(25, 20, 20, 1.0)";
 
-            blur_passes = 2; # 0 disables blurring
-            blur_size = 7;
+            blur_passes = 4; # 0 disables blurring
+            blur_size = 2;
             noise = 0.0117;
             contrast = 0.8916;
             brightness = 0.8172;
