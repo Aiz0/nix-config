@@ -15,6 +15,8 @@
       enable = true;
       settings = {
         close_on_focus_loss = true;
+        # Display above fullscreen windows in niri
+        launcher_window.layer_shell.layer = "overlay";
       };
       extensions = with self.inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
         bluetooth
