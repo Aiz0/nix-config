@@ -125,7 +125,12 @@
 
       binds = with config.lib.niri.actions; {
         "MOD+Return".action = spawn config.myHome.profiles.defaultApps.terminal.exec;
+
+        #Vicinae launcher
         "MOD+Space".action = spawn "vicinae" "toggle";
+        # open window switcher
+        "MOD+Shift+Space".action = spawn "vicinae" "vicinae://extensions/vicinae/wm/switch-windows";
+
         "MOD+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec;
         "MOD+Shift+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec "--private-window";
         "MOD+Z".action = spawn config.myHome.profiles.defaultApps.editor.exec;
