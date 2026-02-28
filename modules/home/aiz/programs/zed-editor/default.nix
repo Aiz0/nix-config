@@ -53,7 +53,18 @@
             };
           };
         };
+        project_panel.dock = "right";
       };
+
+      userKeymaps = [
+        {
+          context = "Workspace";
+          bindings = {
+            ctrl-shift-e = "workspace::ToggleRightDock";
+            ctrl-alt-shift-e = "workspace::ToggleRightDock";
+          };
+        }
+      ];
     };
   };
 }
