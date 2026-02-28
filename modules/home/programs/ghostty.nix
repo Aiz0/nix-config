@@ -12,6 +12,7 @@
       settings = {
         gtk-single-instance = lib.mkIf pkgs.stdenv.isLinux true;
         quit-after-last-window-closed = lib.mkIf pkgs.stdenv.isLinux false;
+        window-inherit-working-directory = false;
       };
     };
   };
