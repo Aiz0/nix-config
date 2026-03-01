@@ -6,6 +6,7 @@
     ./kavita.nix
     ./keyd.nix
     ./lanraragi.nix
+    ./multiScrobbler.nix
     ./noctalia.nix
     ./prometheusNode.nix
     ./qbittorrent.nix

@@ -59,6 +59,7 @@
         enable = true;
         supplementaryGroups = ["media"];
       };
+      multiScrobbler.enable = true;
       jellyfin.enable = true;
       kavita.enable = true;
 
