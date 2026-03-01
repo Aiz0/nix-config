@@ -37,6 +37,14 @@
         '';
       };
 
+      "${config.mySnippets.tailnet.networkMap.multiScrobbler.vHost}" = {
+        extraConfig = ''
+          bind tailscale/multiscrobbler
+          encode zstd gzip
+          reverse_proxy ${config.mySnippets.tailnet.networkMap.multiScrobbler.hostName}:${toString config.mySnippets.tailnet.networkMap.multiScrobbler.port}
+        '';
+      };
+
       "${config.mySnippets.tailnet.networkMap.lidarr.vHost}" = {
         extraConfig = ''
           bind tailscale/lidarr

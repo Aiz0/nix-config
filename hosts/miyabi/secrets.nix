@@ -12,5 +12,6 @@
       file = "${self.inputs.secrets}/grafana/secretKey.age";
       owner = "grafana";
     };
+    multiScrobblerEnv.file = "${self.inputs.secrets}/multiScrobbler/environment.age";
   };
 }

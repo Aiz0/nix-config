@@ -51,6 +51,12 @@
           vHost = "lanraragi.${config.mySnippets.tailnet.name}";
         };
 
+        multiScrobbler = {
+          hostName = "miyabi";
+          port = 9078;
+          vHost = "multiscrobbler.${config.mySnippets.tailnet.name}";
+        };
+
         lidarr = {
           hostName = "miyabi";
           port = 8686;

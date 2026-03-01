@@ -31,6 +31,12 @@ in {
       default = "multi-scrobbler";
       description = "Group under which multi-scrobbler runs.";
     };
+
+    environmentFile = lib.mkOption {
+      description = "Path to the environment file";
+      default = config.age.secrets.multiScrobblerEnv.path or null;
+      type = lib.types.nullOr lib.types.path;
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -48,6 +54,9 @@ in {
         "PUID" = "1001";
         "TZ" = config.time.timeZone;
       };
+      environmentFiles = [
+        cfg.environmentFile
+      ];
     };
     systemd.services."podman-multi-scrobbler" = {
       serviceConfig = {
