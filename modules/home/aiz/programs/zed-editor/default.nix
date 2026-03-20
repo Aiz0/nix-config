@@ -54,6 +54,16 @@
           };
         };
         project_panel.dock = "right";
+
+        lsp = {
+          nil = {
+            nix = {
+              flake = {
+                autoArchive = true;
+              };
+            };
+          };
+        };
       };
 
       userKeymaps = [
