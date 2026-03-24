@@ -57,9 +57,12 @@
 
         lsp = {
           nil = {
-            nix = {
-              flake = {
-                autoArchive = true;
+            settings = {
+              nix = {
+                flake = {
+                  autoArchive = true;
+                  autoEvalInputs = true;
+                };
               };
             };
           };
