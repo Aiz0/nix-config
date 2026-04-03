@@ -19,7 +19,7 @@
         launcher_window.layer_shell.layer = "overlay";
       };
       extensions = with self.inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
-        bluetooth
+        #bluetooth # currently broken
         fuzzy-files
         it-tools
         niri

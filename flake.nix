@@ -67,6 +67,11 @@
       url = "github:aiz0/secrets";
       flake = false;
     };
+
+    #oculante fix for now
+    oculante-fix = {
+      url = "github:AdrielVelazquez/nixpkgs";
+    };
   };
 
   nixConfig = {

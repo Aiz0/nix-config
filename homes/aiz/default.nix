@@ -59,7 +59,6 @@
         prismlauncher # minecraft-launcher
         osu-lazer-bin
         bottles
-        lutris
         protonplus
 
         # fonts
@@ -89,11 +88,10 @@
         emoji = ["Noto Color Emoji"];
       };
     };
-    
+
     programs = {
       lutris = {
         enable = true;
-        
       };
     };
 

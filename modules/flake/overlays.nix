@@ -1,6 +1,7 @@
-_: {
+{self, ...}: {
   flake.overlays = {
-    default = _final: _prev: {
+    default = _final: prev: {
+      inherit (self.inputs.oculante-fix.legacyPackages.${prev.system}) oculante;
     };
   };
 }
