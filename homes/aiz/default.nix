@@ -60,6 +60,7 @@
         osu-lazer-bin
         bottles
         protonplus
+        r2modman
 
         # fonts
         source-code-pro
