@@ -39,6 +39,12 @@
           vHost = "kavita.${config.mySnippets.tailnet.name}";
         };
 
+        komf = {
+          hostName = "miyabi";
+          port = 8085;
+          vHost = "komf.${config.mySnippets.tailnet.name}";
+        };
+
         grafana = {
           hostName = "miyabi";
           port = 3010;

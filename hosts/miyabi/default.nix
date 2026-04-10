@@ -62,6 +62,7 @@
       multiScrobbler.enable = true;
       jellyfin.enable = true;
       kavita.enable = true;
+      komf.enable = true;
 
       prometheusNode.enable = true;
 

@@ -8,6 +8,7 @@
     radarrApiKey.file = "${self.inputs.secrets}/arr/radarrApiKey.age";
     sonarrApiKey.file = "${self.inputs.secrets}/arr/sonarrApiKey.age";
     kavitaTokenKey.file = "${self.inputs.secrets}/kavita/tokenKey.age";
+    komfEnv.file = "${self.inputs.secrets}/komf/environment.age";
     grafanaSecretKey = {
       file = "${self.inputs.secrets}/grafana/secretKey.age";
       owner = "grafana";

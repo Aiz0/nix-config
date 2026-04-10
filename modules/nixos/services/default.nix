@@ -5,6 +5,7 @@
     ./flexget.nix
     ./kavita.nix
     ./keyd.nix
+    ./komf.nix
     ./lanraragi.nix
     ./multiScrobbler.nix
     ./noctalia.nix

@@ -23,9 +23,15 @@
         extraConfig = ''
           bind tailscale/kavita
           encode zstd gzip
-          reverse_proxy ${config.mySnippets.tailnet.networkMap.kavita.hostName}:${toString config.mySnippets.tailnet.networkMap.kavita.port} {
-            flush_interval -1
-          }
+          reverse_proxy ${config.mySnippets.tailnet.networkMap.kavita.hostName}:${toString config.mySnippets.tailnet.networkMap.kavita.port}
+        '';
+      };
+
+      "${config.mySnippets.tailnet.networkMap.komf.vHost}" = {
+        extraConfig = ''
+          bind tailscale/komf
+          encode zstd gzip
+          reverse_proxy ${config.mySnippets.tailnet.networkMap.komf.hostName}:${toString config.mySnippets.tailnet.networkMap.komf.port}
         '';
       };
 
