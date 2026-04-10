@@ -28,6 +28,7 @@
       NPM_CONFIG_TMP = "$XDG_RUNTIME_DIR/npm";
       STARSHIP_CACHE = config.xdg.cacheHome + "/starship";
       _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${config.xdg.configHome}/java";
+      CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
     };
   };
 }
