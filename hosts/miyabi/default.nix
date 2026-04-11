@@ -67,6 +67,10 @@
       prometheusNode.enable = true;
 
       shoko.enable = true;
+      slskd = {
+        enable = true;
+        group = "media";
+      };
       tailscale = {
         enable = true;
         operator = "aiz";

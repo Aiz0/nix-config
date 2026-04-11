@@ -7,6 +7,7 @@
     prowlarrApiKey.file = "${self.inputs.secrets}/arr/prowlarrApiKey.age";
     radarrApiKey.file = "${self.inputs.secrets}/arr/radarrApiKey.age";
     sonarrApiKey.file = "${self.inputs.secrets}/arr/sonarrApiKey.age";
+    slskdEnv.file = "${self.inputs.secrets}/slskd/environment.age";
     kavitaTokenKey.file = "${self.inputs.secrets}/kavita/tokenKey.age";
     komfEnv.file = "${self.inputs.secrets}/komf/environment.age";
     grafanaSecretKey = {
