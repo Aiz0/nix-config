@@ -122,6 +122,22 @@
           reverse_proxy ${config.mySnippets.tailnet.networkMap.prometheus.hostName}:${toString config.mySnippets.tailnet.networkMap.prometheus.port}
         '';
       };
+
+      "${config.mySnippets.tailnet.networkMap.slskd.vHost}" = {
+        extraConfig = ''
+          bind tailscale/slskd
+          encode zstd gzip
+          reverse_proxy ${config.mySnippets.tailnet.networkMap.slskd.hostName}:${toString config.mySnippets.tailnet.networkMap.slskd.port}
+        '';
+      };
+
+      "${config.mySnippets.tailnet.networkMap.navidrome.vHost}" = {
+        extraConfig = ''
+          bind tailscale/navidrome
+          encode zstd gzip
+          reverse_proxy ${config.mySnippets.tailnet.networkMap.navidrome.hostName}:${toString config.mySnippets.tailnet.networkMap.navidrome.port}
+        '';
+      };
     };
   };
 }

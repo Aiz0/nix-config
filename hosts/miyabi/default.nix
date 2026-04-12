@@ -60,6 +60,7 @@
         supplementaryGroups = ["media"];
       };
       multiScrobbler.enable = true;
+      navidrome.enable = true;
       jellyfin.enable = true;
       kavita.enable = true;
       komf.enable = true;

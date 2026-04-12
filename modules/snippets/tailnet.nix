@@ -62,6 +62,12 @@
           port = 9078;
           vHost = "multiscrobbler.${config.mySnippets.tailnet.name}";
         };
+        
+        navidrome = {
+          hostName = "miyabi";
+          port = 4533;
+          vHost = "navidrome.${config.mySnippets.tailnet.name}";
+        };
 
         lidarr = {
           hostName = "miyabi";
@@ -109,6 +115,12 @@
           hostName = "miyabi";
           port = 8989;
           vHost = "sonarr.${config.mySnippets.tailnet.name}";
+        };
+
+        slskd = {
+          hostName = "miyabi";
+          port = 5030;
+          vHost = "slskd.${config.mySnippets.tailnet.name}";
         };
 
         # uptime-kuma = {

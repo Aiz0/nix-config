@@ -8,6 +8,7 @@
     ./komf.nix
     ./lanraragi.nix
     ./multiScrobbler.nix
+    ./navidrome.nix
     ./noctalia.nix
     ./prometheusNode.nix
     ./qbittorrent.nix
