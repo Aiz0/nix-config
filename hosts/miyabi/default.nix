@@ -72,6 +72,7 @@
         enable = true;
         group = "media";
       };
+      soularr.enable = true;
       tailscale = {
         enable = true;
         operator = "aiz";
@@ -81,7 +82,7 @@
 
   users.groups.media = {
     gid = 900;
-    members = ["radarr" "sonarr" "lidarr" "shoko" "flexget"];
+    members = ["radarr" "sonarr" "lidarr" "shoko" "flexget" "slskd"];
   };
 
   myUsers.aiz.enable = true;

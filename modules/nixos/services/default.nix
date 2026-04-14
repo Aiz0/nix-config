@@ -16,6 +16,7 @@
     ./recyclarr.nix
     ./shoko.nix
     ./slskd.nix
+    ./soularr.nix
     ./tailscale.nix
   ];
 }

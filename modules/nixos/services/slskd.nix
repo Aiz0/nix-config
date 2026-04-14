@@ -50,6 +50,9 @@ in {
           downloads = "${cfg.downloadDir}/completed";
           incomplete = "${cfg.downloadDir}/incomplete";
         };
+        shares.directories = [
+          "[Music]/mnt/data/media/music"
+        ];
       };
       openFirewall = true;
       environmentFile = cfg.environmentFile;
