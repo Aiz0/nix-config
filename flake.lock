@@ -491,21 +491,6 @@
         "type": "github"
       }
     },
-    "oculante-fix": {
-      "locked": {
-        "lastModified": 1776629964,
-        "narHash": "sha256-O1lV94ArN5T1djO/bXC6LrB2vQaQywEXK/39IOy191A=",
-        "owner": "AdrielVelazquez",
-        "repo": "nixpkgs",
-        "rev": "8745a77811bb1a08f159b5bf00e89eb521d2a6a5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "AdrielVelazquez",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -519,7 +504,6 @@
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
         "nur": "nur",
-        "oculante-fix": "oculante-fix",
         "secrets": "secrets",
         "treefmt-nix": "treefmt-nix_2",
         "vicinae": "vicinae",
