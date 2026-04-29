@@ -32,7 +32,6 @@
         enable = true;
         operator = "aiz";
       };
-      noctalia.enable = true;
     };
   };
 

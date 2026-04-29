@@ -9,7 +9,6 @@
     ./lanraragi.nix
     ./multiScrobbler.nix
     ./navidrome.nix
-    ./noctalia.nix
     ./prometheusNode.nix
     ./qbittorrent.nix
     ./qbittorrent-hotio.nix

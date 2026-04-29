@@ -51,7 +51,6 @@
     };
 
     services = {
-      noctalia.enable = true;
       tailscale = {
         enable = true;
         operator = "aiz";

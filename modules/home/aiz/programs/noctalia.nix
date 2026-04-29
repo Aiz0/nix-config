@@ -12,7 +12,7 @@
     self.inputs.noctalia.homeModules.default
   ];
 
-  config = lib.mkIf (config.myHome.aiz.programs.noctalia.enable && osConfig.myNixOS.services.noctalia.enable) {
+  config = lib.mkIf config.myHome.aiz.programs.noctalia.enable {
     home.packages = [self.inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default];
 
     programs.noctalia-shell = {

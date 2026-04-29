@@ -11,6 +11,11 @@
       default = true;
       type = lib.types.bool;
     };
+    shell.noctalia.enable = lib.mkOption {
+      description = "Spawn noctalia shell at startup";
+      default = config.myHome.aiz.programs.noctalia.enable;
+      type = lib.types.bool;
+    };
   };
 
   config = lib.mkIf config.myHome.aiz.desktop.niri.enable {
@@ -122,6 +127,14 @@
       ];
       hotkey-overlay.skip-at-startup = true;
       clipboard.disable-primary = true;
+
+      spawn-at-startup =
+        []
+        ++ lib.optional config.myHome.aiz.desktop.niri.shell.noctalia.enable {
+          command = [
+            "noctalia-shell"
+          ];
+        };
 
       binds = with config.lib.niri.actions; {
         "MOD+Return".action = spawn config.myHome.profiles.defaultApps.terminal.exec;
