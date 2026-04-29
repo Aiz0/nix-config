@@ -1,4 +1,4 @@
-{...}: {
+_: {
   flake.overlays = {
     default = _final: prev: {
       # Lutris and Bottles fails to build right now

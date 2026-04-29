@@ -42,8 +42,8 @@ in {
   config = lib.mkIf cfg.enable {
     services.slskd = {
       enable = true;
-      user = cfg.user;
-      group = cfg.group;
+      inherit (cfg) user;
+      inherit (cfg) group;
       settings = {
         web.port = cfg.port;
         directories = {
@@ -55,7 +55,7 @@ in {
         ];
       };
       openFirewall = true;
-      environmentFile = cfg.environmentFile;
+      inherit (cfg) environmentFile;
     };
 
     systemd = {

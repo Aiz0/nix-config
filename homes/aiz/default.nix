@@ -30,7 +30,7 @@
         kdePackages.ark
         kdePackages.ffmpegthumbs
         seahorse
-        protonvpn-gui
+        proton-vpn
         spotify
         freetube
         nur.repos.Ev357.helium
