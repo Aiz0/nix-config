@@ -67,6 +67,10 @@
       url = "github:aiz0/secrets";
       flake = false;
     };
+
+    kavita-overlay = {
+      url = "github:nevivurn/nixpkgs/update/kavita";
+    };
   };
 
   nixConfig = {

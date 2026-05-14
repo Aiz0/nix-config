@@ -1,4 +1,4 @@
-_: {
+{self, ...}: {
   flake.overlays = {
     default = _final: prev: {
       # Lutris and Bottles fails to build right now
@@ -7,6 +7,7 @@ _: {
       openldap = prev.openldap.overrideAttrs {
         doCheck = !prev.stdenv.hostPlatform.isi686;
       };
+      inherit (self.inputs.kavita-overlay.legacyPackages.${prev.system}) kavita;
     };
   };
 }
