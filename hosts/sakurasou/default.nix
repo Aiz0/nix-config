@@ -30,6 +30,9 @@
     enableVirtualCamera = true;
   };
 
+  services.lact.enable = true;
+  hardware.amdgpu.overdrive.ppfeaturemask = "0xfffd7fff";
+
   myNixOS = {
     desktop = {
       niri.enable = true;
