@@ -25,6 +25,10 @@
       base.enable = true;
     };
   };
+  programs.obs-studio = {
+    enable = true;
+    enableVirtualCamera = true;
+  };
 
   myNixOS = {
     desktop = {
