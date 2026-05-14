@@ -6,7 +6,7 @@
   home-manager.users.aiz = {
     imports = [self.homeConfigurations.aiz];
     config.home = {
-      packages = [pkgs.aseprite pkgs.eden pkgs.olympus];
+      packages = [pkgs.aseprite pkgs.eden pkgs.olympus pkgs.ryubing];
     };
     config.xdg.desktopEntries = {
       "dev.eden_emu.eden" = {
