@@ -72,7 +72,10 @@
         enable = true;
         group = "media";
       };
-      soularr.enable = true;
+      # I haven't gotten permissions to work correctly
+      # and right now it always tries to grab stuff again
+      # even if it exists in the download directory
+      soularr.enable = false;
       tailscale = {
         enable = true;
         operator = "aiz";
