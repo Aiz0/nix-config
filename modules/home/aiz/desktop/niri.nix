@@ -127,6 +127,7 @@
       ];
       hotkey-overlay.skip-at-startup = true;
       clipboard.disable-primary = true;
+      screenshot-path = "${config.xdg.userDirs.pictures}/screenshots/niri %Y-%m-%d %H-%M-%S.png";
 
       spawn-at-startup =
         []

@@ -8,13 +8,38 @@
   config = lib.mkIf config.myHome.profiles.xdg.enable {
     # right now these are also set in nixos profile base
     xdg = let
-      local = "${config.home.homeDirectory}/local";
+      home = config.home.homeDirectory;
+      user = "${home}/user";
+      local = "${home}/local";
     in {
       enable = true;
       configHome = local + "/config";
       cacheHome = local + "/cache";
       stateHome = local + "/state";
       dataHome = local + "/share";
+
+      userDirs = {
+        enable = true;
+        createDirectories = true;
+        setSessionVariables = false;
+
+        # in home dir
+        download = "${home}/downloads";
+
+        # in home/user dir
+        documents = "${user}/documents";
+        music = "${user}/music";
+        pictures = "${user}/pictures";
+        projects = "${user}/projects";
+        # might change name of this later
+        # idk if i wanna set up syncthing here yet
+        publicShare = "${user}/shared";
+        videos = "${user}/videos";
+
+        # disabled
+        templates = home;
+        desktop = home;
+      };
     };
 
     # Fix various applications to respect the XDG basedir spec

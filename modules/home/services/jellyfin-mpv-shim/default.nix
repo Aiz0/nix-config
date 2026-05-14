@@ -58,7 +58,7 @@ in {
         thumbnail_osc_builtin = !cfg.uosc.enable;
         lang = "eng";
         lang_filter_sub = true;
-        screenshot_dir = "~/Pictures/screenshots";
+        screenshot_dir = "${config.xdg.userDirs.pictures}/screenshots";
         # set hostname explicitly so that it updates if hostname ever changes
         player_name = osConfig.networking.hostName;
         # Retry for 1 minute before showing window
