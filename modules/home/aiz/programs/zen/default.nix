@@ -66,7 +66,6 @@ in {
             proton-pass
             consent-o-matic
             ublock-origin
-            web-scrobbler
             refined-github
             libredirect
             indie-wiki-buddy
