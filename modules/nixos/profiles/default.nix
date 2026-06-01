@@ -5,5 +5,6 @@
     ./btrfs.nix
     ./swap.nix
     ./workstation.nix
+    ./yubikey.nix
   ];
 }

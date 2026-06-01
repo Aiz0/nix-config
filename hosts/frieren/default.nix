@@ -17,6 +17,7 @@
       btrfs.enable = true;
       swap.enable = true;
       workstation.enable = true;
+      yubikey.enable = true;
     };
     programs = {
       nix.enable = true;

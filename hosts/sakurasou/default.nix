@@ -45,6 +45,7 @@
         size = 16384;
       };
       workstation.enable = true;
+      yubikey.enable = true;
     };
     programs = {
       nix.enable = true;

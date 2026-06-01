@@ -49,7 +49,7 @@
                 content = {
                   type = "luks";
                   name = "crypted";
-
+                  settings.crypttabExtraOpts = ["fido2-device=auto"];
                   content = {
                     type = "btrfs";
                     extraArgs = ["-f"];
