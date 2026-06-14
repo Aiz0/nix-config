@@ -38,7 +38,7 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia/legacy-v4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -66,10 +66,6 @@
     secrets = {
       url = "github:aiz0/secrets";
       flake = false;
-    };
-
-    kavita-overlay = {
-      url = "github:nevivurn/nixpkgs/update/kavita";
     };
   };
 

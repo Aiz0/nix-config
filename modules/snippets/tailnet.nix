@@ -62,7 +62,7 @@
           port = 9078;
           vHost = "multiscrobbler.${config.mySnippets.tailnet.name}";
         };
-        
+
         navidrome = {
           hostName = "miyabi";
           port = 4533;

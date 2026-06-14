@@ -129,13 +129,11 @@
       clipboard.disable-primary = true;
       screenshot-path = "${config.xdg.userDirs.pictures}/screenshots/niri %Y-%m-%d %H-%M-%S.png";
 
-      spawn-at-startup =
-        []
-        ++ lib.optional config.myHome.aiz.desktop.niri.shell.noctalia.enable {
-          command = [
-            "noctalia-shell"
-          ];
-        };
+      spawn-at-startup = lib.optional config.myHome.aiz.desktop.niri.shell.noctalia.enable {
+        command = [
+          "noctalia-shell"
+        ];
+      };
 
       binds = with config.lib.niri.actions; {
         "MOD+Return".action = spawn config.myHome.profiles.defaultApps.terminal.exec;
