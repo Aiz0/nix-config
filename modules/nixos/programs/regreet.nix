@@ -21,6 +21,7 @@
       enable = true;
       theme.name = "Adwaita-dark";
       settings = {
+        skip_selection = true;
         background = {
           # TODO: move to separate configuration
           path = builtins.path {path = ../../../assets/frieren.jpg;};
@@ -42,6 +43,26 @@
         }
 
         // other settings
+
+        // open regreet maximized
+        window-rule {
+            open-fullscreen true
+        }
+
+        // don't animate the window
+        animations {
+          off
+        }
+
+        gestures {
+          hot-corners {
+            off
+          }
+        }
+
+        layout {
+          background-color "#000000"
+        }
 
         spawn-at-startup "sh" "-c" "${lib.getExe pkgs.regreet}; pkill -f niri"
       '';
