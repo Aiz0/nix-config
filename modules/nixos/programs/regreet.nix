@@ -4,10 +4,24 @@
   pkgs,
   ...
 }: {
-  options.myNixOS.programs.regreet.enable = lib.mkOption {
-    description = "Enable regreet Display Manager, uses niri-unstable";
-    default = false;
-    type = lib.types.bool;
+  options.myNixOS.programs.regreet = {
+    enable = lib.mkOption {
+      description = "Enable regreet Display Manager, uses niri-unstable";
+      default = false;
+      type = lib.types.bool;
+    };
+    background = {
+      path = lib.mkOption {
+        description = "Background to use for regreet window";
+        default = builtins.path {path = ../../../assets/frieren.jpg;};
+        type = lib.types.path;
+      };
+      fit = lib.mkOption {
+        description = "How the background image covers the screen if the aspect ratio doesn't match";
+        default = "Cover";
+        type = lib.types.str;
+      };
+    };
   };
 
   config = lib.mkIf config.myNixOS.programs.regreet.enable {
@@ -22,11 +36,7 @@
       theme.name = "Adwaita-dark";
       settings = {
         skip_selection = true;
-        background = {
-          # TODO: move to separate configuration
-          path = builtins.path {path = ../../../assets/frieren.jpg;};
-          fit = "Cover";
-        };
+        inherit (config.myNixOS.programs.regreet) background;
       };
     };
 

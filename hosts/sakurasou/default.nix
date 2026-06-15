@@ -50,6 +50,10 @@
     programs = {
       nix.enable = true;
       systemd-boot.enable = true;
+      regreet = {
+        enable = true;
+        background.path = builtins.path {path = ./assets/wallpaper-greeter.png;};
+      };
       steam = {
         enable = true;
         steamHome.enable = true;
