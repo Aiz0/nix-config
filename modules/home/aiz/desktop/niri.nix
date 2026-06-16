@@ -140,7 +140,7 @@
         #Vicinae launcher
         "MOD+Space".action = spawn "vicinae" "toggle";
         # open window switcher
-        "MOD+Shift+Space".action = spawn "vicinae" "vicinae://extensions/vicinae/wm/switch-windows";
+        "MOD+Shift+Space".action = spawn "vicinae" "vicinae://launch/wm/switch-windows";
 
         "MOD+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec;
         "MOD+Shift+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec "--private-window";
