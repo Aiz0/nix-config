@@ -51,6 +51,7 @@
         tenacity
         ffmpeg
         imagemagick
+        easyeffects
 
         # chat
         element-desktop
