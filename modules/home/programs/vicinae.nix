@@ -8,10 +8,10 @@
   imports = [
     self.inputs.vicinae.homeManagerModules.default
   ];
-  options.myHome.services.vicinae.enable = lib.mkEnableOption "Vicinae raycast inspired launcher";
+  options.myHome.programs.vicinae.enable = lib.mkEnableOption "Vicinae raycast inspired launcher";
 
-  config = lib.mkIf config.myHome.services.vicinae.enable {
-    services.vicinae = {
+  config = lib.mkIf config.myHome.programs.vicinae.enable {
+    programs.vicinae = {
       enable = true;
       settings = {
         close_on_focus_loss = true;

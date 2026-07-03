@@ -126,6 +126,7 @@
           enable = true;
           displayName = lib.mkDefault "Aiz";
         };
+        vicinae.enable = true;
       };
 
       services = {
@@ -141,7 +142,6 @@
         };
         hyprpaper.enable = true;
         trayscale.enable = true;
-        vicinae.enable = true;
       };
 
       aiz = {
