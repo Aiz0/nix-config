@@ -45,12 +45,7 @@ in {
         # encode.lua
         # ============
         # use default profile (makes vp8 webms)
-        "e" = "script-message-to encode set-timestamp";
-
-        # use custom webm profile, the argument name must correspond to an existing .conf file (see script-opts/)
-        "alt+e" = "script-message-to encode set-timestamp encode_webm";
-
-        # use custom profile
+        "e" = "script-message-to encode set-timestamp encode_webm";
         "E" = "script-message-to encode set-timestamp encode_slice";
       };
 
@@ -95,11 +90,11 @@ in {
         };
         jellyfin-mpv-shim-scripts-encode-webm-conf = {
           source = ./encode_webm.conf;
-          target = "jellyfin-mpv-shim/script-opts/encode-webm.conf";
+          target = "jellyfin-mpv-shim/script-opts/encode_webm.conf";
         };
         jellyfin-mpv-shim-scripts-encode-slice-conf = {
           source = ./encode_slice.conf;
-          target = "jellyfin-mpv-shim/script-opts/encode-slice.conf";
+          target = "jellyfin-mpv-shim/script-opts/encode_slice.conf";
         };
         jellyfin-mpv-shim-crop-conf = {
           source = ./crop.conf;
