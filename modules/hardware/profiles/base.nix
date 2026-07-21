@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   options.myHardware.profiles.base.enable = lib.mkEnableOption "Base hardware configuration.";
@@ -14,6 +15,7 @@
       bluetooth = {
         enable = true;
         powerOnBoot = true;
+        package = pkgs.bluez-experimental;
       };
 
       logitech.wireless = {
