@@ -38,6 +38,7 @@
               modules.nixos
               modules.snippets
               modules.users
+              modules.locale
 
               {
                 home-manager = {
