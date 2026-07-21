@@ -124,6 +124,12 @@
           clip-to-geometry = true;
         }
       ];
+      layer-rules = [
+        {
+          matches = [{namespace = "^noctalia-backdrop";}];
+          place-within-backdrop = true;
+        }
+      ];
       hotkey-overlay.skip-at-startup = true;
       clipboard.disable-primary = true;
       screenshot-path = "${config.xdg.userDirs.pictures}/screenshots/niri %Y-%m-%d %H-%M-%S.png";

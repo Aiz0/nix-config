@@ -140,7 +140,7 @@
           enable = true;
           autoSuspend = false; # turned off for now due to problems
         };
-        hyprpaper.enable = true;
+        hyprpaper.enable = false;
         trayscale.enable = true;
       };
 
@@ -151,7 +151,10 @@
         programs = {
           git.enable = true;
           jujutsu.enable = true;
-          noctalia.enable = true;
+          noctalia = {
+            enable = true;
+            wallpaper.enable = true;
+          };
           ssh.enable = true;
           zen.enable = true;
           zed-editor.enable = true;
