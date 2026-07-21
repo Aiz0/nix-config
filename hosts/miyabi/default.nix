@@ -47,6 +47,7 @@
     };
 
     services = {
+      bindery.enable = true;
       caddy.enable = true;
       flexget.enable = true;
       recyclarr.enable = true;

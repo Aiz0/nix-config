@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./bindery.nix
     ./caddy.nix
     ./jellyfin.nix
     ./flexget.nix
