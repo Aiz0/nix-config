@@ -125,6 +125,7 @@
         }
       ];
       layer-rules = [
+        # Needed for noctalia wallpaper backdrop to work
         {
           matches = [{namespace = "^noctalia-backdrop";}];
           place-within-backdrop = true;
@@ -136,7 +137,7 @@
 
       spawn-at-startup = lib.optional config.myHome.aiz.desktop.niri.shell.noctalia.enable {
         command = [
-          "noctalia-shell"
+          "noctalia"
         ];
       };
 
