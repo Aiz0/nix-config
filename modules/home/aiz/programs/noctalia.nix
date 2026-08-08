@@ -79,7 +79,7 @@
             })
             config.myHome.hardware.monitors);
         };
-        backdrop.enable = true;
+        backdrop.enabled = true;
       };
     };
   };
