@@ -136,11 +136,6 @@
           extraScripts.enable = true;
         };
         gpg.enable = true;
-        hypridle = {
-          enable = true;
-          autoSuspend = false; # turned off for now due to problems
-        };
-        hyprpaper.enable = false;
         trayscale.enable = true;
       };
 
@@ -154,6 +149,7 @@
           noctalia = {
             enable = true;
             wallpaper.enable = true;
+            idle.enable = true;
           };
           ssh.enable = true;
           zen.enable = true;

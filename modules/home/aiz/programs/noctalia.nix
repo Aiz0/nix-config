@@ -5,18 +5,24 @@
   pkgs,
   self,
   ...
-}: {
+}: let
+  cfg = config.myHome.aiz.programs.noctalia;
+in {
   options.myHome.aiz.programs.noctalia = {
     enable = lib.mkEnableOption "Noctalia desktop shell";
     # does nothing right now.
     wallpaper.enable = lib.mkEnableOption "Let Noctalia handle wallpapers";
+    idle = {
+      enable = lib.mkEnableOption "Let Noctalia handle idle behaviors";
+      autoSuspend = lib.mkEnableOption "Enable auto suspend";
+    };
   };
 
   imports = [
     self.inputs.noctalia.homeModules.default
   ];
 
-  config = lib.mkIf config.myHome.aiz.programs.noctalia.enable {
+  config = lib.mkIf cfg.enable {
     home.packages = [self.inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default];
 
     programs.noctalia = {
@@ -80,6 +86,30 @@
             config.myHome.hardware.monitors);
         };
         backdrop.enabled = true;
+
+        # Idle
+        idle = lib.mkIf cfg.idle.enable {
+          behavior_order = ["lower_brightness" "lock" "suspend"];
+          behavior = {
+            lower_brightness = {
+              timeout = 180;
+              action = "command";
+              command = "${pkgs.brightnessctl}/bin/brightnessctl -s set 10";
+              resume_command = "${pkgs.brightnessctl}/bin/brightnessctl -r";
+              enabled = false;
+            };
+            lock = {
+              timeout = 300;
+              action = "lock";
+              enabled = true;
+            };
+            suspend = {
+              timeout = 300;
+              action = "suspend";
+              enabled = cfg.idle.autoSuspend;
+            };
+          };
+        };
       };
     };
   };
