@@ -37,6 +37,5 @@
         layout = "eu";
       };
     };
-    zramSwap.enable = lib.mkDefault true;
   };
 }

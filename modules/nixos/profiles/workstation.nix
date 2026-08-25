@@ -111,11 +111,5 @@
       enableSystemSlice = true;
       enableUserSlices = true;
     };
-
-    zramSwap = {
-      enable = lib.mkDefault true;
-      algorithm = lib.mkDefault "lz4";
-      priority = lib.mkDefault 100;
-    };
   };
 }
