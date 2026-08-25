@@ -24,11 +24,9 @@ _: {
     #   #   base.enable = true;
     #   #   arr.enable = true;
     #   #   btrfs.enable = true;
-    #   #   swap.enable = true;
     #   # };
     #   # programs = {
     #   #   nix.enable = true;
-    #   #   systemd-boot.enable = true;
     #   # };
 
     #   services = {
