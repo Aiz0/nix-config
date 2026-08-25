@@ -22,7 +22,6 @@ in {
     i18n = {
       glibcLocales = myGlibcLocales;
       defaultLocale = lib.mkDefault "en_SE.UTF-8";
-      
     };
   };
 }

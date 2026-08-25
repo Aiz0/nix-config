@@ -64,14 +64,7 @@
       };
     };
 
-    services.openssh = {
-      enable = true;
-      openFirewall = true;
-      settings = {
-        PermitRootLogin = "no";
-        PasswordAuthentication = false;
-      };
-    };
+    
 
     system = {
       configurationRevision = self.rev or self.dirtyRev or null;

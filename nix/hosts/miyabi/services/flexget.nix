@@ -1,33 +1,18 @@
-{
-  config,
-  lib,
-  ...
-}: {
-  options.myNixOS.services.flexget = {
-    enable = lib.mkEnableOption "flexget daemon";
-
-    dataDir = lib.mkOption {
-      description = "Data directory to use.";
-      default = "/var/lib";
-      type = lib.types.str;
+_: {
+  flake.nixosModules.miyabi = {config, ...}: let
+    cfg = {
+      dataDir = "/var/lib/";
+      group = "media";
     };
-
-    group = lib.mkOption {
-      description = "Group to use.";
-      default = "media";
-      type = lib.types.str;
-    };
-  };
-
-  config = lib.mkIf config.myNixOS.services.flexget.enable {
+  in {
     services.flexget = {
       enable = true;
       user = "flexget";
       interval = "1h";
-      homeDir = "${config.myNixOS.services.flexget.dataDir}/flexget";
+      homeDir = "${cfg.dataDir}/flexget";
 
       config = ''
-        variables: ${config.myNixOS.services.flexget.dataDir}/flexget/secrets.yml
+        variables: ${cfg.dataDir}/flexget/secrets.yml
         templates:
           anime-series:
             configure_series:
@@ -70,7 +55,7 @@
               what:
                 - entry_list: anime-series
             csv:
-              url: file://${config.myNixOS.services.flexget.dataDir}/flexget/anime.csv
+              url: file://${cfg.dataDir}/flexget/anime.csv
               values:
                 title: 1
                 url: 2
@@ -92,10 +77,10 @@
     };
 
     users.users.flexget = {
-      home = "${config.myNixOS.services.flexget.dataDir}/flexget";
+      home = "${cfg.dataDir}/flexget";
       createHome = true;
       isSystemUser = true;
-      inherit (config.myNixOS.services.flexget) group;
+      inherit (cfg) group;
     };
   };
 }

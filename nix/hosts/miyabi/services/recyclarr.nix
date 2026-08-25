@@ -1,51 +1,30 @@
-{
-  config,
-  lib,
-  ...
-}: {
-  options.myNixOS.services.recyclarr = {
-    enable = lib.mkEnableOption "Enable recyclarr for sonarr and radarr. Single instance";
-    radarr = {
-      base_url = lib.mkOption {
-        default =
+{...}: {
+  flake.nixosModules.miyabi = {config, ...}: let
+    cfg = {
+      radarr = {
+        base_url =
           if config.mySnippets.tailnet.networkMap.radarr.vHost != null
           then "https://${config.mySnippets.tailnet.networkMap.radarr.vHost}"
           else "http://localhost:7878";
-        description = "Base url for radarr";
-        type = lib.types.str;
+        authKeyFile = config.age.secrets.radarrApiKey.path or null;
       };
-      authKeyFile = lib.mkOption {
-        description = "Key file to use for authentication";
-        default = config.age.secrets.radarrApiKey.path or null;
-        type = lib.types.nullOr lib.types.path;
-      };
-    };
-    sonarr = {
-      base_url = lib.mkOption {
-        default =
+      sonarr = {
+        base_url =
           if config.mySnippets.tailnet.networkMap.sonarr.vHost != null
           then "https://${config.mySnippets.tailnet.networkMap.sonarr.vHost}"
           else "http://localhost:8989";
-        description = "Base url for sonarr";
-        type = lib.types.str;
-      };
-      authKeyFile = lib.mkOption {
-        description = "Key file to use for authentication";
-        default = config.age.secrets.sonarrApiKey.path or null;
-        type = lib.types.nullOr lib.types.path;
+        authKeyFile = config.age.secrets.sonarrApiKey.path or null;
       };
     };
-  };
-
-  config = lib.mkIf config.myNixOS.services.recyclarr.enable {
+  in {
     assertions = [
       {
-        assertion = config.myNixOS.services.recyclarr.radarr.authKeyFile != null;
-        message = "config.recyclarr.radarr.authKeyFile cannot be null.";
+        assertion = cfg.radarr.authKeyFile != null;
+        message = "recyclarr radarr authKeyFile cannot be null.";
       }
       {
-        assertion = config.myNixOS.services.recyclarr.sonarr.authKeyFile != null;
-        message = "config.recyclarr.sonarr.authKeyFile cannot be null.";
+        assertion = cfg.sonarr.authKeyFile != null;
+        message = "recyclarr sonarr authKeyFile cannot be null.";
       }
     ];
     services.recyclarr = {
@@ -57,7 +36,7 @@
             api_key = {
               _secret = "/run/credentials/recyclarr.service/radarr-api_key";
             };
-            inherit (config.myNixOS.services.recyclarr.radarr) base_url;
+            inherit (cfg.radarr) base_url;
             include = [
               {template = "radarr-quality-definition-movie";}
               {template = "radarr-quality-profile-hd-bluray-web";}
@@ -114,7 +93,7 @@
             api_key = {
               _secret = "/run/credentials/recyclarr.service/sonarr-api_key";
             };
-            inherit (config.myNixOS.services.recyclarr.sonarr) base_url;
+            inherit (cfg.sonarr) base_url;
             include = [
               {template = "sonarr-quality-definition-series";}
               {template = "sonarr-v4-quality-profile-web-1080p-alternative";}
@@ -167,8 +146,8 @@
     };
 
     systemd.services.recyclarr.serviceConfig.LoadCredential = [
-      "radarr-api_key:${config.myNixOS.services.recyclarr.radarr.authKeyFile}"
-      "sonarr-api_key:${config.myNixOS.services.recyclarr.sonarr.authKeyFile}"
+      "sonarr-api_key:${cfg.sonarr.authKeyFile}"
+      "radarr-api_key:${cfg.radarr.authKeyFile}"
     ];
   };
 }

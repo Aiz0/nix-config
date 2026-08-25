@@ -1,13 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  self,
-  ...
-}: {
-  options.myNixOS.services.caddy.enable = lib.mkEnableOption "Caddy web server.";
-
-  config = lib.mkIf config.myNixOS.services.caddy.enable {
+_: {
+  flake.nixosModules.miyabi = {
+    config,
+    pkgs,
+    self,
+    ...
+  }: {
     age.secrets.tailscaleCaddyAuth.file = "${self.inputs.secrets}/tailscale/caddyAuth.age";
     networking.firewall.allowedTCPPorts = [80 443];
 

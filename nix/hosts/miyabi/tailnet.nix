@@ -1,0 +1,120 @@
+{lib, ...}: {
+  flake.nixosModules.tailnet = {config, ...}: {
+    options.mySnippets.tailnet = {
+      name = lib.mkOption {
+        default = "miku-climb.ts.net";
+        description = "Tailnet name.";
+        type = lib.types.str;
+      };
+
+      networkMap = lib.mkOption {
+        type = lib.types.attrs;
+        description = "Hostnames, ports, and vHosts for ${config.mySnippets.tailnet.name} services.";
+
+        default = {
+          bazarr = {
+            hostName = "miyabi";
+            port = 6767;
+            vHost = "bazarr.${config.mySnippets.tailnet.name}";
+          };
+
+          jellyfin = {
+            hostName = "miyabi";
+            port = 8096;
+            vHost = "jellyfin.${config.mySnippets.tailnet.name}";
+          };
+
+          kavita = {
+            hostName = "miyabi";
+            port = 5000;
+            vHost = "kavita.${config.mySnippets.tailnet.name}";
+          };
+
+          komf = {
+            hostName = "miyabi";
+            port = 8085;
+            vHost = "komf.${config.mySnippets.tailnet.name}";
+          };
+
+          grafana = {
+            hostName = "miyabi";
+            port = 3010;
+            vHost = "grafana.${config.mySnippets.tailnet.name}";
+          };
+
+          lanraragi = {
+            hostName = "miyabi";
+            port = 3000;
+            vHost = "lanraragi.${config.mySnippets.tailnet.name}";
+          };
+
+          multiScrobbler = {
+            hostName = "miyabi";
+            port = 9078;
+            vHost = "multiscrobbler.${config.mySnippets.tailnet.name}";
+          };
+
+          navidrome = {
+            hostName = "miyabi";
+            port = 4533;
+            vHost = "navidrome.${config.mySnippets.tailnet.name}";
+          };
+
+          lidarr = {
+            hostName = "miyabi";
+            port = 8686;
+            vHost = "lidarr.${config.mySnippets.tailnet.name}";
+          };
+
+          loki = {
+            hostName = "miyabi";
+            port = 3030;
+            vHost = "loki.${config.mySnippets.tailnet.name}";
+          };
+
+          prometheus = {
+            hostName = "miyabi";
+            port = 3020;
+            vHost = "prometheus.${config.mySnippets.tailnet.name}";
+          };
+
+          prowlarr = {
+            hostName = "miyabi";
+            port = 9696;
+            vHost = "prowlarr.${config.mySnippets.tailnet.name}";
+          };
+
+          qbittorrent = {
+            hostName = "miyabi";
+            port = 8080;
+            vHost = "qbittorrent.${config.mySnippets.tailnet.name}";
+          };
+
+          radarr = {
+            hostName = "miyabi";
+            port = 7878;
+            vHost = "radarr.${config.mySnippets.tailnet.name}";
+          };
+
+          shoko = {
+            hostName = "miyabi";
+            port = 8111;
+            vHost = "shoko.${config.mySnippets.tailnet.name}";
+          };
+
+          sonarr = {
+            hostName = "miyabi";
+            port = 8989;
+            vHost = "sonarr.${config.mySnippets.tailnet.name}";
+          };
+
+          slskd = {
+            hostName = "miyabi";
+            port = 5030;
+            vHost = "slskd.${config.mySnippets.tailnet.name}";
+          };
+        };
+      };
+    };
+  };
+}

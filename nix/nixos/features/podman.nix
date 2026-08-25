@@ -1,14 +1,5 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
-  options.myNixOS.programs.podman = {
-    enable = lib.mkEnableOption "enable podman";
-  };
-
-  config = lib.mkIf config.myNixOS.programs.podman.enable {
+{pkgs, ...}: {
+  flake.nixosModules.podman = {config, ...}: {
     environment.systemPackages = [pkgs.podman-compose];
 
     # Runtime

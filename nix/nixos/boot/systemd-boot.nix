@@ -1,0 +1,16 @@
+_: {
+  flake.nixosModules.default = {
+    boot = {
+      initrd.systemd.enable = true;
+
+      loader = {
+        efi.canTouchEfiVariables = true;
+
+        systemd-boot = {
+          enable = true;
+          configurationLimit = 10;
+        };
+      };
+    };
+  };
+}

@@ -12,7 +12,6 @@
       hardware = ../hardware;
       locale = ../locale;
       nixos = ../nixos;
-      snippets = ../snippets;
       users = ../users;
     };
 
@@ -21,7 +20,6 @@
     in
       inputs.nixpkgs.lib.genAttrs [
         "frieren"
-        "miyabi"
         "sakurasou"
       ] (
         host:
@@ -36,7 +34,6 @@
               inputs.nur.modules.nixos.default
               modules.hardware
               modules.nixos
-              modules.snippets
               modules.users
               modules.locale
 

@@ -1,50 +1,20 @@
-# Auto-generated using compose2nix v0.3.2-pre.
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: let
-  cfg = config.myNixOS.services.qbittorrent-hotio;
-  UID = 888;
-  GID = 888;
-in {
-  options.myNixOS.services.qbittorrent-hotio = {
-    enable = lib.mkEnableOption "qBittorrent hotio container";
-
-    dataDir = lib.mkOption {
-      type = lib.types.path;
-      default = "/var/lib/qbittorrent-hotio";
-      description = "The directory where qBittorrent stores its data files.";
+_: {
+  flake.nixosModules.miyabi = {
+    pkgs,
+    lib,
+    config,
+    ...
+  }: let
+    cfg = {
+      dataDir = "/var/lib/qbittorrent-hotio";
+      downloadDir = "/mnt/data/";
+      user = "qbittorrent";
+      group = "qbittorrent";
+      port = 8080;
     };
-
-    downloadDir = lib.mkOption {
-      type = lib.types.path;
-      default = "/mnt/data/";
-      description = "The directory where qBittorrent downloads files";
-    };
-
-    user = lib.mkOption {
-      type = lib.types.str;
-      default = "qbittorrent";
-      description = "User account under which qBittorrent runs.";
-    };
-
-    group = lib.mkOption {
-      type = lib.types.str;
-      default = "qbittorrent";
-      description = "Group under which qBittorrent runs.";
-    };
-
-    port = lib.mkOption {
-      type = lib.types.port;
-      default = 8080;
-      description = "qBittorrent web UI port.";
-    };
-  };
-  config = lib.mkIf cfg.enable {
-    myNixOS.programs.podman.enable = true;
-
+    UID = 888;
+    GID = 888;
+  in {
     # Containers
     virtualisation.oci-containers.containers."qbittorrent" = {
       image = "ghcr.io/hotio/qbittorrent";
