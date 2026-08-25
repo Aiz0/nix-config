@@ -10,7 +10,6 @@
 
     nixosModules = {
       hardware = ../hardware;
-      locale = ../locale;
       nixos = ../nixos;
       users = ../users;
     };
@@ -35,8 +34,6 @@
               modules.hardware
               modules.nixos
               modules.users
-              modules.locale
-
               {
                 home-manager = {
                   useGlobalPkgs = true;
