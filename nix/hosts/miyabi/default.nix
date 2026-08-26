@@ -11,6 +11,7 @@
       inputs.disko.nixosModules.disko
       self.nixosModules.miyabi
       self.nixosModules.tailnet
+      self.nixosModules.podman
       self.nixosModules.amd-cpu
       self.nixosModules.nvidia-gpu
     ];

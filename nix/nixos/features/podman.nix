@@ -1,5 +1,9 @@
-{pkgs, ...}: {
-  flake.nixosModules.podman = {config, ...}: {
+_: {
+  flake.nixosModules.podman = {
+    pkgs,
+    config,
+    ...
+  }: {
     environment.systemPackages = [pkgs.podman-compose];
 
     # Runtime
