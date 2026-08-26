@@ -1,5 +1,5 @@
 _: {
-  flake.nixosModules.regreet = {
+  flake.nixosModules.desktop = {
     config,
     lib,
     pkgs,

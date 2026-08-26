@@ -1,5 +1,5 @@
 _: {
-  flake.nixosModules.graphical-boot = {pkgs, ...}: {
+  flake.nixosModules.desktop = {pkgs, ...}: {
     boot = {
       # "Silent boot"
       consoleLogLevel = 0;
