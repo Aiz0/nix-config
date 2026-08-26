@@ -68,29 +68,6 @@ _: {
           };
         };
       };
-      data = {
-        type = "disk";
-        device = "/dev/disk/by-id/ata-ST8000VN004-3CP101_WWZ9NHN4";
-
-        content = {
-          type = "gpt";
-          partitions = {
-            data = {
-              size = "100%";
-              content = {
-                type = "btrfs";
-                extraArgs = ["-f"];
-                subvolumes = {
-                  "/data" = {
-                    mountpoint = "/mnt/data";
-                    mountOptions = ["compress=zstd" "noatime"];
-                  };
-                };
-              };
-            };
-          };
-        };
-      };
     };
   };
 }
