@@ -1,20 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
-  imports = [
-    ./amd-ai-300-series
-  ];
-
-  options.myHardware.framework.laptop13.enable = lib.mkOption {
-    type = lib.types.bool;
-    default = config.myHardware.framework.laptop13.amd-ai-300.enable;
-    description = "Framework Laptop 13 specific hardware configuration";
-  };
-
-  config = lib.mkIf config.myHardware.framework.laptop13.enable {
+_: {
+  flake.nixosModules.framework-laptop13 = {
+    config,
+    lib,
+    pkgs,
+    ...
+  }: {
     boot = {
       extraModulePackages = with config.boot.kernelPackages; [
         framework-laptop-kmod

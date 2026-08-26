@@ -9,7 +9,6 @@
     };
 
     nixosModules = {
-      hardware = ../hardware;
       nixos = ../nixos;
       users = ../users;
     };

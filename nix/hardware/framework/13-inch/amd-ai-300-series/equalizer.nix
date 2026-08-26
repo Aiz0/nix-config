@@ -1,16 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
-  options.myHardware.framework.laptop13.amd-ai-300.equalizer.enable = lib.mkOption {
-    default = config.myHardware.framework.laptop13.amd-ai-300.enable;
-    type = lib.types.bool;
-    description = "Enable Framework Laptop 13 AMD ai 300 equalizer configuration.";
-  };
-
-  config = lib.mkIf config.myHardware.framework.laptop13.amd-ai-300.equalizer.enable {
+_: {
+  flake.nixosModules.framework-laptop13-amd-ai-300 = {
+    config,
+    lib,
+    pkgs,
+    ...
+  }: {
     # https://github.com/NixOS/nixos-hardware/blob/master/framework/13-inch/common/audio.nix
     services.pipewire.wireplumber.configPackages = let
       outputName = "alsa_output.pci-0000_c1_00.6.analog-stereo";

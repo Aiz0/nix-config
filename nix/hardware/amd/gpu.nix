@@ -1,11 +1,5 @@
-{
-  config,
-  lib,
-  ...
-}: {
-  options.myHardware.amd.gpu.enable = lib.mkEnableOption "AMD GPU configuration.";
-
-  config = lib.mkIf config.myHardware.amd.gpu.enable {
+_: {
+  flake.nixosModules.amd-gpu = {
     environment.variables = {
       DPAU_DRIVER = "radeonsi";
       GSK_RENDERER = "ngl";

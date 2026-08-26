@@ -6,19 +6,6 @@ _: {
   }: {
     boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
 
-    nixpkgs.config.nvidia.acceptLicense = true;
-    # myHardware = {
-    #   amd = {
-    #     cpu.enable = true;
-    #   };
-    #   nvidia = {
-    #     gpu.enable = true;
-    #   };
-    #   profiles = {
-    #     base.enable = true;
-    #   };
-    # };
-
     # myNixOS = {
     #   # profiles = {
     #   #   base.enable = true;
