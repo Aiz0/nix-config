@@ -41,11 +41,6 @@
         nix-direnv.enable = true;
         silent = true;
       };
-
-      gnupg.agent = {
-        enable = true;
-        enableSSHSupport = true;
-      };
     };
 
     networking.networkmanager.enable = true;
