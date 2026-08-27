@@ -46,10 +46,6 @@
         enable = true;
         enableSSHSupport = true;
       };
-
-      nh.enable = true;
-      # TODO: add ssh known hosts
-      # ssh.knownHosts = config.mySnippets.ssh.knownHosts;
     };
 
     networking.networkmanager.enable = true;
@@ -63,8 +59,6 @@
         wheelNeedsPassword = false;
       };
     };
-
-    
 
     system = {
       configurationRevision = self.rev or self.dirtyRev or null;
