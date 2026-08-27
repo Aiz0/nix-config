@@ -10,7 +10,6 @@
 
     nixosModules = {
       nixos = ../nixos;
-      users = ../users;
     };
 
     nixosConfigurations = let
@@ -30,9 +29,7 @@
               inputs.disko.nixosModules.disko
               inputs.home-manager.nixosModules.home-manager
               inputs.nur.modules.nixos.default
-              modules.hardware
               modules.nixos
-              modules.users
               {
                 home-manager = {
                   useGlobalPkgs = true;

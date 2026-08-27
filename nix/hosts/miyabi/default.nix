@@ -14,6 +14,7 @@
       self.nixosModules.podman
       self.nixosModules.amd-cpu
       self.nixosModules.nvidia-gpu
+      self.nixosModules.aiz
     ];
     specialArgs = {inherit self;};
   };
