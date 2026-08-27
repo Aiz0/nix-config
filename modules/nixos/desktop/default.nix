@@ -20,8 +20,6 @@
       gvfs.enable = true;
 
       avahi.enable = true;
-      printing.enable = true;
-      system-config-printer.enable = true;
     };
 
     system.nixos.tags = ["desktop"];
