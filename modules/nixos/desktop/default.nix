@@ -19,15 +19,6 @@
       udisks2.enable = true;
       gvfs.enable = true;
 
-      pipewire = {
-        enable = true;
-        alsa = {
-          enable = true;
-          support32Bit = true;
-        };
-        pulse.enable = true;
-      };
-
       avahi.enable = true;
       printing.enable = true;
       system-config-printer.enable = true;

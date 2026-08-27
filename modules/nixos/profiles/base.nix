@@ -35,10 +35,6 @@
 
     networking.networkmanager.enable = true;
 
-    security = {
-      rtkit.enable = true;
-    };
-
     system = {
       configurationRevision = self.rev or self.dirtyRev or null;
       nixos.tags = ["base"];
