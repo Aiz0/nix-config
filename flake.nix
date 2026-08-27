@@ -93,8 +93,15 @@
         config = {
           allowUnfree = true;
           nvidia.acceptLicense = true;
+          permittedInsecurePackages = [
+            "qtwebengine-5.15.19" # Required for Jellyfin-mpv-shim
+          ];
         };
-        overlays = [inputs.self.overlays.default];
+        overlays = [
+          inputs.nur.overlays.default
+          inputs.niri.overlays.niri
+          inputs.self.overlays.default
+        ];
       };
     };
   in

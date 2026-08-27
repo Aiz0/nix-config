@@ -17,16 +17,11 @@
     in
       inputs.nixpkgs.lib.genAttrs [
         "frieren"
-        "sakurasou"
       ] (
         host:
           inputs.nixpkgs.lib.nixosSystem {
             modules = [
               ../../hosts/${host}
-              inputs.agenix.nixosModules.default
-              inputs.niri.nixosModules.niri
-              inputs.mikuboot.nixosModules.default
-              inputs.disko.nixosModules.disko
               inputs.home-manager.nixosModules.home-manager
               inputs.nur.modules.nixos.default
               modules.nixos
@@ -36,19 +31,6 @@
                   useUserPackages = true;
                   extraSpecialArgs = {inherit self;};
                   backupFileExtension = "backup";
-                };
-
-                nixpkgs = {
-                  overlays = [
-                    inputs.nur.overlays.default
-                    inputs.niri.overlays.niri
-                    self.overlays.default
-                  ];
-
-                  config.allowUnfree = true;
-                  config.permittedInsecurePackages = [
-                    "qtwebengine-5.15.19" # Required for Jellyfin-mpv-shim
-                  ];
                 };
               }
             ];
