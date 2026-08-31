@@ -1,28 +1,13 @@
-{
-  config,
-  lib,
-  osConfig,
-  pkgs,
-  self,
-  ...
-}: let
-  cfg = config.myHome.aiz.programs.noctalia;
-in {
-  options.myHome.aiz.programs.noctalia = {
-    enable = lib.mkEnableOption "Noctalia desktop shell";
-    # does nothing right now.
-    wallpaper.enable = lib.mkEnableOption "Let Noctalia handle wallpapers";
-    idle = {
-      enable = lib.mkEnableOption "Let Noctalia handle idle behaviors";
-      autoSuspend = lib.mkEnableOption "Enable auto suspend";
-    };
-  };
+_: {
+  flake.homeModules.aizDesktop = {
+    self,
+    pkgs,
+    ...
+  }: {
+    imports = [
+      self.inputs.noctalia.homeModules.default
+    ];
 
-  imports = [
-    self.inputs.noctalia.homeModules.default
-  ];
-
-  config = lib.mkIf cfg.enable {
     home.packages = [self.inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default];
 
     programs.noctalia = {
@@ -42,16 +27,16 @@ in {
             "tray"
           ];
           center = ["workspaces"];
-          end =
-            [
-              "notifications"
-              "network"
-              "bluetooth"
-            ]
-            ++ lib.optional osConfig.myHardware.profiles.laptop.enable "battery"
-            ++ ["volume"]
-            ++ lib.optional osConfig.myHardware.profiles.laptop.enable "brightness"
-            ++ ["weather" "clock"];
+          end = [
+            "notifications"
+            "network"
+            "bluetooth"
+            "battery"
+            "volume"
+            "brightness"
+            "weather"
+            "clock"
+          ];
         };
         widget = {
           clock.vertical_format = "{:%H\n%M}\n-\n{:%a\n%d\n%b}";
@@ -68,7 +53,8 @@ in {
         };
 
         shell = {
-          avatar_path = config.myHome.profiles.avatar.path;
+          # TODO: fix avatar
+          #avatar_path = config.myHome.profiles.avatar.path;
           clipboard_enabled = false; # I use vicinae
         };
         location.address = "Stockholm, Sweden";
@@ -76,20 +62,21 @@ in {
         # theme
         theme.builtin = "Catppuccin";
         wallpaper = {
-          monitors = builtins.listToAttrs (map (monitor: {
-              name = monitor.plug;
-              value = {
-                enabled = true;
-                path = monitor.wallpaper.path;
-              };
-            })
-            config.myHome.hardware.monitors);
+          # TODO: fix monitors
+          # monitors = builtins.listToAttrs (map (monitor: {
+          #     name = monitor.plug;
+          #     value = {
+          #       enabled = true;
+          #       path = monitor.wallpaper.path;
+          #     };
+          #   })
+          #   config.myHome.hardware.monitors);
         };
         backdrop.enabled = true;
 
         # Idle
-        idle = lib.mkIf cfg.idle.enable {
-          behavior_order = ["lower_brightness" "lock" "suspend"];
+        idle = {
+          behavior_order = ["lower_brightness" "lock"];
           behavior = {
             lower_brightness = {
               timeout = 180;
@@ -102,11 +89,6 @@ in {
               timeout = 300;
               action = "lock";
               enabled = true;
-            };
-            suspend = {
-              timeout = 300;
-              action = "suspend";
-              enabled = cfg.idle.autoSuspend;
             };
           };
         };
