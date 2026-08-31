@@ -16,50 +16,12 @@
       stateVersion = "25.05";
 
       packages = with pkgs; [
-        # launcher
-        fuzzel
-
-        # gui
-        kdePackages.dolphin
-        kdePackages.kservice
-        kdePackages.baloo-widgets
-        kdePackages.baloo
-        kdePackages.ark
-        kdePackages.ffmpegthumbs
-        kdePackages.qtsvg
-        seahorse
-        proton-vpn
-        spotify
-        freetube
-        nur.repos.Ev357.helium
-
         # Dev
         nodejs
         deno
         pnpm
         pakku
         live-server
-
-        # image, video, audio editing
-        krita
-        #kdePackages.kdenlive
-        video-trimmer
-        #aseprite
-        tenacity
-        ffmpeg
-        imagemagick
-        easyeffects
-
-        # chat
-        element-desktop
-        signal-desktop
-
-        # games
-        prismlauncher # minecraft-launcher
-        osu-lazer-bin
-        bottles
-        protonplus
-        r2modman
 
         #
         pkgs.nur.repos.ilya-fedin.qt6ct
