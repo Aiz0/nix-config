@@ -17,6 +17,7 @@
 
         imports = [
           self.homeModules.aiz
+          self.homeModules.aizDesktop
         ];
       };
     };

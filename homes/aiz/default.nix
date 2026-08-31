@@ -64,15 +64,6 @@
         protonplus
         r2modman
 
-        # fonts
-        source-code-pro
-        roboto
-        roboto-serif
-        noto-fonts
-        noto-fonts-cjk-serif
-        noto-fonts-cjk-sans
-        noto-fonts-color-emoji
-
         #
         pkgs.nur.repos.ilya-fedin.qt6ct
       ];
@@ -82,16 +73,6 @@
         package = pkgs.posy-cursors;
         name = "Posy_Cursor_Black";
         dotIcons.enable = false;
-      };
-    };
-
-    fonts.fontconfig = {
-      enable = true;
-      defaultFonts = {
-        serif = ["Noto Serif"];
-        sansSerif = ["Roboto" "Noto"];
-        monospace = ["Source Code Pro" "Noto Sans Mono"];
-        emoji = ["Noto Color Emoji"];
       };
     };
 
