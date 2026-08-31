@@ -11,9 +11,6 @@
 
   config = {
     home = {
-      username = "aiz";
-      homeDirectory = "/home/aiz";
-      stateVersion = "25.05";
 
       packages = with pkgs; [
         # Dev
@@ -31,12 +28,10 @@
       };
     };
 
-    programs.home-manager.enable = true;
     systemd.user.startServices = true; # Needed for auto-mounting agenix secrets.
 
     myHome = {
       profiles = {
-        shell.enable = true;
         defaultApps = {
           enable = true;
           forceMimeAssociations = true;
