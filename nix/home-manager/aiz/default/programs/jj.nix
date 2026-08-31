@@ -1,11 +1,5 @@
-{
-  config,
-  lib,
-  ...
-}: {
-  options.myHome.aiz.programs.jujutsu.enable = lib.mkEnableOption "jujutsu version control";
-
-  config = lib.mkIf config.myHome.aiz.programs.jujutsu.enable {
+_: {
+  flake.homeModules.aiz = {
     programs.jujutsu = {
       enable = true;
       settings = {
