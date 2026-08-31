@@ -1,19 +1,13 @@
-{
-  config,
-  lib,
-  pkgs,
-  self,
-  ...
-}: let
-  engines = import ./engines.nix;
-in {
-  imports = [
-    self.inputs.zen-browser.homeModules.beta
-  ];
+_: {
+  flake.homeModules.aizDesktop = {
+    pkgs,
+    self,
+    ...
+  }: {
+    imports = [
+      self.inputs.zen-browser.homeModules.beta
+    ];
 
-  options.myHome.aiz.programs.zen.enable = lib.mkEnableOption "zen web browser";
-
-  config = lib.mkIf config.myHome.aiz.programs.zen.enable {
     programs.zen-browser = {
       enable = true;
       policies = {
@@ -74,21 +68,6 @@ in {
           ];
 
           id = 0;
-
-          search = {
-            inherit engines;
-            default = "Kagi";
-            force = true;
-
-            order = [
-              "Kagi"
-              "ddg"
-              "Home Manager Options"
-              "NixOS Wiki"
-              "nixpkgs"
-              "Noogle"
-            ];
-          };
 
           settings = {
             "zen.tabs.vertical.right-side" = true;
