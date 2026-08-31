@@ -1,12 +1,6 @@
-{
-  config,
-  lib,
-  ...
-}: {
-  options.myHome.profiles.xdg.enable = lib.mkEnableOption "XDG dirs configuration and application variables";
-
-  config = lib.mkIf config.myHome.profiles.xdg.enable {
-    # right now these are also set in nixos profile base
+_: {
+  flake.homeModules.aiz = {config, ...}: {
+    # right now these are also set in nixos default module
     xdg = let
       home = config.home.homeDirectory;
       user = "${home}/user";
@@ -53,6 +47,7 @@
       NPM_CONFIG_TMP = "$XDG_RUNTIME_DIR/npm";
       STARSHIP_CACHE = config.xdg.cacheHome + "/starship";
       _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${config.xdg.configHome}/java";
+      # Claude still not work, or whatever zed it is doing.
       CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
     };
   };

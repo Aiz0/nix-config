@@ -31,13 +31,11 @@
       };
     };
 
-    xdg.enable = true;
     programs.home-manager.enable = true;
     systemd.user.startServices = true; # Needed for auto-mounting agenix secrets.
 
     myHome = {
       profiles = {
-        xdg.enable = true;
         shell.enable = true;
         defaultApps = {
           enable = true;
