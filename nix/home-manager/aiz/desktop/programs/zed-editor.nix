@@ -1,12 +1,5 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
-  options.myHome.aiz.programs.zed-editor.enable = lib.mkEnableOption "zed editor";
-
-  config = lib.mkIf config.myHome.aiz.programs.zed-editor.enable {
+_: {
+  flake.homeModules.aizDesktop = {pkgs, ...}: {
     home.packages = [
       pkgs.nil
     ];
