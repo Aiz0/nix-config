@@ -1,13 +1,9 @@
-{
-  config,
-  lib,
-  pkgs,
-  osConfig,
-  ...
-}: {
-  options.myHome.aiz.programs.git.enable = lib.mkEnableOption "git version control";
-
-  config = lib.mkIf config.myHome.aiz.programs.git.enable {
+_: {
+  flake.homeModules.aiz = {
+    pkgs,
+    osConfig,
+    ...
+  }: {
     programs.git = {
       enable = true;
       settings = {
