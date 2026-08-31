@@ -117,7 +117,7 @@
 
       imports = [
         (inputs.import-tree ./nix)
-        #inputs.home-manager.flakeModules.home-manager
+        inputs.home-manager.flakeModules.home-manager
         inputs.treefmt-nix.flakeModule
       ];
     };
