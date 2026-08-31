@@ -18,9 +18,6 @@
       packages = with pkgs; [
         # launcher
         fuzzel
-        # archives
-        zip
-        unzip
 
         # gui
         kdePackages.dolphin
