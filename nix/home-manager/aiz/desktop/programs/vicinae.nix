@@ -1,16 +1,13 @@
-{
-  config,
-  lib,
-  self,
-  pkgs,
-  ...
-}: {
-  imports = [
-    self.inputs.vicinae.homeManagerModules.default
-  ];
-  options.myHome.programs.vicinae.enable = lib.mkEnableOption "Vicinae raycast inspired launcher";
+_: {
+  flake.homeModules.aizDesktop = {
+    self,
+    pkgs,
+    ...
+  }: {
+    imports = [
+      self.inputs.vicinae.homeManagerModules.default
+    ];
 
-  config = lib.mkIf config.myHome.programs.vicinae.enable {
     programs.vicinae = {
       enable = true;
       settings = {
