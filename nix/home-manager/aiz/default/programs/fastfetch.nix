@@ -1,18 +1,5 @@
-{
-  config,
-  lib,
-  ...
-}: {
-  options.myHome.programs.fastfetch = {
-    enable = lib.mkEnableOption "fastfetch system information";
-    logo = lib.mkOption {
-      description = "logo name or path to use";
-      default = "";
-      type = lib.types.str;
-    };
-  };
-
-  config = lib.mkIf config.myHome.programs.fastfetch.enable {
+_: {
+  flake.homeModules.aiz = {
     programs.fastfetch = {
       enable = true;
 
@@ -24,9 +11,6 @@
             bottom = 3;
             top = 3;
           };
-
-          #type = "small";
-          source = config.myHome.programs.fastfetch.logo;
         };
 
         modules = [
