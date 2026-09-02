@@ -5,7 +5,7 @@ _: {
     pkgs,
     ...
   }: {
-    options.myNixOS.programs.regreet = {
+    options.flake.desktop.regreet = {
       background = {
         path = lib.mkOption {
           description = "Background to use for regreet window";
@@ -24,10 +24,10 @@ _: {
 
       services.displayManager.regreet = {
         enable = true;
-        theme.name = "Adwaita-dark";
+        theme.name = lib.mkDefault "Adwaita-dark";
         settings = {
           skip_selection = true;
-          inherit (config.myNixOS.programs.regreet) background;
+          inherit (config.flake.desktop.regreet) background;
         };
       };
 
