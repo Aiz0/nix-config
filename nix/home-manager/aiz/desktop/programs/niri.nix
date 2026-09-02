@@ -1,24 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
-  options.myHome.aiz.desktop.niri = {
-    enable = lib.mkEnableOption "niri desktop environment";
-    xwayland.enable = lib.mkOption {
-      description = "Enable xwayland support";
-      default = true;
-      type = lib.types.bool;
-    };
-    shell.noctalia.enable = lib.mkOption {
-      description = "Spawn noctalia shell at startup";
-      default = config.myHome.aiz.programs.noctalia.enable;
-      type = lib.types.bool;
-    };
-  };
-
-  config = lib.mkIf config.myHome.aiz.desktop.niri.enable {
+_: {
+  flake.homeModules.aizDesktop = {
+    config,
+    pkgs,
+    lib,
+    ...
+  }: {
     services = {
       gnome-keyring.enable = true;
     };
@@ -56,24 +42,25 @@
     programs.niri.settings = {
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite-unstable;
 
+      # TODO: Fix monitors
       # Generate niri output configuration from monitor module.
-      outputs = builtins.listToAttrs (map (v: {
-          name = "${v.name.manufacturer} ${v.name.model} ${v.name.serial}";
-          value = {
-            enable = v.enabled;
-            mode.height = v.height;
-            mode.width = v.width;
-            mode.refresh = v.refreshRate.value;
-            variable-refresh-rate =
-              if v.refreshRate.variable.enabled && v.refreshRate.variable.on-demand
-              then "on-demand"
-              else v.refreshRate.variable.enabled;
-            position.x = v.position.x;
-            position.y = v.position.y;
-            focus-at-startup = v.primary;
-          };
-        })
-        config.myHome.hardware.monitors);
+      # outputs = builtins.listToAttrs (map (v: {
+      #     name = "${v.name.manufacturer} ${v.name.model} ${v.name.serial}";
+      #     value = {
+      #       enable = v.enabled;
+      #       mode.height = v.height;
+      #       mode.width = v.width;
+      #       mode.refresh = v.refreshRate.value;
+      #       variable-refresh-rate =
+      #         if v.refreshRate.variable.enabled && v.refreshRate.variable.on-demand
+      #         then "on-demand"
+      #         else v.refreshRate.variable.enabled;
+      #       position.x = v.position.x;
+      #       position.y = v.position.y;
+      #       focus-at-startup = v.primary;
+      #     };
+      #   })
+      #   config.myHome.hardware.monitors);
 
       input = {
         keyboard = {
@@ -135,23 +122,27 @@
       clipboard.disable-primary = true;
       screenshot-path = "${config.xdg.userDirs.pictures}/screenshots/niri %Y-%m-%d %H-%M-%S.png";
 
-      spawn-at-startup = lib.optional config.myHome.aiz.desktop.niri.shell.noctalia.enable {
-        command = [
-          "noctalia"
-        ];
-      };
+      spawn-at-startup = [
+        {
+          command = [
+            "noctalia"
+          ];
+        }
+      ];
 
       binds = with config.lib.niri.actions; {
-        "MOD+Return".action = spawn config.myHome.profiles.defaultApps.terminal.exec;
+        # TODO: FIX DEFAULT APPS
+        # "MOD+Return".action = spawn config.myHome.profiles.defaultApps.terminal.exec;
 
         #Vicinae launcher
         "MOD+Space".action = spawn "vicinae" "toggle";
         # open window switcher
         "MOD+Shift+Space".action = spawn "vicinae" "vicinae://launch/wm/switch-windows";
 
-        "MOD+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec;
-        "MOD+Shift+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec "--private-window";
-        "MOD+Z".action = spawn config.myHome.profiles.defaultApps.editor.exec;
+        # TODO: FIX DEFAULT APPS
+        # "MOD+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec;
+        # "MOD+Shift+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec "--private-window";
+        # "MOD+Z".action = spawn config.myHome.profiles.defaultApps.editor.exec;
         "MOD+Escape".action = spawn "loginctl" "lock-session";
 
         # Media / System Keys
