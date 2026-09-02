@@ -21,8 +21,6 @@
       ];
     };
 
-    systemd.user.startServices = true; # Needed for auto-mounting agenix secrets.
-
     myHome = {
       profiles = {
         defaultApps = {
