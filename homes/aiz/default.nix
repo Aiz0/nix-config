@@ -11,7 +11,6 @@
 
   config = {
     home = {
-
       packages = with pkgs; [
         # Dev
         nodejs
@@ -36,47 +35,11 @@
           enable = true;
           forceMimeAssociations = true;
         };
-        avatar.path = builtins.path {path = ./assets/avatar.webp;};
-      };
-
-      programs = {
-        fastfetch = {
-          enable = true;
-          logo = builtins.path {path = ./assets/nix-snowflake-mashiro.png;};
-        };
-        ghostty.enable = true;
-        hyprlock = {
-          enable = true;
-          displayName = lib.mkDefault "Aiz";
-        };
-        vicinae.enable = true;
-      };
-
-      services = {
-        jellyfin-mpv-shim = {
-          enable = true;
-          uosc.enable = true;
-          extraScripts.enable = true;
-        };
-        gpg.enable = true;
-        trayscale.enable = true;
       };
 
       aiz = {
         desktop = {
           niri.enable = true;
-        };
-        programs = {
-          git.enable = true;
-          jujutsu.enable = true;
-          noctalia = {
-            enable = true;
-            wallpaper.enable = true;
-            idle.enable = true;
-          };
-          ssh.enable = true;
-          zen.enable = true;
-          zed-editor.enable = true;
         };
       };
     };

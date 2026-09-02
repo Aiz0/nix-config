@@ -1,6 +1,7 @@
 _: {
   flake.homeModules.aizDesktop = {
     self,
+    config,
     pkgs,
     ...
   }: {
@@ -53,8 +54,7 @@ _: {
         };
 
         shell = {
-          # TODO: fix avatar
-          #avatar_path = config.myHome.profiles.avatar.path;
+          avatar_path = config.flake.aizDesktop.avatar.path;
           clipboard_enabled = false; # I use vicinae
         };
         location.address = "Stockholm, Sweden";
