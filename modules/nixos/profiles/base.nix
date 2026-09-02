@@ -22,9 +22,5 @@
         alejandra
       ];
     };
-
-    programs = {
-      dconf.enable = true; # Needed for home-manager
-    };
   };
 }
