@@ -10,7 +10,6 @@ _: {
     #     #   inherit (config.mySnippets.tailnet.networkMap.qbittorrent) port;
     #     #   group = "media";
     #     # };
-    #     # # prometheusNode.enable = true; # enable again later
     #   };
     # };
   };
