@@ -25,17 +25,6 @@
 
     programs = {
       dconf.enable = true; # Needed for home-manager
-
-      direnv = {
-        enable = true;
-        nix-direnv.enable = true;
-        silent = true;
-      };
-    };
-
-    system = {
-      configurationRevision = self.rev or self.dirtyRev or null;
-      nixos.tags = ["base"];
     };
   };
 }
