@@ -9,7 +9,7 @@ _: {
       background = {
         path = lib.mkOption {
           description = "Background to use for regreet window";
-          default = builtins.path {path = ../../../assets/frieren.jpg;};
+          default = null;
           type = lib.types.path;
         };
       };
