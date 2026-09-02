@@ -1,13 +1,6 @@
-#TODO move to new setup
-{
-  self,
-  pkgs,
-  ...
-}: {
-  home-manager.users.aiz = {
-    imports = [self.homeConfigurations.aiz];
-    
-    config.myHome.hardware.monitors = [
+_: {
+  flake.homeModules.aizSakurasou = {
+    myHome.monitors = [
       {
         name = {
           manufacturer = "LG Electronics";

@@ -54,7 +54,7 @@ _: {
         };
 
         shell = {
-          avatar_path = config.flake.aizDesktop.avatar.path;
+          avatar_path = config.myHome.avatar.path;
           clipboard_enabled = false; # I use vicinae
         };
         location.address = "Stockholm, Sweden";
@@ -62,15 +62,14 @@ _: {
         # theme
         theme.builtin = "Catppuccin";
         wallpaper = {
-          # TODO: fix monitors
-          # monitors = builtins.listToAttrs (map (monitor: {
-          #     name = monitor.plug;
-          #     value = {
-          #       enabled = true;
-          #       path = monitor.wallpaper.path;
-          #     };
-          #   })
-          #   config.myHome.hardware.monitors);
+          monitors = builtins.listToAttrs (map (monitor: {
+              name = monitor.plug;
+              value = {
+                enabled = true;
+                path = monitor.wallpaper.path;
+              };
+            })
+            config.myHome.monitors);
         };
         backdrop.enabled = true;
 

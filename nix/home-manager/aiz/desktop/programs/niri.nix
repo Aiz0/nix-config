@@ -42,25 +42,24 @@ _: {
     programs.niri.settings = {
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite-unstable;
 
-      # TODO: Fix monitors
       # Generate niri output configuration from monitor module.
-      # outputs = builtins.listToAttrs (map (v: {
-      #     name = "${v.name.manufacturer} ${v.name.model} ${v.name.serial}";
-      #     value = {
-      #       enable = v.enabled;
-      #       mode.height = v.height;
-      #       mode.width = v.width;
-      #       mode.refresh = v.refreshRate.value;
-      #       variable-refresh-rate =
-      #         if v.refreshRate.variable.enabled && v.refreshRate.variable.on-demand
-      #         then "on-demand"
-      #         else v.refreshRate.variable.enabled;
-      #       position.x = v.position.x;
-      #       position.y = v.position.y;
-      #       focus-at-startup = v.primary;
-      #     };
-      #   })
-      #   config.myHome.hardware.monitors);
+      outputs = builtins.listToAttrs (map (v: {
+          name = "${v.name.manufacturer} ${v.name.model} ${v.name.serial}";
+          value = {
+            enable = v.enabled;
+            mode.height = v.height;
+            mode.width = v.width;
+            mode.refresh = v.refreshRate.value;
+            variable-refresh-rate =
+              if v.refreshRate.variable.enabled && v.refreshRate.variable.on-demand
+              then "on-demand"
+              else v.refreshRate.variable.enabled;
+            position.x = v.position.x;
+            position.y = v.position.y;
+            focus-at-startup = v.primary;
+          };
+        })
+        config.myHome.monitors);
 
       input = {
         keyboard = {
