@@ -18,6 +18,7 @@
         imports = [
           self.homeModules.aiz
           self.homeModules.aizDesktop
+          self.homeModules.aizSakurasou
         ];
       };
     };
