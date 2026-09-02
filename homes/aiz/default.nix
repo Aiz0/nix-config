@@ -21,12 +21,6 @@
       ];
     };
 
-    programs = {
-      lutris = {
-        enable = true;
-      };
-    };
-
     systemd.user.startServices = true; # Needed for auto-mounting agenix secrets.
 
     myHome = {
