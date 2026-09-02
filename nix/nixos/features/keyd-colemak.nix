@@ -1,15 +1,5 @@
-{
-  config,
-  lib,
-  ...
-}: {
-  options.myNixOS.keyd.enable = lib.mkOption {
-    default = false;
-    description = "Enable keyd service for colemak layout with home row modifiers";
-    type = lib.types.bool;
-  };
-
-  config = lib.mkIf config.myNixOS.keyd.enable {
+_: {
+  flake.nixosModules.keyd-colemak = {
     services.keyd = {
       enable = true;
       keyboards = {
