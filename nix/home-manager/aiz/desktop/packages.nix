@@ -36,6 +36,12 @@ _: {
       bottles
       protonplus
       r2modman
+
+      # Dev
+      nodejs
+      deno
+      pnpm
+      pakku
     ];
   };
 }
