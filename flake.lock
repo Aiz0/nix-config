@@ -571,11 +571,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1780270903,
-        "narHash": "sha256-hctWY5doHlQyUMwSyKGi5k4Y1XjrmpdegRgtOKKdcGQ=",
+        "lastModified": 1788388721,
+        "narHash": "sha256-EeXJuADiw849mo9YfuG9N4RvtdHPU0IdbqnAvRgLpXQ=",
         "owner": "aiz0",
         "repo": "secrets",
-        "rev": "6e80fd0854c0eeff4d5d767e91e4c6212c965c9f",
+        "rev": "9881e16b7c6198d43384d4fea49b438f0fa9a17c",
         "type": "github"
       },
       "original": {
