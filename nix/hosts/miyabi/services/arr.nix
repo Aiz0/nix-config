@@ -1,11 +1,11 @@
-_: let
-  dataDir = "/var/lib/";
-in {
+_: {
   flake.nixosModules.miyabi = {
     config,
     lib,
     ...
-  }: {
+  }: let
+    dataDir = "/var/lib/";
+  in {
     services = {
       bazarr = {
         enable = true;
