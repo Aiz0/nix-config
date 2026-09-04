@@ -1,5 +1,5 @@
 _: {
-  flake.nixosModules.miyabi = {config, ...}: let
+  flake.nixosModules.miyabi = let
     cfg = {
       dataDir = "/var/lib/";
       group = "media";

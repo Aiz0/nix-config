@@ -1,6 +1,6 @@
 _: {
   flake.nixosModules.aiz = {
-    config,
+    # config,
     lib,
     pkgs,
     ...

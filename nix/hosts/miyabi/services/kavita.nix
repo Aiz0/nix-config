@@ -11,7 +11,7 @@ _: {
     services.kavita = {
       enable = true;
       dataDir = "/var/lib/kavita";
-      tokenKeyFile = tokenKeyFile;
+      inherit tokenKeyFile;
     };
   };
 }

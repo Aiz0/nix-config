@@ -1,6 +1,10 @@
 _: {
-  flake.homeModules.aizDesktop =  {config, lib,...}: {
-    options.myHome.monitors = lib.mkOption{
+  flake.homeModules.aizDesktop = {
+    config,
+    lib,
+    ...
+  }: {
+    options.myHome.monitors = lib.mkOption {
       type = lib.types.listOf (lib.types.submodule {
         options = {
           name = {

@@ -1,11 +1,7 @@
 # TODO: update this to Aly's hoenn swap module
 # when i try facter
 _: {
-  flake.nixosModules.default = {
-    config,
-    lib,
-    ...
-  }: let
+  flake.nixosModules.default = let
     # TODO: I didn't wanna add options at the moment so everything uses the default
     defaultSwapSizeMiB = 8192;
   in {

@@ -1,4 +1,4 @@
-{...}: {
+_: {
   flake.nixosModules.miyabi = {config, ...}: let
     cfg = {
       radarr = {

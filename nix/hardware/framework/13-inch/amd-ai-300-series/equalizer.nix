@@ -1,6 +1,5 @@
 _: {
   flake.nixosModules.framework-laptop13-amd-ai-300 = {
-    config,
     lib,
     pkgs,
     ...

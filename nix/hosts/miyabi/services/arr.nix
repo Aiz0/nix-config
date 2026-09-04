@@ -1,9 +1,5 @@
 _: {
-  flake.nixosModules.miyabi = {
-    config,
-    lib,
-    ...
-  }: let
+  flake.nixosModules.miyabi = let
     dataDir = "/var/lib/";
   in {
     services = {
