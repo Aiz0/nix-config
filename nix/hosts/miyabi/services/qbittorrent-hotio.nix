@@ -9,7 +9,7 @@ _: {
       dataDir = "/var/lib/qbittorrent-hotio";
       downloadDir = "/mnt/data/";
       user = "qbittorrent";
-      group = "qbittorrent";
+      group = "media";
       port = 8080;
     };
     UID = 888;
