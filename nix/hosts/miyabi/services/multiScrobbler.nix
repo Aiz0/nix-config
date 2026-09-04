@@ -1,23 +1,23 @@
-{
-  config,
-  lib,
-  ...
-}: let
-  cfg = {
-    environmentFile = config.age.secrets.multiScrobblerEnv.path or null;
-    user = "multi-scrobbler";
-    group = "multi-scrobbler";
-    port = 9078;
-  };
-  UID = 870;
-  GID = 870;
-in {
-  flake.nixosModules.multiScrobbler = {
-    
+_: {
+  flake.nixosModules.miyabi = {
+    config,
+    lib,
+    ...
+  }: let
+    cfg = {
+      environmentFile = config.age.secrets.multiScrobblerEnv.path or null;
+      dataDir = "/var/lib/multi-scrobbler";
+      user = "multi-scrobbler";
+      group = "multi-scrobbler";
+      port = 9078;
+    };
+    UID = 870;
+    GID = 870;
+  in {
     virtualisation.oci-containers.containers."multi-scrobbler" = {
       image = "ghcr.io/foxxmd/multi-scrobbler";
       volumes = [
-        "/var/lib/multi-scrobbler:/config:rw"
+        "${cfg.dataDir}:/config:rw"
       ];
       ports = [
         "${toString cfg.port}:9078"
