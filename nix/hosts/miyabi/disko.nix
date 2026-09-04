@@ -1,7 +1,7 @@
 _: {
   flake.nixosModules.miyabi = {
     disko.devices.disk = {
-      main = {
+      vdb = {
         type = "disk";
         device = "/dev/disk/by-id/nvme-KINGSTON_RBUSNS8154P3256GJ3_50026B7682E27004";
 

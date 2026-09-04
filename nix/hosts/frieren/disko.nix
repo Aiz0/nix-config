@@ -1,7 +1,7 @@
 _: {
   flake.nixosModules.frieren = {
     disko.devices.disk = {
-      main = {
+      vdb = {
         type = "disk";
         device = "/dev/nvme0n1";
 

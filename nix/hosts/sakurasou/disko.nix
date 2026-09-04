@@ -1,7 +1,7 @@
 _: {
   flake.nixosModules.sakurasou = {
     disko.devices.disk = {
-      main = {
+      vdb = {
         type = "disk";
         device = "/dev/disk/by-id/nvme-ADATA_SX8200PNP_2K1520121131";
 
