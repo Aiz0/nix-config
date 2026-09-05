@@ -14,6 +14,7 @@
       self.nixosModules.sakurasou
       self.nixosModules.desktop
       self.nixosModules.podman
+      self.nixosModules.qbittorrent
       self.nixosModules.amd-cpu
       self.nixosModules.amd-gpu
       self.nixosModules.aiz

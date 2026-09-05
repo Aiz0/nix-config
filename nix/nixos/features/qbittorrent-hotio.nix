@@ -1,5 +1,5 @@
 _: {
-  flake.nixosModules.miyabi = {
+  flake.nixosModules.qbittorrent = {
     pkgs,
     lib,
     config,

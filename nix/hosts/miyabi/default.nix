@@ -13,6 +13,7 @@
       self.nixosModules.tailnet
       self.nixosModules.podman
       self.nixosModules.prometheusNode
+      self.nixosModules.qbittorrent
       self.nixosModules.amd-cpu
       self.nixosModules.nvidia-gpu
       self.nixosModules.aiz
