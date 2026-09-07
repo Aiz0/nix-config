@@ -141,8 +141,6 @@ _: {
                   type = "login_box";
                   output = monitor.plug;
                   enabled = false;
-                  settings.show_media = false;
-                  settings.show_weather = false;
                 };
               })
               otherMonitors);
