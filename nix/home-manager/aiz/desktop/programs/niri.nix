@@ -130,18 +130,16 @@ _: {
       ];
 
       binds = with config.lib.niri.actions; {
-        # TODO: FIX DEFAULT APPS
-        # "MOD+Return".action = spawn config.myHome.profiles.defaultApps.terminal.exec;
+        "MOD+Return".action = spawn config.myHome.profiles.defaultApps.terminal.exec;
 
         #Vicinae launcher
         "MOD+Space".action = spawn "vicinae" "toggle";
         # open window switcher
         "MOD+Shift+Space".action = spawn "vicinae" "vicinae://launch/wm/switch-windows";
 
-        # TODO: FIX DEFAULT APPS
-        # "MOD+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec;
-        # "MOD+Shift+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec "--private-window";
-        # "MOD+Z".action = spawn config.myHome.profiles.defaultApps.editor.exec;
+        "MOD+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec;
+        "MOD+Shift+P".action = spawn config.myHome.profiles.defaultApps.webBrowser.exec "--private-window";
+        "MOD+Z".action = spawn config.myHome.profiles.defaultApps.editor.exec;
         "MOD+Escape".action = spawn "loginctl" "lock-session";
 
         # Media / System Keys
