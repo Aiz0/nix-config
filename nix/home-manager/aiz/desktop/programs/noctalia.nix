@@ -3,6 +3,7 @@ _: {
     self,
     config,
     pkgs,
+    lib,
     ...
   }: {
     imports = [
@@ -90,6 +91,61 @@ _: {
               enabled = true;
             };
           };
+        };
+
+        #lockscreen
+        lockscreen_widgets = let
+          primaryMonitors = lib.filter (m: m.primary) config.myHome.monitors;
+          otherMonitors = lib.filter (m: !m.primary) config.myHome.monitors;
+        in {
+          enabled = true;
+          widget =
+            builtins.listToAttrs (lib.concatMap (monitor: [
+                {
+                  name = "clock@${monitor.plug}";
+                  value = {
+                    type = "clock";
+                    output = monitor.plug;
+                    cx = monitor.width * 1.0 / 2;
+                    cy = 120.0;
+                    box_width = 360.0;
+                    box_height = 120.0;
+                    settings = {
+                      format = "{:%H:%M}";
+                      background = false;
+                      shadow = false;
+                    };
+                  };
+                }
+                {
+                  name = "lockscreen-login-box@${monitor.plug}";
+                  value = {
+                    type = "login_box";
+                    output = monitor.plug;
+                    cx = monitor.width * 1.0 / 2;
+                    cy = monitor.height * 1.0 - 182.0; # or wherever you want it
+                    box_width = 810.0;
+                    box_height = 196.0;
+                    settings = {
+                      show_media = false;
+                      show_weather = true;
+                    };
+                  };
+                }
+              ])
+              primaryMonitors)
+            # Hide login box on other monitors
+            // builtins.listToAttrs (map (monitor: {
+                name = "lockscreen-login-box@${monitor.plug}";
+                value = {
+                  type = "login_box";
+                  output = monitor.plug;
+                  enabled = false;
+                  settings.show_media = false;
+                  settings.show_weather = false;
+                };
+              })
+              otherMonitors);
         };
       };
     };
