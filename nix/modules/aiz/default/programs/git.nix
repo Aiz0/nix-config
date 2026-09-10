@@ -17,12 +17,6 @@ _: {
         init.defaultBranch = "main";
       };
       package = pkgs.gitFull;
-      includes = [
-        {
-          condition = "gitdir:~/work/";
-          inherit (osConfig.age.secrets.gitWorkConfig) path;
-        }
-      ];
     };
     programs.delta = {
       enable = true;
