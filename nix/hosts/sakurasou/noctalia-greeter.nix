@@ -2,7 +2,6 @@ _: {
   flake.nixosModules.sakurasou = {
     services.displayManager.noctalia-greeter.settings = {
       appearance.wallpaper.path = builtins.path {path = ./assets/wallpaper-greeter.png;};
-      output.name = "DP-2";
 
       appearance.palette = {
         primary = "#8b4a62";

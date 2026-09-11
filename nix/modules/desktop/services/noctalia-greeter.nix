@@ -34,6 +34,9 @@ _: {
           wallpaper = {
             fill_mode = "crop";
           };
+          output = {
+            scale = lib.mkDefault 1.0;
+          };
         };
       };
       cursorTheme = {
