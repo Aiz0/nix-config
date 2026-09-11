@@ -1,9 +1,5 @@
 _: {
-  flake.homeModules.aiz = {
-    pkgs,
-    osConfig,
-    ...
-  }: {
+  flake.homeModules.aiz = {pkgs, ...}: {
     programs.git = {
       enable = true;
       settings = {
