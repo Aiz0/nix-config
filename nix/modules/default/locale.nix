@@ -21,8 +21,8 @@ _: {
     };
   in {
     i18n = {
-      glibcLocales = myGlibcLocales;
-      defaultLocale = lib.mkDefault "en_SE.UTF-8";
+      # glibcLocales = myGlibcLocales;
+      defaultLocale = lib.mkDefault "en_DK.UTF-8";
       extraLocaleSettings = {
         LC_ADDRESS = config.i18n.defaultLocale;
         LC_IDENTIFICATION = config.i18n.defaultLocale;
