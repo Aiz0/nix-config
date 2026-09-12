@@ -64,6 +64,11 @@
       url = "github:aiz0/secrets";
       flake = false;
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {

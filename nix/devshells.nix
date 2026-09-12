@@ -5,6 +5,9 @@ _: {
         pkgs.git
         pkgs.nh
         pkgs.nixd
+        pkgs.just
+        pkgs.sops
+        pkgs.ssh-to-age
       ];
 
       shellHook = ''

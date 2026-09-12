@@ -10,6 +10,7 @@
       inputs.disko.nixosModules.disko
       inputs.mikuboot.nixosModules.default
       inputs.niri.nixosModules.niri
+      inputs.sops-nix.nixosModules.sops
       self.nixosModules.default
       self.nixosModules.sakurasou
       self.nixosModules.desktop

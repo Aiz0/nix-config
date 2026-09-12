@@ -9,6 +9,7 @@
       self.nixosModules.default
       inputs.agenix.nixosModules.default
       inputs.disko.nixosModules.disko
+      inputs.sops-nix.nixosModules.sops
       self.nixosModules.miyabi
       self.nixosModules.podman
       self.nixosModules.prometheusNode
