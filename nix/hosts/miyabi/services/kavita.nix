@@ -1,17 +1,14 @@
 _: {
-  flake.nixosModules.miyabi = {config, ...}: let
-    tokenKeyFile = config.age.secrets.kavitaTokenKey.path or null;
-  in {
-    assertions = [
-      {
-        assertion = tokenKeyFile != null;
-        message = "Kavita tokenKeyFile cannot be null.";
-      }
-    ];
+  flake.nixosModules.miyabi = {
+    config,
+    self,
+    ...
+  }: {
+    sops.secrets.kavita-token-key.sopsFile = self + "/secrets/kavita.yaml";
     services.kavita = {
       enable = true;
       dataDir = "/var/lib/kavita";
-      inherit tokenKeyFile;
+      tokenKeyFile = config.sops.secrets.kavita-token-key.path;
     };
   };
 }
