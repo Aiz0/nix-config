@@ -2,10 +2,10 @@ _: {
   flake.nixosModules.miyabi = {
     config,
     lib,
+    self,
     ...
   }: let
     cfg = {
-      environmentFile = config.age.secrets.multiScrobblerEnv.path or null;
       dataDir = "/var/lib/multi-scrobbler";
       user = "multi-scrobbler";
       group = "multi-scrobbler";
@@ -14,6 +14,11 @@ _: {
     UID = 870;
     GID = 870;
   in {
+    sops.secrets.multi-scrobbler = {
+      sopsFile = self + "/secrets/multiScrobbler.env";
+      format = "dotenv";
+    };
+
     virtualisation.oci-containers.containers."multi-scrobbler" = {
       image = "ghcr.io/foxxmd/multi-scrobbler";
       volumes = [
@@ -28,7 +33,7 @@ _: {
         "TZ" = config.time.timeZone;
       };
       environmentFiles = [
-        cfg.environmentFile
+        config.sops.secrets.multi-scrobbler.path
       ];
     };
     systemd.services."podman-multi-scrobbler" = {
