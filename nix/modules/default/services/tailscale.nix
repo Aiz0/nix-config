@@ -12,27 +12,17 @@ _: {
         type = lib.types.nullOr lib.types.str;
       };
     };
-    config = let
-      authKeyFile = config.age.secrets.tailscaleAuthKey.path or null;
-    in {
-      assertions = [
-        {
-          assertion = authKeyFile != null;
-          message = "Tailscale authKeyFile cannot be null.";
-        }
-      ];
-
-      age.secrets.tailscaleCaddyAuth.file = "${self.inputs.secrets}/tailscale/caddyAuth.age";
-
+    config = {
       networking.firewall = {
         allowedUDPPorts = [config.services.tailscale.port];
         trustedInterfaces = [config.services.tailscale.interfaceName];
       };
 
+      sops.secrets.tailscale-auth-key.sopsFile = self + "/secrets/tailscale.yaml";
       services = {
         tailscale = {
           enable = true;
-          inherit authKeyFile;
+          authKeyFile = config.sops.secrets.tailscale-auth-key.path;
 
           extraUpFlags =
             ["--ssh"]

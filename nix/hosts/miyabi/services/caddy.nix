@@ -5,14 +5,17 @@ _: {
     self,
     ...
   }: {
-    age.secrets.tailscaleCaddyAuth.file = "${self.inputs.secrets}/tailscale/caddyAuth.age";
+    sops.secrets.tailscaleCaddyAuthEnv = {
+      sopsFile = self + "/secrets/tailscaleCaddy.env";
+      format = "dotenv";
+    };
     networking.firewall.allowedTCPPorts = [80 443];
 
     services = {
       caddy = {
         enable = true;
         enableReload = false;
-        environmentFile = config.age.secrets.tailscaleCaddyAuth.path;
+        environmentFile = config.sops.secrets.tailscaleCaddyAuthEnv.path;
 
         globalConfig = ''
           tailscale {

@@ -59,7 +59,7 @@ sops-rekey:
         cat <<'EOF'
 
     creation_rules:
-      - path_regex: ^secrets/.*\.ya?ml$
+      - path_regex: ^secrets/.*\.(yaml|env)$
         key_groups:
           - age:
     EOF
