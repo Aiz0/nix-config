@@ -1,11 +1,16 @@
 _: {
-  flake.nixosModules.miyabi = {config, ...}: {
+  flake.nixosModules.miyabi = {
+    config,
+    self,
+    ...
+  }: {
+    sops.secrets.grafana-secret-key.sopsFile = self + "/secrets/grafana.yaml";
     services = {
       grafana = {
         enable = true;
 
         settings = {
-          security.secret_key = "$__file{${config.age.secrets.grafanaSecretKey.path}}";
+          security.secret_key = "$__file{${config.sops.secrets.grafana-secret-key.path}}";
           server = {
             http_addr = "0.0.0.0";
             http_port = config.mySnippets.tailnet.networkMap.grafana.port;
