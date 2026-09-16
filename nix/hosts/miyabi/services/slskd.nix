@@ -1,13 +1,20 @@
 _: {
-  flake.nixosModules.miyabi = {config, ...}: let
+  flake.nixosModules.miyabi = {
+    config,
+    self,
+    ...
+  }: let
     cfg = {
       downloadDir = "/mnt/data/downloads/soulseek";
       user = "slskd";
       group = "media";
       port = 5030;
-      environmentFile = config.age.secrets.slskdEnv.path or null;
     };
   in {
+    sops.secrets.slskd-env = {
+      sopsFile = self + "/secrets/slskd.env";
+      format = "dotenv";
+    };
     services.slskd = {
       enable = true;
       inherit (cfg) user;
@@ -23,7 +30,7 @@ _: {
         ];
       };
       openFirewall = true;
-      inherit (cfg) environmentFile;
+      environmentFile = config.sops.secrets.slskd-env.path;
     };
 
     systemd = {
