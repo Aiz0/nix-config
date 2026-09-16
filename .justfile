@@ -11,15 +11,15 @@
 sops-bootstrap:
     #!/usr/bin/env bash
     set -euo pipefail
-    
+
     config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
     keys_file="$config_dir/sops/age/keys.txt"
-    
+
     if [[ -f $keys_file ]]; then
         echo "$keys_file already exists; skipping."
         exit 0
     fi
-    
+
     mkdir -p "$(dirname "$keys_file")"
     ssh-to-age -private-key -i ~/.ssh/id_ed25519 > "$keys_file"
     chmod 600 "$keys_file"
@@ -59,7 +59,7 @@ sops-rekey:
         cat <<'EOF'
 
     creation_rules:
-      - path_regex: ^secrets/.*\.(yaml|env)$
+      - path_regex: ^secrets/.*\.(yaml|env|ini)$
         key_groups:
           - age:
     EOF

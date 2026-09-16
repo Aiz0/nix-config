@@ -12,7 +12,7 @@ keys:
   - &host_sakurasou age1sjmkcl5a9f9p7m3xvjunthuhvj4qjpg9zsnn2w6agzth7ukrlpnsmpwgdg
 
 creation_rules:
-  - path_regex: ^secrets/.*\.(yaml|env)$
+  - path_regex: ^secrets/.*\.(yaml|env|ini)$
     key_groups:
       - age:
           - *user_aiz_frieren
