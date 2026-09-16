@@ -7,7 +7,6 @@
     system = "x86_64-linux";
     modules = [
       self.nixosModules.default
-      inputs.agenix.nixosModules.default
       inputs.disko.nixosModules.disko
       inputs.sops-nix.nixosModules.sops
       self.nixosModules.miyabi

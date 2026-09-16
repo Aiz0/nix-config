@@ -6,7 +6,6 @@
   config.flake.nixosConfigurations.sakurasou = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules = [
-      inputs.agenix.nixosModules.default
       inputs.disko.nixosModules.disko
       inputs.mikuboot.nixosModules.default
       inputs.niri.nixosModules.niri
