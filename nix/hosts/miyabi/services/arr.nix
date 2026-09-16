@@ -1,7 +1,16 @@
 _: {
-  flake.nixosModules.miyabi = let
+  flake.nixosModules.miyabi = {self, ...}: let
     dataDir = "/var/lib/";
   in {
+    sops.secrets = let
+      sopsFile = self + "/secrets/arr.yaml";
+    in {
+      bazarr-api-key.sopsFile = sopsFile;
+      lidarr-api-key.sopsFile = sopsFile;
+      prowlarr-api-key.sopsFile = sopsFile;
+      radarr-api-key.sopsFile = sopsFile;
+      sonarr-api-key.sopsFile = sopsFile;
+    };
     services = {
       bazarr = {
         enable = true;

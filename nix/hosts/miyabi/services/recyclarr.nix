@@ -6,27 +6,17 @@ _: {
           if config.mySnippets.tailnet.networkMap.radarr.vHost != null
           then "https://${config.mySnippets.tailnet.networkMap.radarr.vHost}"
           else "http://localhost:7878";
-        authKeyFile = config.age.secrets.radarrApiKey.path or null;
+        authKeyFile = config.sops.secrets.radarr-api-key.path;
       };
       sonarr = {
         base_url =
           if config.mySnippets.tailnet.networkMap.sonarr.vHost != null
           then "https://${config.mySnippets.tailnet.networkMap.sonarr.vHost}"
           else "http://localhost:8989";
-        authKeyFile = config.age.secrets.sonarrApiKey.path or null;
+        authKeyFile = config.sops.secrets.sonarr-api-key.path;
       };
     };
   in {
-    assertions = [
-      {
-        assertion = cfg.radarr.authKeyFile != null;
-        message = "recyclarr radarr authKeyFile cannot be null.";
-      }
-      {
-        assertion = cfg.sonarr.authKeyFile != null;
-        message = "recyclarr sonarr authKeyFile cannot be null.";
-      }
-    ];
     services.recyclarr = {
       enable = true;
       schedule = "weekly";
