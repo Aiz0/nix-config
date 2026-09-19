@@ -60,6 +60,8 @@ _: {
         };
         location.address = "Stockholm, Sweden";
 
+        audio.enable_overdrive = false;
+
         # theme
         theme.builtin = "Catppuccin";
         wallpaper = {
