@@ -1,7 +1,7 @@
 _: {
   flake.homeModules.aizDesktop = {pkgs, ...}: {
     home.packages = [
-      pkgs.nil
+      pkgs.nixd
       pkgs.nerd-fonts.lilex
     ];
 
@@ -34,12 +34,11 @@ _: {
         };
 
         use_on_type_format = true;
+        project_panel.dock = "right";
         languages = {
           Nix = {
-            language_servers = [
-              "nil"
-              "!nixd"
-            ];
+            language_servers = ["nixd"];
+            format_on_save = "on";
             formatter = {
               external = {
                 command = "alejandra";
@@ -48,17 +47,10 @@ _: {
             };
           };
         };
-        project_panel.dock = "right";
-
         lsp = {
-          nil = {
-            settings = {
-              nix = {
-                flake = {
-                  autoArchive = true;
-                  autoEvalInputs = true;
-                };
-              };
+          nixd.settings = {
+            formatting = {
+              command = [""];
             };
           };
         };
