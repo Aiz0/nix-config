@@ -42,6 +42,7 @@ _: {
       deno
       pnpm
       pakku
+      opencode-desktop
     ];
   };
 }
