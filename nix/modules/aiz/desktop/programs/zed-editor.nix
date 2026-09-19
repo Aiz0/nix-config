@@ -2,6 +2,7 @@ _: {
   flake.homeModules.aizDesktop = {pkgs, ...}: {
     home.packages = [
       pkgs.nil
+      pkgs.nerd-fonts.lilex
     ];
 
     programs.zed-editor = {
@@ -24,6 +25,7 @@ _: {
         autosave.after_delay.milliseconds = 1000;
 
         theme = "Ayu Dark";
+        terminal.font_family = "Lilex Nerd Font";
 
         minimap.show = "auto";
         indent_guides = {
