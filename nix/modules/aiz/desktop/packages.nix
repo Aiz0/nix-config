@@ -21,7 +21,7 @@ _: {
       # image, video, audio editing
       krita
       video-trimmer
-      tenacity
+      audacity
       ffmpeg
       imagemagick
       easyeffects
