@@ -15,6 +15,11 @@ _: {
     programs.noctalia = {
       enable = true;
       settings = {
+        plugins = {
+          enabled = ["noctalia/world_clock"];
+          auto_update = "all";
+        };
+
         bar.default = {
           position = "left";
           margin_ends = 0;
@@ -37,6 +42,7 @@ _: {
             "volume"
             "brightness"
             "weather"
+            "noctalia/world_clock:bar"
             "clock"
           ];
         };
