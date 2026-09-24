@@ -10,13 +10,13 @@ _: {
       self.inputs.noctalia.homeModules.default
     ];
 
-    home.packages = [self.inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default];
+    home.packages = [self.inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default pkgs.gpu-screen-recorder];
 
     programs.noctalia = {
       enable = true;
       settings = {
         plugins = {
-          enabled = ["noctalia/world_clock"];
+          enabled = ["noctalia/world_clock" "noctalia/screen_recorder"];
           auto_update = "all";
         };
 
@@ -30,6 +30,7 @@ _: {
           start = [
             "control-center"
             "sysmon"
+            "noctalia/screen_recorder:recorder"
             "media"
             "tray"
           ];
