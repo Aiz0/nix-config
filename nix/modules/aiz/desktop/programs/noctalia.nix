@@ -1,17 +1,10 @@
 _: {
   flake.homeModules.aizDesktop = {
-    self,
     config,
     pkgs,
     lib,
     ...
   }: {
-    imports = [
-      self.inputs.noctalia.homeModules.default
-    ];
-
-    home.packages = [self.inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default pkgs.gpu-screen-recorder];
-
     programs.noctalia = {
       enable = true;
       settings = {
