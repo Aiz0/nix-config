@@ -4,7 +4,11 @@ _: {
     self,
     ...
   }: {
-    sops.secrets.grafana-secret-key.sopsFile = self + "/secrets/grafana.yaml";
+    sops.secrets.grafana-secret-key = {
+      sopsFile = self + "/secrets/grafana.yaml";
+      owner = "grafana";
+      group = "grafana";
+    };
     services = {
       grafana = {
         enable = true;
