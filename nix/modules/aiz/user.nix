@@ -15,7 +15,7 @@ _: {
     users.users.aiz = {
       description = "Aiz";
       group = "aiz";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "media"];
       home = "/home/aiz";
       hashedPasswordFile = config.sops.secrets.aiz-password.path;
       isNormalUser = true;
