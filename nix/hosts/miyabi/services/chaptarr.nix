@@ -2,6 +2,7 @@ _: {
   flake.nixosModules.miyabi = {
     config,
     lib,
+    self,
     ...
   }: let
     cfg = {
@@ -16,6 +17,7 @@ _: {
     UID = 879;
     GID = 879;
   in {
+    imports = [self.nixosModules.podman];
     virtualisation.oci-containers.containers."chaptarr" = {
       image = "docker.io/chaptarr/chaptarr:latest";
       volumes = [

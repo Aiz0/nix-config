@@ -11,6 +11,7 @@ _: {
       port = 5030;
     };
   in {
+    imports = [self.nixosModules.podman];
     sops.secrets.slskd-env = {
       sopsFile = self + "/secrets/slskd.env";
       format = "dotenv";

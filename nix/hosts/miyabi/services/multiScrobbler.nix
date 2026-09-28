@@ -14,6 +14,7 @@ _: {
     UID = 870;
     GID = 870;
   in {
+    imports = [self.nixosModules.podman];
     sops.secrets.multi-scrobbler = {
       sopsFile = self + "/secrets/multiScrobbler.env";
       format = "dotenv";

@@ -10,7 +10,6 @@
       inputs.disko.nixosModules.disko
       inputs.sops-nix.nixosModules.sops
       self.nixosModules.miyabi
-      self.nixosModules.podman
       self.nixosModules.prometheusNode
       self.nixosModules.qbittorrent
       self.nixosModules.amd-cpu

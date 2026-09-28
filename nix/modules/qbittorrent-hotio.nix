@@ -3,6 +3,7 @@ _: {
     pkgs,
     lib,
     config,
+    self,
     ...
   }: let
     cfg = {
@@ -15,6 +16,7 @@ _: {
     UID = 888;
     GID = 888;
   in {
+    imports = [self.nixosModules.podman];
     # Containers
     virtualisation.oci-containers.containers."qbittorrent" = {
       image = "ghcr.io/hotio/qbittorrent";
