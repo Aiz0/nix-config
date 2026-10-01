@@ -41,8 +41,11 @@ _: {
       };
 
       settings = {
+        # prefer web app
+        start_minimized = true;
+        fullscreen = true;
         # use uosc instead
-        thumbnail_osc_builtin = false;
+        osc_style = "custom";
         lang = "eng";
         lang_filter_sub = true;
         screenshot_dir = "${config.xdg.userDirs.pictures}/screenshots";
