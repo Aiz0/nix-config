@@ -10,6 +10,8 @@ _: {
 
     programs.vicinae = {
       enable = true;
+      # vicinae is bronked for now
+      package = pkgs.vicinae;
       settings = {
         close_on_focus_loss = true;
         # Display above fullscreen windows in niri
