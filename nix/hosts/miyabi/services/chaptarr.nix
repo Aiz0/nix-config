@@ -67,5 +67,6 @@ _: {
         "d ${cfg.ebookDir} 0755 chaptarr chaptarr"
       ];
     };
+    myBackup.paths = [cfg.dataDir];
   };
 }

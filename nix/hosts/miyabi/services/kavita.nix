@@ -10,5 +10,8 @@ _: {
       dataDir = "/var/lib/kavita";
       tokenKeyFile = config.sops.secrets.kavita-token-key.path;
     };
+    myBackup.paths = [
+      "${config.services.kavita.dataDir}/config/backups"
+    ];
   };
 }

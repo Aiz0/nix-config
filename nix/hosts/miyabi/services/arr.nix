@@ -1,5 +1,9 @@
 _: {
-  flake.nixosModules.miyabi = {self, ...}: let
+  flake.nixosModules.miyabi = {
+    config,
+    self,
+    ...
+  }: let
     dataDir = "/var/lib/";
   in {
     sops.secrets = let
@@ -50,5 +54,11 @@ _: {
         "d ${dataDir}/sonarr 0755 sonarr sonarr"
       ];
     };
+
+    myBackup.paths = [
+      config.services.radarr.dataDir
+      config.services.sonarr.dataDir
+      config.services.lidarr.dataDir
+    ];
   };
 }
