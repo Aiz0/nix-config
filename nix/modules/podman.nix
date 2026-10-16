@@ -2,6 +2,7 @@ _: {
   flake.nixosModules.podman = {
     pkgs,
     config,
+    lib,
     ...
   }: {
     environment.systemPackages = [pkgs.podman-compose];
@@ -25,8 +26,16 @@ _: {
 
     virtualisation.oci-containers.backend = "podman";
 
-    # Services
-    # hmm maybe these should be moved to a separate module
+    # docker.io registry
+    environment.etc."containers/registries.conf".text = lib.mkForce ''
+      unqualified-search-registries = ["docker.io"]
+
+      [[registry]]
+      location = "docker.io"
+
+      [[registry]]
+      location = "quay.io"
+    '';
 
     # Root service
     # When started, this will automatically create all resources and start
