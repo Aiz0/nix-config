@@ -17,6 +17,7 @@ _: {
       spotify
       freetube
       nur.repos.Ev357.helium
+      obsidian
 
       # image, video, audio editing
       krita
