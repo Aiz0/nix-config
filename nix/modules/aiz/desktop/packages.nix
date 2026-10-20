@@ -21,7 +21,8 @@ _: {
       # image, video, audio editing
       krita
       video-trimmer
-      audacity
+      # https://github.com/NixOS/nixpkgs/issues/572942
+      # audacity
       ffmpeg
       imagemagick
       easyeffects

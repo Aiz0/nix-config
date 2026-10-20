@@ -1,17 +1,11 @@
 _: {
   flake.nixosModules.framework-laptop13 = {
-    config,
     lib,
     pkgs,
     ...
   }: {
     boot = {
-      extraModulePackages = with config.boot.kernelPackages; [
-        framework-laptop-kmod
-      ];
-
       kernelModules = [
-        # https://github.com/DHowett/framework-laptop-kmod?tab=readme-ov-file#usage
         "cros_ec_lpcs"
         "cros_ec"
       ];
