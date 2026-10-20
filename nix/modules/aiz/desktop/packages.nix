@@ -45,6 +45,7 @@ _: {
       pnpm
       pakku
       opencode-desktop
+      crush
     ];
   };
 }
